@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-09-16T09:02:27.410Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="YClDbhc8jd2uhpH1mDQO" version="13.6.5" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2020-09-16T09:05:12.793Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="1i7TRnPDzxsunWJlcNZK" version="13.6.5" type="github" pages="2">
   <diagram id="XnHhwjnP2CLqmePo37kd" name="moneed-CI/CD">
     <mxGraphModel dx="1899" dy="994" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -8,7 +8,7 @@
           <mxGeometry x="1319.5" y="748" width="79.5" height="54" as="geometry" />
         </mxCell>
         <mxCell id="UyodA7iAwC8A7Ai0S4ob-242" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.internet_gateway;fillColor=#F58536;gradientColor=none;rounded=0;labelBackgroundColor=none;strokeColor=#000000;fontSize=16;" vertex="1" parent="1">
-          <mxGeometry x="1167" y="1020" width="69" height="72" as="geometry" />
+          <mxGeometry x="1167" y="1020" width="53" height="50" as="geometry" />
         </mxCell>
         <mxCell id="UyodA7iAwC8A7Ai0S4ob-216" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.virtual_private_cloud;fillColor=#F58534;gradientColor=none;" vertex="1" parent="1">
           <mxGeometry x="872.25" y="1020" width="79.5" height="54" as="geometry" />
