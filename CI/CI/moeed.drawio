@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-09-16T05:52:01.624Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="LJEFcm4UWoECilh-7E__" version="13.6.5" type="github">
+<mxfile host="app.diagrams.net" modified="2020-09-16T08:53:27.164Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="cYiE82boROB496wmM76I" version="13.6.5" type="github" pages="2">
   <diagram id="XnHhwjnP2CLqmePo37kd" name="moneed-CI/CD">
-    <mxGraphModel dx="1899" dy="994" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" page="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -377,6 +377,14 @@
         <mxCell id="UyodA7iAwC8A7Ai0S4ob-255" value="生产环境示例" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;" vertex="1" parent="1">
           <mxGeometry x="783" y="660" width="110" height="20" as="geometry" />
         </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="vGHQ0Zt4DYp0rAchskxo" name="MOMO架构图">
+    <mxGraphModel dx="1899" dy="994" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="YJQCJ9RpwSyD0m5CXFxp-0" />
+        <mxCell id="YJQCJ9RpwSyD0m5CXFxp-1" parent="YJQCJ9RpwSyD0m5CXFxp-0" />
       </root>
     </mxGraphModel>
   </diagram>
