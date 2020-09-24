@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-09-24T07:21:19.187Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="CktUZ2K7kTmMBnukpKUI" version="13.7.1" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2020-09-24T08:15:05.734Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="W_DGm_v_ZH11Q5u4Ogq-" version="13.7.1" type="github" pages="2">
   <diagram id="XnHhwjnP2CLqmePo37kd" name="moneed-CI/CD">
     <mxGraphModel dx="3165" dy="1657" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -688,6 +688,138 @@
         </mxCell>
         <mxCell id="NHhHYFXaY86tUfiC6w56-1" value="&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; font-family: &amp;#34;helvetica neue&amp;#34; , &amp;#34;helvetica&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: medium ; vertical-align: baseline ; letter-spacing: 1px ; line-height: 220% ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 16px ; color: rgb(61 , 170 , 214)&quot;&gt;&lt;strong style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;举个例子&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 16px ; color: rgb(61 , 170 , 214)&quot;&gt;：&lt;/span&gt;&lt;/p&gt;&lt;ul class=&quot;list-paddingleft-2&quot; style=&quot;margin: 0px ; padding: 0px 0px 0px 2.2em ; max-width: 100% ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;li&gt;&lt;p style=&quot;text-align: justify ; margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; font-family: &amp;#34;helvetica neue&amp;#34; , &amp;#34;helvetica&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: medium ; vertical-align: baseline ; letter-spacing: 1px ; line-height: 1.5em ; box-sizing: border-box ; overflow-wrap: break-word ; display: inline&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px&quot;&gt;库存服务原本部署在&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 16px&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px&quot;&gt;台机器上，现在扩容了，部署到了&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; font-family: &amp;#34;calibri&amp;#34;&quot;&gt;3&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px&quot;&gt;台机器，并且均注册到了&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; font-family: &amp;#34;calibri&amp;#34;&quot;&gt;Eureka Server&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px&quot;&gt;上。&lt;br&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word ; font-size: 15px&quot;&gt;然后订单服务的&lt;/span&gt;&lt;span style=&quot;font-size: 16px ; margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;Eureka Client&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word ; font-size: 15px&quot;&gt;会每隔&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word ; font-size: 15px ; font-family: &amp;#34;calibri&amp;#34;&quot;&gt;30&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word ; font-size: 15px&quot;&gt;秒去找&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word ; font-size: 15px ; font-family: &amp;#34;calibri&amp;#34;&quot;&gt;Eureka Server&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word ; font-size: 15px&quot;&gt;拉取最近注册表的变化，看看其他服务的地址有没有变化。&lt;br&gt;&lt;br&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 16px ; margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;除此之外，&lt;/span&gt;&lt;span style=&quot;font-size: 16px ; margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;Eureka还有一个心跳机制&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; font-size: 15px ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;，各个&lt;/span&gt;Eureka Client&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; font-size: 15px ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;每隔&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; font-family: &amp;#34;calibri&amp;#34;&quot;&gt;30&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; font-size: 15px ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;秒会发送一次心跳到&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; font-family: &amp;#34;calibri&amp;#34;&quot;&gt;Eureka Server&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; font-size: 15px ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;，通知人家说，哥们，我这个服务实例还活着！&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; font-family: &amp;#34;helvetica neue&amp;#34; , &amp;#34;helvetica&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: medium ; vertical-align: baseline ; letter-spacing: 1px ; line-height: normal ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;font-size: 16px&quot;&gt;如果某个Eureka Client很长时间没有发送心跳给&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word ; font-size: 15px ; font-family: &amp;#34;calibri&amp;#34;&quot;&gt;Eureka Server&lt;/span&gt;&lt;span style=&quot;font-size: 16px&quot;&gt;，那么就说明这个服务实例已经挂了。&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=26;fillColor=#d5e8d4;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
           <mxGeometry x="160" y="380" width="1100" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-4" value="&amp;nbsp; Eureka&amp;nbsp; Server" style="whiteSpace=wrap;html=1;rounded=1;fontSize=26;align=center;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="540" y="770" width="270" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-10" value="" style="group" vertex="1" connectable="0" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="1096" y="680" width="290" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-12" value="" style="group;fillColor=#fff2cc;strokeColor=#d6b656;rounded=1;" vertex="1" connectable="0" parent="NHhHYFXaY86tUfiC6w56-10">
+          <mxGeometry y="10" width="290" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-6" value="库存服务" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#f5f5f5;fontSize=26;align=center;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="NHhHYFXaY86tUfiC6w56-12">
+          <mxGeometry width="290" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-9" value="Eureka Client" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#dae8fc;fontSize=26;align=left;strokeColor=#6c8ebf;" vertex="1" parent="NHhHYFXaY86tUfiC6w56-12">
+          <mxGeometry x="60" y="80" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-13" value="" style="group;fillColor=#f8cecc;strokeColor=#b85450;rounded=1;" vertex="1" connectable="0" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="1096" y="870" width="290" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-14" value="库存服务" style="whiteSpace=wrap;html=1;rounded=1;fillColor=none;fontSize=26;align=center;" vertex="1" parent="NHhHYFXaY86tUfiC6w56-13">
+          <mxGeometry width="290" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-15" value="Eureka Client" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#dae8fc;fontSize=26;align=left;strokeColor=#6c8ebf;" vertex="1" parent="NHhHYFXaY86tUfiC6w56-13">
+          <mxGeometry x="60" y="80" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-16" value="" style="group;rounded=1;" vertex="1" connectable="0" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="1096" y="1030" width="290" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-17" value="库存服务" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#f8cecc;fontSize=26;align=center;strokeColor=#b85450;" vertex="1" parent="NHhHYFXaY86tUfiC6w56-16">
+          <mxGeometry width="290" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-18" value="Eureka Client" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#dae8fc;fontSize=26;align=left;strokeColor=#6c8ebf;" vertex="1" parent="NHhHYFXaY86tUfiC6w56-16">
+          <mxGeometry x="60" y="80" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-19" value="" style="group" vertex="1" connectable="0" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="40" y="825" width="290" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-20" value="" style="group;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;" vertex="1" connectable="0" parent="NHhHYFXaY86tUfiC6w56-19">
+          <mxGeometry y="10" width="290" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-21" value="订单服务" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#cdeb8b;fontSize=26;align=center;strokeColor=#36393d;" vertex="1" parent="NHhHYFXaY86tUfiC6w56-20">
+          <mxGeometry width="290" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-22" value="Eureka Client" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#cce5ff;fontSize=26;align=left;strokeColor=#36393d;" vertex="1" parent="NHhHYFXaY86tUfiC6w56-20">
+          <mxGeometry x="60" y="80" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endSize=7;strokeWidth=2;fontSize=26;" edge="1" parent="YJQCJ9RpwSyD0m5CXFxp-1" target="NHhHYFXaY86tUfiC6w56-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1156" y="810" as="sourcePoint" />
+            <mxPoint x="820" y="795" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1156" y="810" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-25" value="&lt;font style=&quot;font-size: 18px&quot;&gt;1. 注册库存服务&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=26;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="950" y="750" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endSize=7;strokeWidth=2;fontSize=26;" edge="1" parent="YJQCJ9RpwSyD0m5CXFxp-1" source="NHhHYFXaY86tUfiC6w56-22">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="540" y="810" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="240" y="810" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-29" value="&lt;font style=&quot;font-size: 17px&quot;&gt;2. 订单服务第一次拉取注册表&lt;br&gt;就发现一个库存服务实例&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=26;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="290" y="770" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endSize=7;strokeWidth=2;fontSize=26;entryX=1.011;entryY=0.618;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryPerimeter=0;" edge="1" parent="YJQCJ9RpwSyD0m5CXFxp-1" source="NHhHYFXaY86tUfiC6w56-15" target="NHhHYFXaY86tUfiC6w56-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1016" y="935" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="970" y="975" />
+              <mxPoint x="970" y="974" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endSize=7;strokeWidth=2;fontSize=26;entryX=1.007;entryY=0.697;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="YJQCJ9RpwSyD0m5CXFxp-1" source="NHhHYFXaY86tUfiC6w56-18" target="NHhHYFXaY86tUfiC6w56-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="820" y="1000" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="960" y="1135" />
+              <mxPoint x="960" y="1000" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-34" value="&lt;font style=&quot;font-size: 18px&quot;&gt;3. 注册2个库存服务&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=26;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="926" y="940" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-35" value="" style="endArrow=classic;html=1;strokeWidth=2;fontSize=26;" edge="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="199" y="960" as="sourcePoint" />
+            <mxPoint x="536" y="1000" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="199" y="1000" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-36" value="&lt;font style=&quot;font-size: 18px&quot;&gt;4. 订单服务每30s请求一次注册表书否发生变化&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=26;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="200" y="960" width="390" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-37" value="&lt;font style=&quot;font-size: 18px&quot;&gt;5. 发现库存服务新增两个注册实例，更新注册表&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=26;fillColor=#cce5ff;strokeColor=#36393d;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="40" y="1040" width="400" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-38" value="" style="endArrow=classic;html=1;strokeWidth=2;fontSize=26;exitX=0.3;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="YJQCJ9RpwSyD0m5CXFxp-1" source="NHhHYFXaY86tUfiC6w56-37">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="100" y="1040" as="sourcePoint" />
+            <mxPoint x="160" y="960" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-39" value="" style="endArrow=classic;html=1;strokeWidth=2;fontSize=26;entryX=0.367;entryY=-0.012;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="YJQCJ9RpwSyD0m5CXFxp-1" source="NHhHYFXaY86tUfiC6w56-22" target="NHhHYFXaY86tUfiC6w56-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="260" y="750" as="sourcePoint" />
+            <mxPoint x="310" y="700" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="185" y="720" />
+              <mxPoint x="639" y="720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-41" value="&lt;font style=&quot;font-size: 18px&quot;&gt;6. 订单服务每30s发送一次心跳&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=26;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="270" y="680" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-43" value="2. Eureka Server 设计精妙的注册表存储结构" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=26;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="160" y="1280" width="530" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-44" value="&lt;p style=&quot;line-height: 130%&quot;&gt;前置条件：&lt;br&gt;100 个服务&amp;nbsp; 每个服务20台机器&amp;nbsp; 机器4C8G&lt;br&gt;&lt;br&gt;&amp;nbsp;100 * 20 = 2000 台机器&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;br&gt;&amp;nbsp; Eureka Client: 30s 一次心跳；&amp;nbsp; 30s 一个拉取注册表请求&lt;br&gt;&lt;br&gt;&amp;nbsp; Eureka Server 作为一个注册中心，每秒要被请求多少次？一天请求多少次？&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;1.&amp;nbsp; 1分钟： 每个服务发送2次心跳请求 + 2次拉取注册表请求 = 4次请求&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;2.&amp;nbsp; 2000 * 4 = 8000 次/min&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;3.&amp;nbsp; 8000/60=133次/s&amp;nbsp; &amp;nbsp; &amp;nbsp; EurekaServer每秒会被请求133次&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;4.&amp;nbsp; 24 * 60 * 8000 = 1152万&amp;nbsp; &amp;nbsp; 每天访问1152万次&lt;/p&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=26;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="200" y="1325" width="910" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-46" value="&lt;pre style=&quot;background-color: #2b2b2b ; color: #a9b7c6 ; font-family: &amp;#34;meslo lg m dz for powerline&amp;#34; , monospace ; font-size: 12.0pt&quot;&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span style=&quot;font-size: 12pt ; white-space: nowrap ; color: rgb(204 , 120 , 50)&quot;&gt;public abstract class &lt;/span&gt;&lt;span style=&quot;font-size: 12pt ; white-space: nowrap&quot;&gt;AbstractInstanceRegistry &lt;/span&gt;&lt;span style=&quot;font-size: 12pt ; white-space: nowrap ; color: rgb(204 , 120 , 50)&quot;&gt;implements &lt;/span&gt;&lt;span style=&quot;font-size: 12pt ; white-space: nowrap&quot;&gt;InstanceRegistry {&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;span style=&quot;color: #cc7832&quot;&gt;    private final &lt;/span&gt;ConcurrentHashMap&amp;lt;String&lt;span style=&quot;color: #cc7832&quot;&gt;, &lt;/span&gt;Map&amp;lt;String&lt;span style=&quot;color: #cc7832&quot;&gt;, &lt;/span&gt;Lease&amp;lt;InstanceInfo&amp;gt;&amp;gt;&amp;gt; &lt;span style=&quot;color: #9876aa&quot;&gt;registry &lt;/span&gt;= &lt;span style=&quot;color: #cc7832&quot;&gt;new &lt;/span&gt;ConcurrentHashMap()&lt;span style=&quot;color: #cc7832&quot;&gt;;&lt;br/&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span style=&quot;font-size: 12pt ; white-space: nowrap&quot;&gt;}&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;&lt;/pre&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=26;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="200" y="1775" width="1100" height="160" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
