@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-09-24T08:51:49.858Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="UVScTohBvUsJLGStEytp" version="13.7.1" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2020-09-24T08:52:33.125Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="zxsEwntKaJ-_qrxyYE3A" version="13.7.1" type="github" pages="2">
   <diagram id="XnHhwjnP2CLqmePo37kd" name="moneed-CI/CD">
     <mxGraphModel dx="3165" dy="1657" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -740,7 +740,7 @@
         <mxCell id="NHhHYFXaY86tUfiC6w56-6" value="库存服务" style="whiteSpace=wrap;html=1;fillColor=#A8DADC;fontSize=26;align=center;strokeColor=#457B9D;fontColor=#1D3557;" vertex="1" parent="NHhHYFXaY86tUfiC6w56-12">
           <mxGeometry width="290" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="NHhHYFXaY86tUfiC6w56-9" value="Eureka Client" style="whiteSpace=wrap;html=1;fillColor=#A8DADC;fontSize=26;align=left;strokeColor=#457B9D;fontColor=#1D3557;" vertex="1" parent="NHhHYFXaY86tUfiC6w56-12">
+        <mxCell id="NHhHYFXaY86tUfiC6w56-9" value="Eureka Client" style="whiteSpace=wrap;html=1;fillColor=#e3c800;fontSize=26;align=left;strokeColor=#B09500;fontColor=#ffffff;" vertex="1" parent="NHhHYFXaY86tUfiC6w56-12">
           <mxGeometry x="60" y="80" width="170" height="50" as="geometry" />
         </mxCell>
         <mxCell id="NHhHYFXaY86tUfiC6w56-13" value="" style="group;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;" vertex="1" connectable="0" parent="NHhHYFXaY86tUfiC6w56-58">
@@ -749,7 +749,7 @@
         <mxCell id="NHhHYFXaY86tUfiC6w56-14" value="库存服务" style="whiteSpace=wrap;html=1;fillColor=none;fontSize=26;align=center;strokeColor=#457B9D;fontColor=#1D3557;" vertex="1" parent="NHhHYFXaY86tUfiC6w56-13">
           <mxGeometry width="290" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="NHhHYFXaY86tUfiC6w56-15" value="Eureka Client" style="whiteSpace=wrap;html=1;fillColor=#A8DADC;fontSize=26;align=left;strokeColor=#457B9D;fontColor=#1D3557;" vertex="1" parent="NHhHYFXaY86tUfiC6w56-13">
+        <mxCell id="NHhHYFXaY86tUfiC6w56-15" value="Eureka Client" style="whiteSpace=wrap;html=1;fillColor=#e3c800;fontSize=26;align=left;strokeColor=#B09500;fontColor=#ffffff;" vertex="1" parent="NHhHYFXaY86tUfiC6w56-13">
           <mxGeometry x="60" y="80" width="170" height="50" as="geometry" />
         </mxCell>
         <mxCell id="NHhHYFXaY86tUfiC6w56-16" value="" style="group;fontColor=#1D3557;" vertex="1" connectable="0" parent="NHhHYFXaY86tUfiC6w56-58">
@@ -758,7 +758,7 @@
         <mxCell id="NHhHYFXaY86tUfiC6w56-17" value="库存服务" style="whiteSpace=wrap;html=1;fillColor=#A8DADC;fontSize=26;align=center;strokeColor=#457B9D;fontColor=#1D3557;" vertex="1" parent="NHhHYFXaY86tUfiC6w56-16">
           <mxGeometry width="290" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="NHhHYFXaY86tUfiC6w56-18" value="Eureka Client" style="whiteSpace=wrap;html=1;fillColor=#A8DADC;fontSize=26;align=left;strokeColor=#457B9D;fontColor=#1D3557;" vertex="1" parent="NHhHYFXaY86tUfiC6w56-16">
+        <mxCell id="NHhHYFXaY86tUfiC6w56-18" value="Eureka Client" style="whiteSpace=wrap;html=1;fillColor=#e3c800;fontSize=26;align=left;strokeColor=#B09500;fontColor=#ffffff;" vertex="1" parent="NHhHYFXaY86tUfiC6w56-16">
           <mxGeometry x="60" y="80" width="170" height="50" as="geometry" />
         </mxCell>
         <mxCell id="NHhHYFXaY86tUfiC6w56-19" value="" style="group;fontColor=#1D3557;" vertex="1" connectable="0" parent="NHhHYFXaY86tUfiC6w56-58">
@@ -770,7 +770,7 @@
         <mxCell id="NHhHYFXaY86tUfiC6w56-21" value="订单服务" style="whiteSpace=wrap;html=1;fillColor=#A8DADC;fontSize=26;align=center;strokeColor=#457B9D;fontColor=#1D3557;" vertex="1" parent="NHhHYFXaY86tUfiC6w56-20">
           <mxGeometry width="290" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="NHhHYFXaY86tUfiC6w56-22" value="Eureka Client" style="whiteSpace=wrap;html=1;fillColor=#A8DADC;fontSize=26;align=left;strokeColor=#457B9D;fontColor=#1D3557;" vertex="1" parent="NHhHYFXaY86tUfiC6w56-20">
+        <mxCell id="NHhHYFXaY86tUfiC6w56-22" value="Eureka Client" style="whiteSpace=wrap;html=1;fillColor=#e3c800;fontSize=26;align=left;strokeColor=#B09500;fontColor=#ffffff;" vertex="1" parent="NHhHYFXaY86tUfiC6w56-20">
           <mxGeometry x="60" y="80" width="170" height="50" as="geometry" />
         </mxCell>
         <mxCell id="NHhHYFXaY86tUfiC6w56-24" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;endSize=7;strokeWidth=2;fontSize=26;strokeColor=#457B9D;fontColor=#1D3557;labelBackgroundColor=#F1FAEE;" edge="1" parent="NHhHYFXaY86tUfiC6w56-58" target="NHhHYFXaY86tUfiC6w56-4">
