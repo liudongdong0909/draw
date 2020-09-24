@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-09-24T07:16:22.188Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="eVORC-br_vic_8RGX-Fq" version="13.7.1" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2020-09-24T07:17:07.232Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="vi2XXtpC3hoCBvwiGiv_" version="13.7.1" type="github" pages="2">
   <diagram id="XnHhwjnP2CLqmePo37kd" name="moneed-CI/CD">
     <mxGraphModel dx="3165" dy="1657" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -675,13 +675,13 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="vGHQ0Zt4DYp0rAchskxo" name="MOMO架构图">
+  <diagram id="vGHQ0Zt4DYp0rAchskxo" name="Eureka如何承载千万级访问">
     <mxGraphModel dx="1899" dy="994" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="YJQCJ9RpwSyD0m5CXFxp-0" />
         <mxCell id="YJQCJ9RpwSyD0m5CXFxp-1" parent="YJQCJ9RpwSyD0m5CXFxp-0" />
-        <mxCell id="ImQxukdiIf3jLyKbNu_T-0" value="&lt;b&gt;&lt;font style=&quot;font-size: 25px&quot;&gt;MoNeed 3.0 系统架构&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;" parent="YJQCJ9RpwSyD0m5CXFxp-1" vertex="1">
-          <mxGeometry x="670" y="15" width="260" height="30" as="geometry" />
+        <mxCell id="ImQxukdiIf3jLyKbNu_T-0" value="&lt;span style=&quot;font-size: 25px&quot;&gt;&lt;b&gt;Eureka如何承载千万级访问&lt;/b&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;" parent="YJQCJ9RpwSyD0m5CXFxp-1" vertex="1">
+          <mxGeometry x="640" y="15" width="320" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
