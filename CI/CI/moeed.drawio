@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-09-24T06:51:34.160Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="tsgyHZ8sXi-1ewQPJrW1" version="13.7.1" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2020-09-24T07:16:22.188Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="eVORC-br_vic_8RGX-Fq" version="13.7.1" type="github" pages="2">
   <diagram id="XnHhwjnP2CLqmePo37kd" name="moneed-CI/CD">
     <mxGraphModel dx="3165" dy="1657" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -676,18 +676,12 @@
     </mxGraphModel>
   </diagram>
   <diagram id="vGHQ0Zt4DYp0rAchskxo" name="MOMO架构图">
-    <mxGraphModel dx="1899" dy="1043" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1899" dy="994" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="YJQCJ9RpwSyD0m5CXFxp-0" />
         <mxCell id="YJQCJ9RpwSyD0m5CXFxp-1" parent="YJQCJ9RpwSyD0m5CXFxp-0" />
-        <mxCell id="ImQxukdiIf3jLyKbNu_T-0" value="&lt;b&gt;&lt;font style=&quot;font-size: 25px&quot;&gt;MoNeed 3.0 系统架构&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+        <mxCell id="ImQxukdiIf3jLyKbNu_T-0" value="&lt;b&gt;&lt;font style=&quot;font-size: 25px&quot;&gt;MoNeed 3.0 系统架构&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;" parent="YJQCJ9RpwSyD0m5CXFxp-1" vertex="1">
           <mxGeometry x="670" y="15" width="260" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="yn3N6KSkOpFlr_FsvgWR-0" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.users;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#ffffff;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
-          <mxGeometry x="250" y="210" width="66" height="63" as="geometry" />
-        </mxCell>
-        <mxCell id="yn3N6KSkOpFlr_FsvgWR-5" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.virtual_private_cloud;fillColor=#F58534;gradientColor=none;rounded=0;labelBackgroundColor=none;strokeColor=#000000;fontSize=16;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
-          <mxGeometry x="260" y="430" width="79.5" height="54" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
