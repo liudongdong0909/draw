@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-09-24T08:52:43.015Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="K7_86ZxTtKSATzV0hes5" version="13.7.1" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2020-09-24T10:05:59.021Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="MuY3HLNvbLMVMaLXpHld" version="13.7.1" type="github" pages="2">
   <diagram id="XnHhwjnP2CLqmePo37kd" name="moneed-CI/CD">
     <mxGraphModel dx="3165" dy="1657" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -878,6 +878,157 @@
         </mxCell>
         <mxCell id="NHhHYFXaY86tUfiC6w56-66" value="&lt;font style=&quot;font-size: 20px&quot;&gt;优点：&lt;br&gt;1. 尽可能的保证了内存注册表数据不会出现频繁的读写冲突问题&lt;br&gt;2. 进一步保证EurekaServer的大量请求，都是快速从内存走，性能极高&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=26;fontColor=#1D3557;fillColor=#A8DADC;strokeColor=#457B9D;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
           <mxGeometry x="240" y="3050" width="640" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-67" value="" style="whiteSpace=wrap;html=1;rounded=0;sketch=0;strokeColor=#457B9D;fillColor=#A8DADC;fontColor=#1D3557;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="440" y="3440" width="840" height="550" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-68" value="&lt;font style=&quot;font-size: 20px&quot;&gt;&lt;b&gt;Eureka Server&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#1D3557;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="680" y="3410" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-71" value="&lt;b&gt;&lt;font style=&quot;font-size: 16px&quot;&gt;库存服务&lt;/font&gt;&lt;/b&gt;" style="whiteSpace=wrap;html=1;rounded=0;sketch=0;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="1450" y="3730" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-72" value="&lt;b&gt;&lt;font style=&quot;font-size: 16px&quot;&gt;库存服务&lt;/font&gt;&lt;/b&gt;" style="whiteSpace=wrap;html=1;rounded=0;sketch=0;strokeColor=#B20000;fillColor=#e51400;fontColor=#ffffff;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="1450" y="3900" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-76" value="&lt;font style=&quot;font-size: 16px&quot;&gt;1. 发起注册&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#1D3557;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="1340" y="3730" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-77" value="&lt;b&gt;&lt;font style=&quot;font-size: 16px&quot;&gt;注册表 (内存)&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;pre style=&quot;font-family: &amp;#34;meslo lg m dz for powerline&amp;#34; , monospace ; font-size: 12pt&quot;&gt;&lt;span style=&quot;background-color: rgb(255 , 255 , 255)&quot;&gt;&lt;font color=&quot;#ff8000&quot;&gt;ConcurrentHashMap&amp;lt;String, Map&amp;lt;String, Lease&amp;lt;InstanceInfo&amp;gt;&amp;gt;&amp;gt; registry&lt;/font&gt;&lt;/span&gt;&lt;/pre&gt;" style="rounded=1;whiteSpace=wrap;html=1;sketch=0;strokeColor=#BD7000;fillColor=#f0a30a;fontColor=#ffffff;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="530" y="3860" width="660" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-78" value="" style="endArrow=classic;html=1;strokeColor=#457B9D;fillColor=#A8DADC;fontColor=#1D3557;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=2;entryX=1.003;entryY=0.363;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="YJQCJ9RpwSyD0m5CXFxp-1" source="NHhHYFXaY86tUfiC6w56-71" target="NHhHYFXaY86tUfiC6w56-77">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="910" y="3730" as="sourcePoint" />
+            <mxPoint x="1191" y="3803" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1320" y="3760" />
+              <mxPoint x="1320" y="3889" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-80" value="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;读写缓存&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;pre style=&quot;font-family: &amp;#34;meslo lg m dz for powerline&amp;#34; , monospace ; font-size: 12pt&quot;&gt;&lt;span style=&quot;background-color: rgb(255 , 255 , 255)&quot;&gt;&lt;font color=&quot;#0066cc&quot;&gt;LoadingCache&amp;lt;Key, ResponseCacheImpl.Value&amp;gt; readWriteCacheMap;&lt;/font&gt;&lt;/span&gt;&lt;/pre&gt;" style="whiteSpace=wrap;html=1;rounded=1;sketch=0;strokeColor=#006EAF;fillColor=#1ba1e2;fontColor=#ffffff;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="550" y="3680" width="610" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-81" value="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;只读缓存&lt;br&gt;&lt;/b&gt;&lt;pre style=&quot;font-family: &amp;#34;meslo lg m dz for powerline&amp;#34; , monospace ; font-size: 12pt&quot;&gt;&lt;span style=&quot;background-color: rgb(255 , 255 , 255)&quot;&gt;&lt;font color=&quot;#00cc00&quot;&gt;ConcurrentMap&amp;lt;Key, ResponseCacheImpl.Value&amp;gt; readOnlyCacheMap &lt;/font&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=1;sketch=0;strokeColor=#2D7600;fillColor=#60a917;fontColor=#ffffff;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="550" y="3487" width="610" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-83" value="&lt;b&gt;&lt;font style=&quot;font-size: 16px&quot;&gt;订单服务&lt;/font&gt;&lt;/b&gt;" style="whiteSpace=wrap;html=1;rounded=0;sketch=0;strokeColor=#005700;fillColor=#008a00;fontColor=#ffffff;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="70" y="3720" width="183" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-84" value="" style="endArrow=none;html=1;strokeWidth=2;fillColor=#e51400;fontColor=#1D3557;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endFill=0;startArrow=classic;startFill=1;strokeColor=#FF0000;" edge="1" parent="YJQCJ9RpwSyD0m5CXFxp-1" source="NHhHYFXaY86tUfiC6w56-85">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="3650" as="sourcePoint" />
+            <mxPoint x="548" y="3580" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="400" y="3815" />
+              <mxPoint x="400" y="3580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-85" value="&lt;font style=&quot;font-size: 16px&quot;&gt;EurekaClient&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;sketch=0;strokeColor=#B09500;fillColor=#e3c800;fontColor=#ffffff;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="100" y="3800" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-86" value="&lt;font style=&quot;font-size: 16px&quot;&gt;2. 订单服务&lt;br&gt;第一次拉取注册表&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#1D3557;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="253" y="3770" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-87" value="&lt;font style=&quot;font-size: 16px&quot; color=&quot;#ff0000&quot;&gt;2.1 首先查询 &lt;br&gt;ReadOnlyCacheMap&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#1D3557;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="400" y="3540" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-88" value="" style="endArrow=classic;html=1;strokeColor=#B20000;strokeWidth=5;fillColor=#e51400;fontColor=#1D3557;exitX=0.279;exitY=1.01;exitDx=0;exitDy=0;entryX=0.279;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;exitPerimeter=0;" edge="1" parent="YJQCJ9RpwSyD0m5CXFxp-1" source="NHhHYFXaY86tUfiC6w56-81" target="NHhHYFXaY86tUfiC6w56-80">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="670" y="3670" as="sourcePoint" />
+            <mxPoint x="720" y="3620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-89" value="" style="endArrow=classic;html=1;strokeColor=#B20000;strokeWidth=5;fillColor=#e51400;fontColor=#1D3557;exitX=0.71;exitY=-0.012;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="YJQCJ9RpwSyD0m5CXFxp-1" source="NHhHYFXaY86tUfiC6w56-80">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1000" y="3620" as="sourcePoint" />
+            <mxPoint x="983" y="3580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-90" value="&lt;font style=&quot;font-size: 16px&quot; color=&quot;#cc00cc&quot;&gt;2.2 若ReadOnlyCacheMap没有数据&lt;br&gt;则查询 ReadWriteCacheMap&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#1D3557;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="450" y="3620" width="270" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-92" value="" style="endArrow=classic;html=1;strokeColor=#B20000;strokeWidth=5;fillColor=#e51400;fontColor=#1D3557;exitX=0.279;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="YJQCJ9RpwSyD0m5CXFxp-1" source="NHhHYFXaY86tUfiC6w56-80">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="3800" as="sourcePoint" />
+            <mxPoint x="720" y="3860" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-93" value="&lt;font style=&quot;font-size: 16px&quot; color=&quot;#cc00cc&quot;&gt;2.3 若 ReadWriteCacheMap没有数据&lt;br&gt;则直接查询内存注册表&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#1D3557;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="450" y="3790" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-94" value="" style="endArrow=classic;html=1;strokeColor=#B20000;strokeWidth=5;fillColor=#e51400;fontColor=#1D3557;entryX=0.707;entryY=1.013;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="YJQCJ9RpwSyD0m5CXFxp-1" target="NHhHYFXaY86tUfiC6w56-80">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="981" y="3860" as="sourcePoint" />
+            <mxPoint x="1080" y="3990" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-95" value="&lt;font style=&quot;font-size: 16px&quot;&gt;3. 发起注册 +1&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#1D3557;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="1320" y="3900" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-96" value="" style="endArrow=classic;html=1;strokeColor=#457B9D;strokeWidth=2;fillColor=#A8DADC;fontColor=#1D3557;entryX=0.998;entryY=0.863;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="YJQCJ9RpwSyD0m5CXFxp-1" source="NHhHYFXaY86tUfiC6w56-72" target="NHhHYFXaY86tUfiC6w56-77">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1430" y="3900" as="sourcePoint" />
+            <mxPoint x="1400" y="3930" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1320" y="3929" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-97" value="&lt;font style=&quot;font-size: 16px&quot; color=&quot;#cc00cc&quot;&gt;4. 内存注册表发生变更时，&lt;br&gt;同时过期 ReadWriteCacheMap中的缓存&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#1D3557;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="990" y="3795" width="300" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-98" value="&lt;div&gt;&lt;span style=&quot;font-size: 16px&quot;&gt;&lt;font color=&quot;#cc00cc&quot;&gt;5. 每隔30s,后台线程&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px&quot;&gt;&lt;font color=&quot;#cc00cc&quot;&gt;自动同步 ReadOnlyCacheMap&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;font style=&quot;font-size: 16px&quot; color=&quot;#cc00cc&quot;&gt;ReadWriteCacheMap中的数据&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#1D3557;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="990" y="3610" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-102" value="" style="endArrow=none;html=1;strokeWidth=2;fillColor=#A8DADC;entryX=0.913;entryY=-0.1;entryDx=0;entryDy=0;entryPerimeter=0;fontColor=#FF0000;strokeColor=#FF0000;startArrow=classic;startFill=1;endFill=0;" edge="1" parent="YJQCJ9RpwSyD0m5CXFxp-1" target="NHhHYFXaY86tUfiC6w56-87">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="100" y="3808" as="sourcePoint" />
+            <mxPoint x="380" y="3875" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="40" y="3808" />
+              <mxPoint x="40" y="3536" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-103" value="&lt;font style=&quot;font-size: 16px ; line-height: 140%&quot;&gt;6. 第一个30s拉取一次注册表&lt;br&gt;有可能还是走的ReadOnlyCacheMap的老数据&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#1D3557;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="60" y="3512" width="340" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-105" value="" style="endArrow=none;html=1;strokeColor=#FF0000;strokeWidth=2;fillColor=#A8DADC;fontColor=#FF0000;exitX=0;exitY=0.75;exitDx=0;exitDy=0;endFill=0;startArrow=classic;startFill=1;" edge="1" parent="YJQCJ9RpwSyD0m5CXFxp-1" source="NHhHYFXaY86tUfiC6w56-85">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="170" y="3970" as="sourcePoint" />
+            <mxPoint x="548" y="3503" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="20" y="3823" />
+              <mxPoint x="20" y="3500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-106" value="&lt;font style=&quot;font-size: 16px&quot; color=&quot;#000000&quot;&gt;7.&amp;nbsp; 第二个30s拉取注册表，发现ReadOnlyCacheMap&lt;br&gt;ReadWriteCacheMap都没有数据，直接从内存中的&lt;br&gt;注册表拉拉取数据，发现2个库存服务&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FF0000;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="50" y="3440" width="390" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-107" value="" style="endArrow=classic;html=1;strokeColor=#FF0000;strokeWidth=2;fillColor=#A8DADC;fontColor=#FF0000;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="YJQCJ9RpwSyD0m5CXFxp-1" source="NHhHYFXaY86tUfiC6w56-83" target="NHhHYFXaY86tUfiC6w56-77">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="3980" as="sourcePoint" />
+            <mxPoint x="450" y="3930" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="162" y="3920" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-108" value="&lt;font style=&quot;font-size: 16px&quot; color=&quot;#000000&quot;&gt;8. 每30s发送一次心跳到注册表中&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FF0000;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="180" y="3890" width="250" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-112" value="" style="group" vertex="1" connectable="0" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="810" y="3590" width="100" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-110" value="" style="shape=mxgraph.bpmn.loop;html=1;outlineConnect=0;rounded=1;sketch=0;strokeColor=#C73500;fillColor=#fa6800;fontColor=#ffffff;align=left;strokeWidth=6;direction=west;" vertex="1" parent="NHhHYFXaY86tUfiC6w56-112">
+          <mxGeometry width="100" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="NHhHYFXaY86tUfiC6w56-111" value="&lt;font style=&quot;font-size: 12px&quot; color=&quot;#000000&quot;&gt;&lt;b&gt;定时任务&lt;br&gt;每30s&lt;br&gt;缓存同步&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FF0000;" vertex="1" parent="NHhHYFXaY86tUfiC6w56-112">
+          <mxGeometry x="20" y="20" width="60" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
