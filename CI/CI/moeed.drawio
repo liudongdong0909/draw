@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-09-24T06:02:31.221Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="1xgT-DPAA11eP5ypRCaA" version="13.7.1" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2020-09-24T06:03:10.115Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="GLDTCNW2HWO1bLuEC_rF" version="13.7.1" type="github" pages="2">
   <diagram id="XnHhwjnP2CLqmePo37kd" name="moneed-CI/CD">
     <mxGraphModel dx="1899" dy="1043" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -24,10 +24,7 @@
             <mxPoint x="920" y="610" as="sourcePoint" />
             <mxPoint x="1180" y="310" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="759" y="540" />
-              <mxPoint x="940" y="540" />
-              <mxPoint x="940" y="310" />
-              <mxPoint x="1175" y="310" />
+              <mxPoint x="1175" y="540" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -109,8 +106,8 @@
         <mxCell id="UyodA7iAwC8A7Ai0S4ob-125" value="&lt;b&gt;4. pull&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;" parent="1" vertex="1">
           <mxGeometry x="414" y="585" width="60" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="UyodA7iAwC8A7Ai0S4ob-126" value="&lt;b style=&quot;line-height: 130%&quot;&gt;5.&amp;nbsp; mvn clean deploy&amp;nbsp;&lt;br&gt;只部署依赖包&lt;br&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;" parent="1" vertex="1">
-          <mxGeometry x="769" y="490" width="180" height="50" as="geometry" />
+        <mxCell id="UyodA7iAwC8A7Ai0S4ob-126" value="&lt;b style=&quot;line-height: 130%&quot;&gt;5.&amp;nbsp; mvn clean deploy&amp;nbsp; &amp;nbsp;只部署依赖包到私服&lt;br&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="806.75" y="510" width="330" height="30" as="geometry" />
         </mxCell>
         <mxCell id="UyodA7iAwC8A7Ai0S4ob-132" value="" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.dataServer;strokeColor=#9673a6;aspect=fixed;fillColor=#e1d5e7;" parent="1" vertex="1">
           <mxGeometry x="1450" y="798.5" width="123" height="106" as="geometry" />
