@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-09-25T05:57:54.061Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="wpHOnHVAHNZfhRQN7Nyq" version="13.7.5" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2020-09-25T05:58:37.159Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="Igwt3orvWOr7CXbEPZsm" version="13.7.5" type="github" pages="3">
   <diagram id="XnHhwjnP2CLqmePo37kd" name="moneed-CI/CD">
     <mxGraphModel dx="1899" dy="994" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -1018,8 +1018,8 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="NHhHYFXaY86tUfiC6w56-108" value="&lt;font style=&quot;font-size: 16px&quot; color=&quot;#000000&quot;&gt;8. 每30s发送一次心跳到注册表中&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FF0000;" parent="YJQCJ9RpwSyD0m5CXFxp-1" vertex="1">
-          <mxGeometry x="180" y="3890" width="250" height="20" as="geometry" />
+        <mxCell id="NHhHYFXaY86tUfiC6w56-108" value="&lt;font style=&quot;font-size: 16px&quot; color=&quot;#000000&quot;&gt;每30s发送一次心跳到注册表中&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FF0000;" parent="YJQCJ9RpwSyD0m5CXFxp-1" vertex="1">
+          <mxGeometry x="190" y="3900" width="230" height="20" as="geometry" />
         </mxCell>
         <mxCell id="NHhHYFXaY86tUfiC6w56-112" value="" style="group" parent="YJQCJ9RpwSyD0m5CXFxp-1" vertex="1" connectable="0">
           <mxGeometry x="810" y="3590" width="100" height="90" as="geometry" />
@@ -1035,8 +1035,8 @@
             <mxPoint x="1380" y="4110" as="sourcePoint" />
             <mxPoint x="960" y="4060" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="1519" y="4040" />
-              <mxPoint x="860" y="4040" />
+              <mxPoint x="1519" y="4020" />
+              <mxPoint x="860" y="4020" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -1051,8 +1051,8 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="ihFwfbBBff85c3vipAK5-3" value="&lt;font style=&quot;font-size: 16px&quot; color=&quot;#000000&quot;&gt;8. 每30s发送一次心跳到注册表中&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FF0000;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
-          <mxGeometry x="970" y="4040" width="250" height="20" as="geometry" />
+        <mxCell id="ihFwfbBBff85c3vipAK5-3" value="&lt;font style=&quot;font-size: 16px&quot; color=&quot;#000000&quot;&gt;每30s发送一次心跳到注册表中&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FF0000;" vertex="1" parent="YJQCJ9RpwSyD0m5CXFxp-1">
+          <mxGeometry x="980" y="4040" width="230" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
