@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-09-25T03:03:22.992Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="aO_Wy2TUB0YZ2g89PNLi" version="13.7.5" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2020-09-25T03:34:11.104Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="thlU4is-l1vnIuQivz55" version="13.7.5" type="github" pages="3">
   <diagram id="XnHhwjnP2CLqmePo37kd" name="moneed-CI/CD">
     <mxGraphModel dx="1899" dy="994" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -1324,6 +1324,67 @@
               <mxPoint x="960" y="1500" />
               <mxPoint x="880" y="1620" />
               <mxPoint x="900" y="1800" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OpYCIUqKoeaGVZBWI2TF-77" value="优化:&amp;nbsp;&lt;br style=&quot;font-size: 16px&quot;&gt;&amp;nbsp;1. 核心服务B进行单表操作，优化sql&lt;br&gt;&amp;nbsp;2. 超时时间设置， ribbon, hystrix&amp;nbsp; --&amp;gt; 不要因为系统接口的性能过差，搞成几秒甚至几十秒的超时，一般超时定义在1s内，是比较通用以及合理的&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;why?&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 因为一个接口，理论的最佳响应速度应该在200ms内，或者慢一点的接口就在几百毫秒&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 如果一个接口响应时间达到1s+,建议考虑用缓存、索引、NoSQL等各种技术手段，优化一下性能&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 否则，胡乱设置超时时间是几秒甚至几十秒，万一下游服务偶然出现了点问题响应时间长了点呢？那你的这个线程池里的线程立马全部卡死&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="OpYCIUqKoeaGVZBWI2TF-1">
+          <mxGeometry x="50" y="2200" width="1040" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="OpYCIUqKoeaGVZBWI2TF-78" value="" style="curved=1;endArrow=classic;html=1;strokeWidth=2;fontSize=16;entryX=1.001;entryY=0.6;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.609;exitY=1.014;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="OpYCIUqKoeaGVZBWI2TF-1" source="OpYCIUqKoeaGVZBWI2TF-47" target="OpYCIUqKoeaGVZBWI2TF-77">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1190" y="2160" as="sourcePoint" />
+            <mxPoint x="1310" y="2210" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1460" y="2290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OpYCIUqKoeaGVZBWI2TF-79" value="针对性优化" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;" vertex="1" parent="OpYCIUqKoeaGVZBWI2TF-1">
+          <mxGeometry x="1300" y="2210" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="OpYCIUqKoeaGVZBWI2TF-80" value="如图所示" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;" vertex="1" parent="OpYCIUqKoeaGVZBWI2TF-1">
+          <mxGeometry x="900" y="1660" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="OpYCIUqKoeaGVZBWI2TF-81" value="&lt;p style=&quot;line-height: 120% ; font-size: 17px&quot;&gt;继续优化：&lt;br&gt;如果超时时间设置成1s,如果就是因为偶然发生的网路抖动，导致接口某次调用是在2s,这个经常发生的，因为网络的问题，接口调用偶然超时。&lt;br&gt;所以：此时配合着超时时间，一般都会设置一个合理的重试：&lt;br&gt;&lt;/p&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="OpYCIUqKoeaGVZBWI2TF-1">
+          <mxGeometry x="50" y="2450" width="1080" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="OpYCIUqKoeaGVZBWI2TF-82" value="&lt;div style=&quot;color: rgb(212 , 212 , 212) ; background-color: rgb(30 , 30 , 30) ; font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace ; font-size: 12px ; line-height: 18px&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #3dc9b0&quot;&gt;ribbon&lt;/span&gt;:&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #3dc9b0&quot;&gt;&amp;nbsp; ConnectTimeout&lt;/span&gt;: &lt;span style=&quot;color: #b5cea8&quot;&gt;1000&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #3dc9b0&quot;&gt;&amp;nbsp; ReadTimeout&lt;/span&gt;: &lt;span style=&quot;color: #b5cea8&quot;&gt;1000&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #3dc9b0&quot;&gt;&amp;nbsp; OkToRetryOnAllOperations&lt;/span&gt;: &lt;span style=&quot;color: #569cd6&quot;&gt;true&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #3dc9b0&quot;&gt;&amp;nbsp; MaxAutoRetries&lt;/span&gt;: &lt;span style=&quot;color: #ce9178&quot;&gt;1 #对第一次请求的服务的重试次数&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #3dc9b0&quot;&gt;&amp;nbsp; MaxAutoRetriesNextServer&lt;/span&gt;: &lt;span style=&quot;color: #ce9178&quot;&gt;1 #要重试的下一个服务的最大数量（不包括第一个服务）&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;" vertex="1" parent="OpYCIUqKoeaGVZBWI2TF-1">
+          <mxGeometry x="1610" y="2450" width="530" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="OpYCIUqKoeaGVZBWI2TF-83" value="" style="curved=1;endArrow=classic;html=1;strokeWidth=2;fontSize=16;entryX=0.999;entryY=0.54;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.003;exitY=0.65;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="OpYCIUqKoeaGVZBWI2TF-1" source="OpYCIUqKoeaGVZBWI2TF-77" target="OpYCIUqKoeaGVZBWI2TF-81">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1170" y="2400" as="sourcePoint" />
+            <mxPoint x="1220" y="2350" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1230" y="2380" />
+              <mxPoint x="1200" y="2491" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OpYCIUqKoeaGVZBWI2TF-84" value="" style="endArrow=classic;html=1;strokeWidth=2;fontSize=16;" edge="1" parent="OpYCIUqKoeaGVZBWI2TF-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1134" y="2516" as="sourcePoint" />
+            <mxPoint x="1611" y="2516" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OpYCIUqKoeaGVZBWI2TF-85" value="优化参数后" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;" vertex="1" parent="OpYCIUqKoeaGVZBWI2TF-1">
+          <mxGeometry x="1310" y="2495" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="OpYCIUqKoeaGVZBWI2TF-86" value="设置这段重试之后，springcloud 中的Feign + Ribbon的组合，&lt;br&gt;在进行服务调用的时候，如果发现某台机器超时请求失败，&lt;br&gt;会自动重试这台机器，如果还是不行会换另外一条机器重试" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="OpYCIUqKoeaGVZBWI2TF-1">
+          <mxGeometry x="1150" y="2520" width="450" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OpYCIUqKoeaGVZBWI2TF-87" value="继续优化：&lt;br&gt;&amp;nbsp; &amp;nbsp;接口幂等性方案：&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;1. 可以在数据库里建一个唯一索引，插入数据的时候如果唯一索引冲突了就不会插入重复数据&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;2. 通过redis里放一个唯一id的值，然后每次要插入数据，都通过redis判断一下，如果值已存在，就不插入重复数据了&amp;nbsp;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="OpYCIUqKoeaGVZBWI2TF-1">
+          <mxGeometry x="50" y="2720" width="870" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="OpYCIUqKoeaGVZBWI2TF-88" value="这种由于偶尔的网络抖动造成请求超时进行的自动重试，&lt;br&gt;就必须保证接口的幂等性" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fillColor=#a20025;strokeColor=#6F0000;fontColor=#ffffff;" vertex="1" parent="OpYCIUqKoeaGVZBWI2TF-1">
+          <mxGeometry x="1090" y="2670" width="420" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OpYCIUqKoeaGVZBWI2TF-89" value="" style="curved=1;endArrow=classic;html=1;strokeWidth=2;fontSize=16;entryX=1.001;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.004;exitY=0.73;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="OpYCIUqKoeaGVZBWI2TF-1" source="OpYCIUqKoeaGVZBWI2TF-81" target="OpYCIUqKoeaGVZBWI2TF-87">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1135" y="2520" as="sourcePoint" />
+            <mxPoint x="930" y="2630" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1120" y="2740" />
             </Array>
           </mxGeometry>
         </mxCell>
