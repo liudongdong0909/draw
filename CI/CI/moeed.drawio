@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-09-25T08:02:10.059Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="57bDL5hQGjdFeMt4xdJC" version="13.7.5" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2020-09-25T08:03:56.363Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="B8RL-Blt_8MuCccZJoBV" version="13.7.5" type="github" pages="3">
   <diagram id="XnHhwjnP2CLqmePo37kd" name="moneed-CI/CD">
     <mxGraphModel dx="2234" dy="1169" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -1062,6 +1062,12 @@
       <root>
         <mxCell id="OpYCIUqKoeaGVZBWI2TF-0" />
         <mxCell id="OpYCIUqKoeaGVZBWI2TF-1" parent="OpYCIUqKoeaGVZBWI2TF-0" />
+        <mxCell id="OxH5Ets6VSNgIPRUwGYC-34" value="&lt;font color=&quot;#000000&quot; style=&quot;font-size: 16px&quot;&gt;理论上只要6个线程&lt;br&gt;每秒就可以执行30个请求&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=21;fillColor=#e1d5e7;" vertex="1" parent="OpYCIUqKoeaGVZBWI2TF-1">
+          <mxGeometry x="635" y="4000" width="190" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OxH5Ets6VSNgIPRUwGYC-32" value="&lt;font style=&quot;font-size: 16px&quot; color=&quot;#000000&quot;&gt;一个线程调用一次B服务需要200ms&lt;br&gt;即 1s可以调用5次&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=21;fillColor=#f8cecc;" vertex="1" parent="OpYCIUqKoeaGVZBWI2TF-1">
+          <mxGeometry x="710" y="3878" width="270" height="60" as="geometry" />
+        </mxCell>
         <mxCell id="OxH5Ets6VSNgIPRUwGYC-37" value="&lt;font style=&quot;font-size: 16px&quot; color=&quot;#000000&quot;&gt;但是如果高峰期线程执行一个请求要300ms&lt;br&gt;那么一个线程每秒只能执行3次请求&lt;br&gt;此时空闲的4个线程就可以顶上，&lt;br&gt;10个线程一起工作，每秒还是可以顶住30个请求&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=21;fillColor=#dae8fc;" vertex="1" parent="OpYCIUqKoeaGVZBWI2TF-1">
           <mxGeometry x="760" y="4110" width="360" height="110" as="geometry" />
         </mxCell>
@@ -1660,9 +1666,6 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="OxH5Ets6VSNgIPRUwGYC-32" value="&lt;font style=&quot;font-size: 16px&quot; color=&quot;#000000&quot;&gt;一个线程调用一次B服务需要200ms&lt;br&gt;即 1s可以调用5次&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=21;fontColor=#EA6B66;" vertex="1" parent="OpYCIUqKoeaGVZBWI2TF-1">
-          <mxGeometry x="710" y="3878" width="270" height="60" as="geometry" />
-        </mxCell>
         <mxCell id="OxH5Ets6VSNgIPRUwGYC-33" value="" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=2;fontSize=21;fontColor=#EA6B66;exitX=1;exitY=0.533;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.006;entryY=0.675;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="OpYCIUqKoeaGVZBWI2TF-1" source="OxH5Ets6VSNgIPRUwGYC-17" target="OxH5Ets6VSNgIPRUwGYC-30">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="760" y="4170" as="sourcePoint" />
@@ -1672,9 +1675,6 @@
               <mxPoint x="830" y="3960" />
             </Array>
           </mxGeometry>
-        </mxCell>
-        <mxCell id="OxH5Ets6VSNgIPRUwGYC-34" value="&lt;font color=&quot;#000000&quot; style=&quot;font-size: 16px&quot;&gt;理论上只要6个线程&lt;br&gt;每秒就可以执行30个请求&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=21;fontColor=#EA6B66;" vertex="1" parent="OpYCIUqKoeaGVZBWI2TF-1">
-          <mxGeometry x="635" y="4000" width="190" height="60" as="geometry" />
         </mxCell>
         <mxCell id="OxH5Ets6VSNgIPRUwGYC-35" value="" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=2;fontSize=21;fontColor=#EA6B66;exitX=1.017;exitY=0.2;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.006;entryY=0.858;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="OpYCIUqKoeaGVZBWI2TF-1" source="OxH5Ets6VSNgIPRUwGYC-18" target="OxH5Ets6VSNgIPRUwGYC-30">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
