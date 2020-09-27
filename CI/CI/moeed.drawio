@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-09-27T03:42:01.916Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="Vzxea7pv9wmmDnR8p-Qd" version="13.7.5" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2020-09-27T03:42:21.910Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="Sb2RyEYgN0gm9CQXady9" version="13.7.5" type="github" pages="5">
   <diagram id="XnHhwjnP2CLqmePo37kd" name="moneed-CI/CD">
     <mxGraphModel dx="1899" dy="1043" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -1829,7 +1829,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="-h0pTx25_JJzhhGNy_4A-29" value="&lt;span style=&quot;color: rgb(51, 51, 51); font-size: 15px; letter-spacing: 2px; background-color: rgb(255, 255, 255);&quot;&gt;此时别的线程的工作内存中有这个data变量的本地缓存，也就是一个变量副本的话，&lt;br&gt;那么会&lt;/span&gt;&lt;span style=&quot;margin: 0px; padding: 0px; max-width: 100%; font-size: 15px; letter-spacing: 2px; color: rgb(201, 56, 28); box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;强制让其他线程的工作内存中的data变量缓存直接失效过期&lt;/span&gt;&lt;span style=&quot;color: rgb(51, 51, 51); font-size: 15px; letter-spacing: 2px; background-color: rgb(255, 255, 255);&quot;&gt;，不允许再次读取和使用了！&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#fff2cc;" vertex="1" parent="-h0pTx25_JJzhhGNy_4A-1">
+        <mxCell id="-h0pTx25_JJzhhGNy_4A-29" value="&lt;span style=&quot;background-color: rgb(255 , 242 , 204)&quot;&gt;&lt;span style=&quot;color: rgb(51 , 51 , 51) ; font-size: 15px ; letter-spacing: 2px&quot;&gt;此时别的线程的工作内存中有这个data变量的本地缓存，也就是一个变量副本的话，&lt;br&gt;那么会&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; font-size: 15px ; letter-spacing: 2px ; color: rgb(201 , 56 , 28) ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;强制让其他线程的工作内存中的data变量缓存直接失效过期&lt;/span&gt;&lt;span style=&quot;color: rgb(51 , 51 , 51) ; font-size: 15px ; letter-spacing: 2px&quot;&gt;，不允许再次读取和使用了！&lt;/span&gt;&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#fff2cc;" vertex="1" parent="-h0pTx25_JJzhhGNy_4A-1">
           <mxGeometry x="760" y="380" width="730" height="40" as="geometry" />
         </mxCell>
         <mxCell id="-h0pTx25_JJzhhGNy_4A-30" value="" style="endArrow=classic;html=1;dashed=1;strokeColor=#FF0080;strokeWidth=2;entryX=0.511;entryY=1.15;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="-h0pTx25_JJzhhGNy_4A-1" target="-h0pTx25_JJzhhGNy_4A-15">
