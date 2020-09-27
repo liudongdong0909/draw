@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-09-27T03:45:14.844Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="ZtBiNMez7RxEerEv8pRq" version="13.7.5" type="github" pages="7">
+<mxfile host="app.diagrams.net" modified="2020-09-27T06:25:50.459Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="eduYZGpFYX-INvrRtKwF" version="13.7.5" type="github" pages="7">
   <diagram id="XnHhwjnP2CLqmePo37kd" name="moneed-CI/CD">
     <mxGraphModel dx="1899" dy="1043" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -1861,6 +1861,209 @@
       <root>
         <mxCell id="OxfkeTKddjhHw0AheIVP-0" />
         <mxCell id="OxfkeTKddjhHw0AheIVP-1" parent="OxfkeTKddjhHw0AheIVP-0" />
+        <mxCell id="01sIQlWdCzxstv_JN03J-0" value="&lt;b&gt;&lt;font style=&quot;font-size: 22px&quot;&gt;JAVA8 如何优化CAS性能&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="670" y="30" width="270" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-1" value="&lt;pre style=&quot;background-color: #2b2b2b ; color: #a9b7c6 ; font-family: &amp;quot;meslo lg m dz for powerline&amp;quot; , monospace ; font-size: 12.0pt&quot;&gt;&lt;span style=&quot;color: #629755 ; font-style: italic&quot;&gt;/**&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-style: italic&quot;&gt; * &lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-weight: bold ; font-style: italic&quot;&gt;@Author &lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-style: italic&quot;&gt;walle&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-style: italic&quot;&gt; * &lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-weight: bold ; font-style: italic&quot;&gt;@Date &lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-style: italic&quot;&gt;2020-09-27&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-style: italic&quot;&gt; * &lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-weight: bold ; font-style: italic&quot;&gt;@Version &lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-style: italic&quot;&gt;1.0.0&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-style: italic&quot;&gt; */&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #cc7832&quot;&gt;public class &lt;/span&gt;HelloCAS &lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;{&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;    &lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;    &lt;/span&gt;&lt;span style=&quot;color: #cc7832&quot;&gt;private  int &lt;/span&gt;&lt;span style=&quot;color: #9876aa&quot;&gt;data &lt;/span&gt;= &lt;span style=&quot;color: #6897bb&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;color: #cc7832&quot;&gt;;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #cc7832&quot;&gt;    &lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #cc7832&quot;&gt;    public synchronized void &lt;/span&gt;&lt;span style=&quot;color: #ffc66d&quot;&gt;increment&lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;(){&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;        &lt;/span&gt;&lt;span style=&quot;color: #9876aa&quot;&gt;data &lt;/span&gt;++&lt;span style=&quot;color: #cc7832&quot;&gt;;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #cc7832&quot;&gt;    &lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;}&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;    &lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;    &lt;/span&gt;&lt;span style=&quot;color: #808080&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: #808080 ; font-family: &amp;quot;menlo-regular&amp;quot; , monospace&quot;&gt;多线程调用&lt;/span&gt;&lt;span style=&quot;color: #808080&quot;&gt; increment()&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;}&lt;/span&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="640" y="130" width="410" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-2" value="&lt;span style=&quot;color: rgb(51 , 51 , 51) ; font-size: 16px ; letter-spacing: 2px ; background-color: rgb(212 , 225 , 245)&quot;&gt;多个线程直接这样并发的对一个data变量进行修改，&lt;br&gt;是线程不安全性的行为，会导致data值的变化不遵照预期的值来改变。&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="80" y="460" width="580" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-3" value="&lt;pre style=&quot;background-color: #2b2b2b ; color: #a9b7c6 ; font-family: &amp;#34;meslo lg m dz for powerline&amp;#34; , monospace ; font-size: 12.0pt&quot;&gt;&lt;span style=&quot;color: #629755 ; font-style: italic&quot;&gt;/**&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-style: italic&quot;&gt; * &lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-weight: bold ; font-style: italic&quot;&gt;@Author &lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-style: italic&quot;&gt;walle&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-style: italic&quot;&gt; * &lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-weight: bold ; font-style: italic&quot;&gt;@Date &lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-style: italic&quot;&gt;2020-09-27&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-style: italic&quot;&gt; * &lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-weight: bold ; font-style: italic&quot;&gt;@Version &lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-style: italic&quot;&gt;1.0.0&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-style: italic&quot;&gt; */&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #cc7832&quot;&gt;public class &lt;/span&gt;HelloCAS &lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;{&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;    &lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;    &lt;/span&gt;&lt;span style=&quot;color: #cc7832&quot;&gt;private  int &lt;/span&gt;&lt;span style=&quot;color: #9876aa&quot;&gt;data &lt;/span&gt;= &lt;span style=&quot;color: #6897bb&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;color: #cc7832&quot;&gt;;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #cc7832&quot;&gt;    &lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #cc7832&quot;&gt;    public void &lt;/span&gt;&lt;span style=&quot;color: #ffc66d&quot;&gt;increment&lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;(){&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;        &lt;/span&gt;&lt;span style=&quot;color: #9876aa&quot;&gt;data &lt;/span&gt;++&lt;span style=&quot;color: #cc7832&quot;&gt;;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #cc7832&quot;&gt;    &lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;}&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;    &lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;    &lt;/span&gt;&lt;span style=&quot;color: #808080&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: #808080 ; font-family: &amp;#34;menlo-regular&amp;#34; , monospace&quot;&gt;多线程调用&lt;/span&gt;&lt;span style=&quot;color: #808080&quot;&gt; increment()&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;}&lt;/span&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="160" y="140" width="290" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-4" value="&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; letter-spacing: 2px&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px&quot;&gt;这个时候，代码就是线程安全的了，因为我们加了&lt;/span&gt;&lt;strong style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px&quot;&gt;synchronized&lt;/strong&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px&quot;&gt;，&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; letter-spacing: 2px&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px&quot;&gt;也就是让每个线程要进入increment()方法之前先得尝试加锁，同一时间只有一个线程能加锁，其他线程需要等待锁。&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;通过这样处理，就可以保证换个data每次都会累加1，不会出现数据错乱的问题。&lt;/span&gt;&lt;/p&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fillColor=#d5e8d4;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="720" y="425" width="910" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-5" value="" style="endArrow=classic;html=1;dashed=1;strokeColor=#FF0080;strokeWidth=2;fontSize=16;entryX=1.002;entryY=0.468;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="OxfkeTKddjhHw0AheIVP-1" target="01sIQlWdCzxstv_JN03J-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1200" y="420" as="sourcePoint" />
+            <mxPoint x="760" y="810" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1200" y="247" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-6" value="&lt;span style=&quot;color: rgb(51 , 51 , 51) ; letter-spacing: 2px ; text-align: justify ; background-color: rgb(255 , 255 , 255)&quot;&gt;&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;感受一下synchronized加锁下的效果和氛围，相当于N个线程一个一个的排队在更新那个数值。&lt;/b&gt;&lt;/font&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="150" y="660" width="790" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF0080;strokeWidth=2;fontSize=16;" edge="1" parent="OxfkeTKddjhHw0AheIVP-1" source="01sIQlWdCzxstv_JN03J-10" target="01sIQlWdCzxstv_JN03J-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-10" value="线程3" style="whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontSize=16;align=center;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="155" y="760" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF0080;strokeWidth=2;fontSize=16;" edge="1" parent="OxfkeTKddjhHw0AheIVP-1" source="01sIQlWdCzxstv_JN03J-13" target="01sIQlWdCzxstv_JN03J-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-13" value="线程2" style="whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontSize=16;align=center;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="355" y="760" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF0080;strokeWidth=2;fontSize=16;" edge="1" parent="OxfkeTKddjhHw0AheIVP-1" source="01sIQlWdCzxstv_JN03J-15" target="01sIQlWdCzxstv_JN03J-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-15" value="线程1" style="whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontSize=16;align=center;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="555" y="760" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF0080;strokeWidth=2;fontSize=16;" edge="1" parent="OxfkeTKddjhHw0AheIVP-1" source="01sIQlWdCzxstv_JN03J-17" target="01sIQlWdCzxstv_JN03J-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-17" value="synchronized&lt;br&gt;加锁" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;fontSize=16;align=center;strokeColor=#b85450;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="755" y="720" width="120" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF0080;strokeWidth=2;fontSize=16;" edge="1" parent="OxfkeTKddjhHw0AheIVP-1" source="01sIQlWdCzxstv_JN03J-19" target="01sIQlWdCzxstv_JN03J-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-19" value="data ++" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;fontSize=16;align=center;strokeColor=#6c8ebf;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="955" y="755" width="110" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-21" value="synchronized&lt;br&gt;释放锁" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;fontSize=16;align=center;strokeColor=#b85450;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="1145" y="720" width="110" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-23" value="&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;b&gt;&lt;font color=&quot;#ff0000&quot;&gt;synchronized是可以解决更加复杂的并发编程场景和问题的。&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;b&gt;&lt;font color=&quot;#ff0000&quot;&gt;而且，在这个场景下，你要是用synchronized，不就相当于让各个线程串行化了么？一个接一个的排队，加锁，处理数据，释放锁，下一个再进来。&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;&lt;/p&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fillColor=#f5f5f5;fontColor=#333333;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="160" y="920" width="1160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-24" value="更加高效的方案： Atomic原子类" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=22;fontStyle=1" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="160" y="1090" width="340" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-25" value="" style="endArrow=classic;html=1;strokeColor=#FF0080;strokeWidth=2;fontSize=22;dashed=1;" edge="1" parent="OxfkeTKddjhHw0AheIVP-1" target="01sIQlWdCzxstv_JN03J-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="301" y="457" as="sourcePoint" />
+            <mxPoint x="330" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-28" value="&lt;pre style=&quot;background-color: #2b2b2b ; color: #a9b7c6 ; font-family: &amp;#34;meslo lg m dz for powerline&amp;#34; , monospace ; font-size: 12.0pt&quot;&gt;&lt;span style=&quot;color: #629755 ; font-style: italic&quot;&gt;/**&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-style: italic&quot;&gt; * &lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-weight: bold ; font-style: italic&quot;&gt;@Author &lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-style: italic&quot;&gt;walle&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-style: italic&quot;&gt; * &lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-weight: bold ; font-style: italic&quot;&gt;@Date &lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-style: italic&quot;&gt;2020-09-27&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-style: italic&quot;&gt; * &lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-weight: bold ; font-style: italic&quot;&gt;@Version &lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-style: italic&quot;&gt;1.0.0&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #629755 ; font-style: italic&quot;&gt; */&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #cc7832&quot;&gt;public class &lt;/span&gt;HelloCAS &lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;{&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;    &lt;/span&gt;&lt;span style=&quot;color: #cc7832&quot;&gt;private &lt;/span&gt;AtomicInteger &lt;span style=&quot;color: #9876aa&quot;&gt;data &lt;/span&gt;= &lt;span style=&quot;color: #cc7832&quot;&gt;new &lt;/span&gt;AtomicInteger&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: #6897bb&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;)&lt;/span&gt;&lt;span style=&quot;color: #cc7832&quot;&gt;;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #cc7832&quot;&gt;    &lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #cc7832&quot;&gt;    &lt;/span&gt;&lt;span style=&quot;color: #808080&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: #808080 ; font-family: &amp;#34;menlo-regular&amp;#34; , monospace&quot;&gt;多线程调用&lt;/span&gt;&lt;span style=&quot;color: #808080&quot;&gt; data.incrementAndGet();&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;}&lt;br&gt;&lt;/span&gt;&lt;/pre&gt;" style="whiteSpace=wrap;html=1;fillColor=none;fontSize=22;align=left;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="110" y="1150" width="520" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-29" value="&lt;strong style=&quot;margin: 0px; padding: 0px; max-width: 100%; color: rgb(201, 56, 28); font-size: 19px; letter-spacing: 2px; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;Atomic原子类底层用的不是传统意义的锁机制，&lt;br style=&quot;font-size: 19px;&quot;&gt;而是无锁化的CAS机制，通过CAS机制保证多线程修改一个数值的安全性&lt;/strong&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=19;fontStyle=1" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="675" y="1240" width="700" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-31" value="&lt;pre style=&quot;color: rgb(169 , 183 , 198) ; font-family: &amp;#34;meslo lg m dz for powerline&amp;#34; , monospace ; font-size: 12pt&quot;&gt;&lt;br&gt;&lt;/pre&gt;" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;fontSize=19;align=left;strokeColor=none;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="325" y="1840" width="205" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-32" value="线程A" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;fontSize=18;align=center;strokeColor=#6c8ebf;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="80" y="1560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-33" value="线程B" style="whiteSpace=wrap;html=1;fillColor=#fff2cc;fontSize=18;align=center;strokeColor=#d6b656;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="367.5" y="1560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-34" value="线程C" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;fontSize=18;align=center;strokeColor=#b85450;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="650" y="1560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-35" value="&lt;span style=&quot;font-size: 22px; letter-spacing: 2px; text-align: justify; background-color: rgb(255, 255, 255);&quot;&gt;3个线程并发的要修改一个&lt;/span&gt;&lt;span style=&quot;margin: 0px; padding: 0px; max-width: 100%; font-size: 22px; text-align: justify; letter-spacing: 0.5px; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;AtomicInteger&lt;/span&gt;&lt;span style=&quot;font-size: 22px; letter-spacing: 2px; text-align: justify; background-color: rgb(255, 255, 255);&quot;&gt;的值，他们底层的机制如下：&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=22;fontStyle=1;fontColor=#FF0000;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="160" y="1440" width="760" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-36" value="&lt;span style=&quot;color: rgb(51 , 51 , 51) ; font-size: 15px ; letter-spacing: 2px ; background-color: rgb(255 , 255 , 255)&quot;&gt;1. 每个线程都会先获取当前的值，接着走一个原子的CAS操作，&lt;br&gt;原子的意思就是这个CAS操作一定是自己完整执行完的，不会被别人打断。&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=22;fontColor=#FF0000;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="920" y="1520" width="580" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-37" value="" style="endArrow=classic;html=1;strokeColor=#FF0080;strokeWidth=2;fontSize=22;fontColor=#FF0000;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=-0.02;exitY=0.342;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="OxfkeTKddjhHw0AheIVP-1" source="01sIQlWdCzxstv_JN03J-31" target="01sIQlWdCzxstv_JN03J-32">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="320" y="1910" as="sourcePoint" />
+            <mxPoint x="120" y="1650" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="140" y="1905" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-38" value="&lt;font style=&quot;font-size: 16px&quot;&gt;先拿到当前值0&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=22;fontColor=#FF0000;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="20" y="1694" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-39" value="" style="endArrow=classic;html=1;strokeColor=#FF0080;strokeWidth=2;fontSize=22;fontColor=#FF0000;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="OxfkeTKddjhHw0AheIVP-1" source="01sIQlWdCzxstv_JN03J-32">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="1710" as="sourcePoint" />
+            <mxPoint x="320" y="1880" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="170" y="1880" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-40" value="&amp;nbsp;&lt;font style=&quot;font-size: 16px&quot;&gt;CAS&lt;br&gt;你现在还是0吗？&lt;br&gt;如果是，设置为1&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=22;fontColor=#FF0000;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="160" y="1655" width="140" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-42" value="" style="endArrow=classic;html=1;strokeColor=#FF0080;strokeWidth=2;fontSize=22;fontColor=#FF0000;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="OxfkeTKddjhHw0AheIVP-1" source="01sIQlWdCzxstv_JN03J-31" target="01sIQlWdCzxstv_JN03J-33">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="450" y="1740" as="sourcePoint" />
+            <mxPoint x="440" y="1690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-43" value="&lt;font style=&quot;font-size: 16px&quot;&gt;先拿到当前值1&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=22;fontColor=#FF0000;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="310" y="1685" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-44" value="" style="endArrow=classic;html=1;strokeColor=#FF0080;strokeWidth=2;fontSize=22;fontColor=#FF0000;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.659;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="OxfkeTKddjhHw0AheIVP-1" source="01sIQlWdCzxstv_JN03J-33" target="01sIQlWdCzxstv_JN03J-31">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="470" y="1730" as="sourcePoint" />
+            <mxPoint x="520" y="1680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-45" value="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;font style=&quot;font-size: 16px&quot;&gt;CAS&lt;br&gt;&lt;/font&gt;你现在还是1吗？&lt;br&gt;如果是，设置为2&amp;nbsp;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=22;fontColor=#FF0000;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="460" y="1664" width="140" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-47" value="" style="endArrow=classic;html=1;strokeColor=#FF0080;strokeWidth=2;fontSize=22;fontColor=#FF0000;exitX=1;exitY=0.216;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="OxfkeTKddjhHw0AheIVP-1" source="01sIQlWdCzxstv_JN03J-31" target="01sIQlWdCzxstv_JN03J-34">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="710" y="1800" as="sourcePoint" />
+            <mxPoint x="760" y="1750" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="710" y="1881" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-48" value="&lt;font style=&quot;font-size: 16px&quot; color=&quot;#cc6600&quot;&gt;先拿到当前值1&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=22;fontColor=#FF0000;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="590" y="1685" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-49" value="" style="endArrow=classic;html=1;strokeColor=#FF0080;strokeWidth=2;fontSize=22;fontColor=#FF0000;exitX=0.692;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="OxfkeTKddjhHw0AheIVP-1" source="01sIQlWdCzxstv_JN03J-34">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="750" y="1780" as="sourcePoint" />
+            <mxPoint x="532" y="1905" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="733" y="1905" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-50" value="&lt;font style=&quot;font-size: 16px ; background-color: rgb(255 , 255 , 255)&quot;&gt;&lt;font color=&quot;#cc6600&quot;&gt;CAS&lt;br&gt;你现在还是1吗？&lt;br&gt;不是！CAS失败&lt;/font&gt;&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=22;fontColor=#FF0000;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="735" y="1655" width="140" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-51" value="" style="endArrow=none;html=1;strokeWidth=2;fontSize=22;fontColor=#FF0000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.99;entryY=0.537;entryDx=0;entryDy=0;startArrow=classic;startFill=1;endFill=0;strokeColor=#FF00FF;entryPerimeter=0;" edge="1" parent="OxfkeTKddjhHw0AheIVP-1" source="01sIQlWdCzxstv_JN03J-34" target="01sIQlWdCzxstv_JN03J-31">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="960" y="1830" as="sourcePoint" />
+            <mxPoint x="1010" y="1780" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="870" y="1590" />
+              <mxPoint x="870" y="1942" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-52" value="&lt;font style=&quot;font-size: 16px&quot; color=&quot;#ff00ff&quot;&gt;再次拿到当前值2&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=22;fontColor=#FF0000;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="800" y="1634" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-53" value="" style="endArrow=classic;html=1;strokeColor=#FF00FF;strokeWidth=2;fontSize=22;fontColor=#FF0000;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=1.01;entryY=0.642;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="OxfkeTKddjhHw0AheIVP-1" source="01sIQlWdCzxstv_JN03J-34" target="01sIQlWdCzxstv_JN03J-31">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1000" y="1780" as="sourcePoint" />
+            <mxPoint x="1050" y="1730" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="950" y="1575" />
+              <mxPoint x="950" y="1962" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-54" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;span style=&quot;color: rgb(255 , 0 , 255) ; font-size: 16px&quot;&gt;CAS&lt;/span&gt;&lt;/div&gt;&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span style=&quot;color: rgb(255 , 0 , 255)&quot;&gt;你现在时还是2吗？&lt;/span&gt;&lt;/div&gt;&lt;font color=&quot;#ff00ff&quot;&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;是的！设置为3&lt;/span&gt;&lt;/div&gt;&lt;/font&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=22;fontColor=#FF0000;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="950" y="1664" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-55" value="&lt;pre style=&quot;text-align: left ; color: rgb(169 , 183 , 198) ; font-family: &amp;#34;meslo lg m dz for powerline&amp;#34; , monospace ; font-size: 13px&quot;&gt;&lt;span style=&quot;color: rgb(204 , 120 , 50)&quot;&gt;new &lt;/span&gt;AtomicInteger&lt;span style=&quot;color: rgb(152 , 118 , 170) ; font-style: italic&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: rgb(104 , 151 , 187)&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;color: rgb(152 , 118 , 170) ; font-style: italic&quot;&gt;)&lt;/span&gt;&lt;/pre&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="342.5" y="1850" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-56" value="&lt;pre style=&quot;text-align: left ; font-family: &amp;#34;meslo lg m dz for powerline&amp;#34; , monospace ; font-size: 14px&quot;&gt;&lt;font color=&quot;#a9b7c6&quot; style=&quot;font-size: 14px&quot;&gt;AtomicInteger&lt;/font&gt;&lt;span style=&quot;color: rgb(152 , 118 , 170) ; font-style: italic&quot;&gt;(&lt;/span&gt;&lt;font color=&quot;#6897bb&quot; style=&quot;font-size: 14px&quot;&gt;3&lt;/font&gt;&lt;span style=&quot;color: rgb(152 , 118 , 170) ; font-style: italic&quot;&gt;)&lt;/span&gt;&lt;/pre&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=22;fillColor=#f8cecc;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="352.5" y="1960" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-57" value="" style="endArrow=classic;html=1;strokeColor=#FF00FF;strokeWidth=2;fontSize=22;fontColor=#FF0000;exitX=0.497;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;dashed=1;" edge="1" parent="OxfkeTKddjhHw0AheIVP-1" source="01sIQlWdCzxstv_JN03J-55" target="01sIQlWdCzxstv_JN03J-56">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="620" y="2120" as="sourcePoint" />
+            <mxPoint x="670" y="2070" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="01sIQlWdCzxstv_JN03J-59" value="&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;上述整个过程，就是所谓Atomic原子类的原理，没有基于加锁机制串行化，&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;而是基于CAS机制：&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;先获取一个值，然后发起CAS，比较这个值被人改过没？如果没有，就更改值！这个CAS是原子的，别人不会打断你！&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;通过这个机制，不需要加锁这么重量级的机制，也可以用轻量级的方式实现多个线程安全的并发的修改某个数值。&lt;/span&gt;&lt;/p&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=22;fontColor=#333333;fillColor=#f5f5f5;" vertex="1" parent="OxfkeTKddjhHw0AheIVP-1">
+          <mxGeometry x="80" y="2080" width="1080" height="110" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
