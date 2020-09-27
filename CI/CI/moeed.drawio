@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-09-27T06:46:00.380Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="dq79fRW052dPPRoPLzAO" version="13.7.5" type="github" pages="7">
+<mxfile host="app.diagrams.net" modified="2020-09-27T07:00:51.427Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="nJLx-XwcvAJskHwbFITp" version="13.7.5" type="github" pages="7">
   <diagram id="XnHhwjnP2CLqmePo37kd" name="moneed-CI/CD">
     <mxGraphModel dx="1899" dy="1043" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -2159,6 +2159,39 @@
       <root>
         <mxCell id="tKw40Ly27kMV1H0R8ahZ-0" />
         <mxCell id="tKw40Ly27kMV1H0R8ahZ-1" parent="tKw40Ly27kMV1H0R8ahZ-0" />
+        <mxCell id="2yfIsKCGeYPUNgimlRBR-0" value="&lt;font color=&quot;#000000&quot; style=&quot;font-size: 22px&quot;&gt;AQS&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fontColor=#FF0000;" vertex="1" parent="tKw40Ly27kMV1H0R8ahZ-1">
+          <mxGeometry x="680" y="10" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2yfIsKCGeYPUNgimlRBR-1" value="&lt;pre style=&quot;background-color: #2b2b2b ; color: #a9b7c6 ; font-family: &amp;#34;meslo lg m dz for powerline&amp;#34; , monospace ; font-size: 12.0pt&quot;&gt;ReentrantLock lock = &lt;span style=&quot;color: #cc7832&quot;&gt;new &lt;/span&gt;ReentrantLock&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;()&lt;/span&gt;&lt;span style=&quot;color: #cc7832&quot;&gt;;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #cc7832&quot;&gt;&lt;br&gt;&lt;/span&gt;lock.lock&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;()&lt;/span&gt;&lt;span style=&quot;color: #cc7832&quot;&gt;;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #cc7832&quot;&gt;try &lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;{&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;    &lt;/span&gt;&lt;span style=&quot;color: #808080&quot;&gt;//&lt;/span&gt;&lt;span style=&quot;color: #808080 ; font-family: &amp;#34;menlo-regular&amp;#34; , monospace&quot;&gt;一堆业务逻辑&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;} &lt;/span&gt;&lt;span style=&quot;color: #cc7832&quot;&gt;catch &lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;(&lt;/span&gt;Exception e&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;) {&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;    &lt;/span&gt;e.printStackTrace&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;()&lt;/span&gt;&lt;span style=&quot;color: #cc7832&quot;&gt;;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;} &lt;/span&gt;&lt;span style=&quot;color: #cc7832&quot;&gt;finally &lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;{&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;    &lt;/span&gt;lock.unlock&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;()&lt;/span&gt;&lt;span style=&quot;color: #cc7832&quot;&gt;;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: #9876aa ; font-style: italic&quot;&gt;}&lt;/span&gt;&lt;/pre&gt;" style="whiteSpace=wrap;html=1;fillColor=none;fontSize=16;fontColor=#FF0000;align=left;" vertex="1" parent="tKw40Ly27kMV1H0R8ahZ-1">
+          <mxGeometry x="160" y="200" width="400" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="2yfIsKCGeYPUNgimlRBR-3" value="&lt;strong style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; color: rgb(201 , 56 , 28) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 15px ; letter-spacing: 2px ; text-align: justify ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;AbstractQueuedSynchronizer，抽象队列同步器&lt;/strong&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fontColor=#FF0000;" vertex="1" parent="tKw40Ly27kMV1H0R8ahZ-1">
+          <mxGeometry x="520" y="60" width="420" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2yfIsKCGeYPUNgimlRBR-10" value="" style="group" vertex="1" connectable="0" parent="tKw40Ly27kMV1H0R8ahZ-1">
+          <mxGeometry x="680" y="160" width="310" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="2yfIsKCGeYPUNgimlRBR-4" value="" style="whiteSpace=wrap;html=1;fillColor=#ffcc99;fontSize=16;align=center;strokeColor=#36393d;" vertex="1" parent="2yfIsKCGeYPUNgimlRBR-10">
+          <mxGeometry width="310" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="2yfIsKCGeYPUNgimlRBR-7" value="&lt;font style=&quot;font-size: 18px&quot;&gt;AbstractQueueSynchronizer&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="2yfIsKCGeYPUNgimlRBR-10">
+          <mxGeometry x="40" y="110" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2yfIsKCGeYPUNgimlRBR-8" value="ReentrantLock" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=20;fillColor=#ffcc99;" vertex="1" parent="2yfIsKCGeYPUNgimlRBR-10">
+          <mxGeometry x="70" y="35" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2yfIsKCGeYPUNgimlRBR-11" value="&lt;span style=&quot;background-color: rgb(230 , 230 , 230)&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; color: rgb(51 , 51 , 51) ; font-size: 15px ; letter-spacing: 0.5px ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;ReentrantLock&lt;/span&gt;&lt;span style=&quot;color: rgb(51 , 51 , 51) ; font-size: 15px ; letter-spacing: 2px&quot;&gt;内部包含了一个AQS对象，也就是&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; color: rgb(51 , 51 , 51) ; font-size: 15px ; letter-spacing: 0.5px ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;AbstractQueuedSynchronizer&lt;/span&gt;&lt;span style=&quot;color: rgb(51 , 51 , 51) ; font-size: 15px ; letter-spacing: 2px&quot;&gt;类型的对象。&lt;br&gt;这个AQS对象就是&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; color: rgb(51 , 51 , 51) ; font-size: 15px ; letter-spacing: 0.5px ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;ReentrantLock&lt;/span&gt;&lt;span style=&quot;color: rgb(51 , 51 , 51) ; font-size: 15px ; letter-spacing: 2px&quot;&gt;可以实现加锁和释放锁的关键性的核心组件。&lt;/span&gt;&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=20;fillColor=#eeeeee;" vertex="1" parent="tKw40Ly27kMV1H0R8ahZ-1">
+          <mxGeometry x="680" y="340" width="690" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2yfIsKCGeYPUNgimlRBR-12" value="&lt;b&gt;ReentrantLock加锁和释放锁的底层原理&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=20;fontColor=#FF0000;" vertex="1" parent="tKw40Ly27kMV1H0R8ahZ-1">
+          <mxGeometry x="155" y="535" width="380" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2yfIsKCGeYPUNgimlRBR-14" value="&lt;font color=&quot;#000000&quot;&gt;Text&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=20;fontColor=#FF0000;" vertex="1" parent="tKw40Ly27kMV1H0R8ahZ-1">
+          <mxGeometry x="265" y="685" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2yfIsKCGeYPUNgimlRBR-15" value="&lt;font color=&quot;#000000&quot;&gt;Text&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=20;fontColor=#FF0000;" vertex="1" parent="tKw40Ly27kMV1H0R8ahZ-1">
+          <mxGeometry x="435" y="655" width="50" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
