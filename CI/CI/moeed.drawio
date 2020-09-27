@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-09-27T07:38:59.201Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="zR9axv1uXsHzu7MNuHpR" version="13.7.5" type="github" pages="7">
+<mxfile host="app.diagrams.net" modified="2020-09-27T07:45:29.243Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="MDy1W_ofECwQ5mxXO_vD" version="13.7.5" type="github" pages="7">
   <diagram id="XnHhwjnP2CLqmePo37kd" name="moneed-CI/CD">
     <mxGraphModel dx="1899" dy="1043" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -2216,56 +2216,80 @@
         <mxCell id="2yfIsKCGeYPUNgimlRBR-24" value="&lt;font color=&quot;#000000&quot;&gt;加锁线程 = null&lt;/font&gt;" style="whiteSpace=wrap;html=1;fillColor=none;fontSize=20;fontColor=#FF0000;align=center;" vertex="1" parent="2yfIsKCGeYPUNgimlRBR-18">
           <mxGeometry x="240" y="150" width="140" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="2yfIsKCGeYPUNgimlRBR-44" value="" style="group" vertex="1" connectable="0" parent="tKw40Ly27kMV1H0R8ahZ-1">
-          <mxGeometry x="210" y="1130" width="720" height="270" as="geometry" />
+        <mxCell id="2yfIsKCGeYPUNgimlRBR-45" value="&lt;span style=&quot;margin: 0px; padding: 0px; max-width: 100%; letter-spacing: 2px; font-size: 15px; color: rgb(64, 179, 230); box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;可重入锁的意思&lt;/span&gt;&lt;span style=&quot;margin: 0px; padding: 0px; max-width: 100%; color: rgb(51, 51, 51); letter-spacing: 2px; font-size: 15px; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;，就是你可以对一个ReentrantLock对象多次执行lock()加锁和unlock()释放锁，也就是可以对一个锁加多次，叫做可重入加锁。&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=20;fillColor=#eeeeee;" vertex="1" parent="tKw40Ly27kMV1H0R8ahZ-1">
+          <mxGeometry x="160" y="1470" width="1110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2yfIsKCGeYPUNgimlRBR-46" value="&lt;strong style=&quot;margin: 0px; padding: 0px; max-width: 100%; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 2px; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; font-size: 15px ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;锁的互斥是如何实现的？&lt;/span&gt;&lt;/strong&gt;&lt;span style=&quot;margin: 0px; padding: 0px; max-width: 100%; color: rgb(51, 51, 51); letter-spacing: 2px; font-size: 15px; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;线程2跑过来一下看到，哎呀！state的值不是0啊？所以CAS操作将state从0变为1的过程会失败，因为state的值当前为1，说明已经有人加锁了！&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=20;fillColor=#eeeeee;" vertex="1" parent="tKw40Ly27kMV1H0R8ahZ-1">
+          <mxGeometry x="160" y="1540" width="1300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2yfIsKCGeYPUNgimlRBR-47" value="&lt;span style=&quot;background-color: rgb(230 , 230 , 230)&quot;&gt;&lt;span style=&quot;color: rgb(51, 51, 51); font-size: 15px; letter-spacing: 2px;&quot;&gt;接着线程2会看一下，&lt;/span&gt;&lt;span style=&quot;margin: 0px; padding: 0px; max-width: 100%; font-size: 15px; letter-spacing: 2px; color: rgb(64, 179, 230); box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;是不是自己之前加的锁啊&lt;/span&gt;&lt;span style=&quot;color: rgb(51, 51, 51); font-size: 15px; letter-spacing: 2px;&quot;&gt;？当然不是了，&lt;/span&gt;&lt;strong style=&quot;margin: 0px; padding: 0px; max-width: 100%; color: rgb(51, 51, 51); font-size: 15px; letter-spacing: 2px; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;“加锁线程”&lt;/strong&gt;&lt;span style=&quot;color: rgb(51, 51, 51); font-size: 15px; letter-spacing: 2px;&quot;&gt;这个变量明确记录了是线程1占用了这个锁，所以线程2此时就是加锁失败。&lt;/span&gt;&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=20;fillColor=#eeeeee;" vertex="1" parent="tKw40Ly27kMV1H0R8ahZ-1">
+          <mxGeometry x="160" y="1610" width="1140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2yfIsKCGeYPUNgimlRBR-48" value="&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;接着，线程2会将自己放入AQS中的一个等待队列，因为自己尝试加锁失败了，此时就要将自己放入队列中来等待，等待线程1释放锁之后，自己就可以重新尝试加锁了&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;所以大家可以看到，AQS是如此的核心！AQS内部还有一个等待队列，专门放那些加锁失败的线程！&lt;/span&gt;&lt;/p&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=20;fillColor=#eeeeee;" vertex="1" parent="tKw40Ly27kMV1H0R8ahZ-1">
+          <mxGeometry x="160" y="1685" width="1280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="2yfIsKCGeYPUNgimlRBR-49" value="&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;接着，线程1在执行完自己的业务逻辑代码之后，就会释放锁！&lt;strong style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;他释放锁的过程非常的简单&lt;/strong&gt;，就是将AQS内的state变量的值递减1，如果state值为0，则彻底释放锁，会将“加锁线程”变量也设置为null！&lt;/span&gt;&lt;/p&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=20;fillColor=#eeeeee;" vertex="1" parent="tKw40Ly27kMV1H0R8ahZ-1">
+          <mxGeometry x="155" y="1820" width="1540" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="2yfIsKCGeYPUNgimlRBR-50" value="&lt;span style=&quot;margin: 0px; padding: 0px; max-width: 100%; color: rgb(51, 51, 51); letter-spacing: 2px; font-size: 15px; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;接下来，会从&lt;/span&gt;&lt;strong style=&quot;margin: 0px; padding: 0px; max-width: 100%; color: rgb(51, 51, 51); letter-spacing: 2px; font-size: 15px; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;等待队列的队头唤醒线程2重新尝试加锁。&lt;/strong&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=20;fillColor=#eeeeee;" vertex="1" parent="tKw40Ly27kMV1H0R8ahZ-1">
+          <mxGeometry x="160" y="1920" width="430" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2yfIsKCGeYPUNgimlRBR-51" value="&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;线程2现在就重新尝试加锁，这时还是用CAS操作将state从0变为1，此时就会成功，成功之后代表加锁成功，就会将state设置为1。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;此外，还要把&lt;strong style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;“加锁线程”&lt;/strong&gt;设置为线程2自己，同时线程2自己就从等待队列中出队了。&lt;/span&gt;&lt;/p&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=20;fillColor=#eeeeee;" vertex="1" parent="tKw40Ly27kMV1H0R8ahZ-1">
+          <mxGeometry x="160" y="2000" width="1030" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="2yfIsKCGeYPUNgimlRBR-52" value="" style="group" vertex="1" connectable="0" parent="tKw40Ly27kMV1H0R8ahZ-1">
+          <mxGeometry x="210" y="1130" width="660" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="2yfIsKCGeYPUNgimlRBR-44" value="" style="group" vertex="1" connectable="0" parent="2yfIsKCGeYPUNgimlRBR-52">
+          <mxGeometry width="659.9999999999999" height="270" as="geometry" />
         </mxCell>
         <mxCell id="2yfIsKCGeYPUNgimlRBR-28" value="" style="group" vertex="1" connectable="0" parent="2yfIsKCGeYPUNgimlRBR-44">
-          <mxGeometry x="280" width="440" height="240" as="geometry" />
+          <mxGeometry x="256.6666666666666" width="403.33333333333326" height="240" as="geometry" />
         </mxCell>
         <mxCell id="2yfIsKCGeYPUNgimlRBR-29" value="" style="group" vertex="1" connectable="0" parent="2yfIsKCGeYPUNgimlRBR-28">
-          <mxGeometry width="440" height="240" as="geometry" />
+          <mxGeometry width="403.33333333333326" height="240" as="geometry" />
         </mxCell>
         <mxCell id="2yfIsKCGeYPUNgimlRBR-30" value="" style="whiteSpace=wrap;html=1;fillColor=#ffcc99;fontSize=16;align=center;strokeColor=#36393d;" vertex="1" parent="2yfIsKCGeYPUNgimlRBR-29">
-          <mxGeometry width="440" height="240" as="geometry" />
+          <mxGeometry width="403.33333333333326" height="240" as="geometry" />
         </mxCell>
         <mxCell id="2yfIsKCGeYPUNgimlRBR-31" value="ReentrantLock" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=20;fillColor=#ffcc99;" vertex="1" parent="2yfIsKCGeYPUNgimlRBR-29">
-          <mxGeometry x="160.00483870967741" y="10" width="150" height="30" as="geometry" />
+          <mxGeometry x="146.6711021505376" y="10.000000000000002" width="150" height="30" as="geometry" />
         </mxCell>
         <mxCell id="2yfIsKCGeYPUNgimlRBR-32" value="" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;fontSize=20;align=center;strokeColor=#36393d;" vertex="1" parent="2yfIsKCGeYPUNgimlRBR-29">
-          <mxGeometry x="60" y="70" width="340" height="140" as="geometry" />
+          <mxGeometry x="54.999999999999986" y="70" width="311.6666666666666" height="140" as="geometry" />
         </mxCell>
         <mxCell id="2yfIsKCGeYPUNgimlRBR-33" value="&lt;span&gt;&lt;font color=&quot;#000000&quot;&gt;AbstractQueueSynchronizer&lt;/font&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=20;fontColor=#FF0000;" vertex="1" parent="2yfIsKCGeYPUNgimlRBR-29">
-          <mxGeometry x="85" y="70" width="270" height="30" as="geometry" />
+          <mxGeometry x="77.91666666666664" y="70" width="270" height="30" as="geometry" />
         </mxCell>
         <mxCell id="2yfIsKCGeYPUNgimlRBR-34" value="&lt;font color=&quot;#000000&quot; style=&quot;font-size: 16px&quot;&gt;state = 1&lt;/font&gt;" style="whiteSpace=wrap;html=1;fillColor=none;fontSize=20;fontColor=#FF0000;align=center;" vertex="1" parent="2yfIsKCGeYPUNgimlRBR-29">
-          <mxGeometry x="90" y="150" width="90" height="40" as="geometry" />
+          <mxGeometry x="82.49999999999997" y="150.00000000000003" width="82.49999999999997" height="40.00000000000001" as="geometry" />
         </mxCell>
         <mxCell id="2yfIsKCGeYPUNgimlRBR-35" value="&lt;font color=&quot;#000000&quot; style=&quot;font-size: 16px&quot;&gt;加锁线程 = 线程1&lt;/font&gt;" style="whiteSpace=wrap;html=1;fillColor=none;fontSize=20;fontColor=#FF0000;align=center;" vertex="1" parent="2yfIsKCGeYPUNgimlRBR-29">
-          <mxGeometry x="240" y="150" width="140" height="40" as="geometry" />
+          <mxGeometry x="219.99999999999994" y="150.00000000000003" width="128.3333333333333" height="40.00000000000001" as="geometry" />
         </mxCell>
         <mxCell id="2yfIsKCGeYPUNgimlRBR-40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;endArrow=classic;endFill=1;strokeColor=#4D9900;strokeWidth=2;fontSize=20;fontColor=#FF0000;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="2yfIsKCGeYPUNgimlRBR-44" source="2yfIsKCGeYPUNgimlRBR-38" target="2yfIsKCGeYPUNgimlRBR-34">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="200" y="120" as="targetPoint" />
+            <mxPoint x="183.33333333333331" y="120" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="2yfIsKCGeYPUNgimlRBR-38" value="&lt;font style=&quot;font-size: 16px&quot;&gt;线程1&lt;/font&gt;" style="whiteSpace=wrap;html=1;fillColor=#cce5ff;fontSize=20;align=center;strokeColor=#36393d;" vertex="1" parent="2yfIsKCGeYPUNgimlRBR-44">
-          <mxGeometry y="90" width="120" height="60" as="geometry" />
+          <mxGeometry y="90.00000000000001" width="110" height="60" as="geometry" />
         </mxCell>
         <mxCell id="2yfIsKCGeYPUNgimlRBR-41" value="&lt;font style=&quot;font-size: 16px&quot;&gt;CAS&amp;nbsp;&lt;br&gt;设置state=1&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=20;fontColor=#FF0000;" vertex="1" parent="2yfIsKCGeYPUNgimlRBR-44">
-          <mxGeometry x="130" y="60" width="100" height="60" as="geometry" />
+          <mxGeometry x="119.16666666666667" y="60" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="2yfIsKCGeYPUNgimlRBR-42" value="" style="endArrow=classic;html=1;strokeColor=#4D9900;strokeWidth=2;fontSize=20;fontColor=#FF0000;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.607;entryY=1.025;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="2yfIsKCGeYPUNgimlRBR-44" source="2yfIsKCGeYPUNgimlRBR-38" target="2yfIsKCGeYPUNgimlRBR-35">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="110" y="220" as="sourcePoint" />
-            <mxPoint x="160" y="170" as="targetPoint" />
+            <mxPoint x="100.83333333333331" y="220" as="sourcePoint" />
+            <mxPoint x="146.66666666666663" y="170" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="60" y="270" />
-              <mxPoint x="605" y="270" />
+              <mxPoint x="55" y="270" />
+              <mxPoint x="554.5833333333333" y="270" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="2yfIsKCGeYPUNgimlRBR-43" value="&lt;font style=&quot;font-size: 16px&quot;&gt;如果CAS成功 设置加锁线程为线程1&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=20;fontColor=#FF0000;" vertex="1" parent="2yfIsKCGeYPUNgimlRBR-44">
-          <mxGeometry x="70" y="240" width="270" height="30" as="geometry" />
+          <mxGeometry x="64.16666666666664" y="240" width="270" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
