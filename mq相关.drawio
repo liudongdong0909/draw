@@ -1,1 +1,708 @@
-<mxfile host="app.diagrams.net" modified="2020-09-29T09:06:03.998Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" version="13.7.6" etag="GmKmHehWW6M84RSlPcrg" type="github"><diagram id="JzXBgew2gPKfXDzcpc2j">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2020-09-29T09:06:51.031Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="39VtDoE5oUDpGiWz2_WK" version="13.7.6" type="github">
+  <diagram id="JzXBgew2gPKfXDzcpc2j" name="第 1 页">
+    <mxGraphModel dx="1899" dy="1043" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-1" value="&lt;h2 class=&quot;rich_media_title&quot; id=&quot;activity-name&quot; style=&quot;margin: 0px 0px 14px ; padding: 0px ; font-size: 22px ; line-height: 1.4 ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; letter-spacing: 0.621714px&quot;&gt;线上服务宕机时，如何保证数据100%不丢失？&lt;/h2&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="30" width="480" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="520" y="430" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="440" y="310" />
+              <mxPoint x="440" y="430" />
+              <mxPoint x="516" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-3" value="订单服务" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="230" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-5" target="Lkm7xPwdyCk8JkXtMmqo-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-5" value="订单服务" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="230" y="420" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-7" target="Lkm7xPwdyCk8JkXtMmqo-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="510" y="480" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="440" y="590" />
+              <mxPoint x="440" y="470" />
+              <mxPoint x="510" y="470" />
+              <mxPoint x="510" y="471" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-7" value="订单服务" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="230" y="560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-8" value="" style="whiteSpace=wrap;html=1;fillColor=#fa6800;strokeColor=#C73500;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="520" y="385" width="330" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-10" target="Lkm7xPwdyCk8JkXtMmqo-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-10" value="&lt;b style=&quot;font-size: 14px&quot;&gt;仓储服务&lt;br&gt;(突然宕机)&lt;/b&gt;" style="whiteSpace=wrap;html=1;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-12" target="Lkm7xPwdyCk8JkXtMmqo-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-12" value="仓储服务" style="whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="420" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-14" target="Lkm7xPwdyCk8JkXtMmqo-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-14" value="仓储服务" style="whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-15" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="Lkm7xPwdyCk8JkXtMmqo-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="851" y="430" as="sourcePoint" />
+            <mxPoint x="980" y="440" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="940" y="430" />
+              <mxPoint x="940" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-16" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-8" target="Lkm7xPwdyCk8JkXtMmqo-12">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="900" y="490" as="sourcePoint" />
+            <mxPoint x="950" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-17" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1.006;exitY=0.646;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-8" target="Lkm7xPwdyCk8JkXtMmqo-14">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="850" y="450" as="sourcePoint" />
+            <mxPoint x="950" y="550" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="940" y="470" />
+              <mxPoint x="940" y="590" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-18" value="仓库系统" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-19" value="仓库服务" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-20" value="仓库系统" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="420" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-21" value="订单消息01" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="360" y="290" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-22" value="订单消息02" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="360" y="430" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-23" value="订单消息03" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="360" y="570" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-24" value="RabbitMQ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="385" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-25" value="" style="whiteSpace=wrap;html=1;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="540" y="440" width="290" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-26" value="queue" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="440" width="50" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-28" target="Lkm7xPwdyCk8JkXtMmqo-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-28" value="订单消息03" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="540" y="480" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-30" target="Lkm7xPwdyCk8JkXtMmqo-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-30" value="订单消息02" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="645" y="480" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-31" value="订单消息01" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="750" y="480" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-32" value="订单消息03" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="950" y="290" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-33" value="订单消息01" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="950" y="430" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-34" value="订单消息02" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="950" y="570" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-35" value="订单02&lt;br&gt;调度发货" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="555" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-36" value="订单01&lt;br&gt;调度发货" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="420" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-37" value="订单03&lt;br&gt;调度发货" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="280" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-38" value="&lt;span style=&quot;color: rgb(51, 51, 51); font-size: 16px; letter-spacing: 2px; background-color: rgb(255, 255, 255);&quot;&gt;如果仓储服务作为消费者服务，刚收到了一个订单消息，但是在完成消息的处理之前，也就是还没对订单完成仓储调度发货，结果这个仓储服务突然就宕机了，这个时候会发生什么事情？&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="160" y="170" width="1490" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-39" value="&lt;span style=&quot;color: rgb(51 , 51 , 51) ; font-size: 15px ; letter-spacing: 2px ; background-color: rgb(255 , 255 , 255)&quot;&gt;RabbitMQ这个中间件默认的一个行为，就是只要仓储服务收到一个订单消息，RabbitMQ就会立马把这条订单消息给标记为删除，&lt;/span&gt;&lt;strong style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; color: rgb(51 , 51 , 51) ; font-size: 15px ; letter-spacing: 2px ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;这个行为叫做自动ack，&lt;br&gt;&lt;br&gt;&lt;/strong&gt;&lt;span style=&quot;color: rgb(51 , 51 , 51) ; font-size: 15px ; letter-spacing: 2px ; background-color: rgb(255 , 255 , 255)&quot;&gt;也就是投递完成一条消息就自动确认这个消息处理完毕了。&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;fontSize=16;horizontal=1;" vertex="1" parent="1">
+          <mxGeometry x="165" y="660" width="1180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-40" value="&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-size: 17px ; letter-spacing: 0.621714px ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;但是接着如果此时仓储服务收到了一个订单消息，但是还没来得及对仓库系统完成商品的调度发货，结果直接就宕机了。&lt;br&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-size: 17px ; letter-spacing: 0.621714px ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;此时，明显这个订单消息就丢失了啊，因为RabbitMQ那里已经没有了。。。&lt;/span&gt;&lt;/p&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="155" y="750" width="930" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-41" value="&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-size: 17px ; letter-spacing: 0.621714px ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; letter-spacing: 2px&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; font-size: 15px ; color: rgb(110 , 191 , 248) ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;这会导致什么样的尴尬体验呢？&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; font-size: 15px ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;就是一个用户支付了8999元，对一个iphone8下了订单，结果呢，死等活等了好几天，就是不见网站上显示他的iphone8在发货。&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-size: 17px ; letter-spacing: 0.621714px ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;font-size: 15px ; letter-spacing: 2px&quot;&gt;搞了半天，原因就是他的那个iphone8的订单在仓储服务那里，还没来得及调度发货直接就宕机了，导致这个订单消息就一直丢失了，始终没有给这个用户通知仓库系统进行发货。&lt;/span&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-size: 17px ; letter-spacing: 0.621714px ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;font-size: 15px ; letter-spacing: 2px&quot;&gt;这个问题，是不是很尴尬？所以说，技术问题是会严重影响企业的核心业务流程的！&lt;/span&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="160" y="870" width="1370" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-42" value="channle.basicConsume(QUEUE_NAME, true, diliverCallback, consumerTag -&amp;gt; {});&lt;br&gt;&lt;span style=&quot;text-align: center&quot;&gt;这行代码的第二个参数 true, 代表了一个核心含义： RabbitMQ只要把一个消息投递到消费者手上，立马就标记这个消息删除了。&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fillColor=#cdeb8b;" vertex="1" parent="1">
+          <mxGeometry x="165" y="1000" width="920" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-43" value="&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; letter-spacing: 2px ; font-size: 15px&quot;&gt;但是在这个默认的配置之下，要是仓储服务收到一个订单消息，结果还没来得及完成耗时几十秒的仓储调度发货的业务逻辑，结果突然宕机了，那么这个订单消息就永久性丢失了！&lt;/span&gt;&lt;/p&gt;&lt;div&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; letter-spacing: 2px ; font-size: 15px&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="160" y="1060" width="1370" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-44" value="&lt;span style=&quot;color: rgb(51, 51, 51); font-size: 15px; letter-spacing: 2px; background-color: rgb(255, 255, 255);&quot;&gt;只要修改为false之后，RabbitMQ就不会盲目的投递消息到仓储服务，立马就删除消息了，说白了就是关闭autoAck的行为，不要自作主张的认为消息处理成功了。&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="160" y="1120" width="1250" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-45" value="&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; color: rgb(51 , 51 , 51) ; font-size: 18px ; letter-spacing: 2px ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;这段代码，说白了，就是在对订单完成了调度发货之后，&lt;br&gt;&lt;/span&gt;&lt;strong style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; color: rgb(51 , 51 , 51) ; font-size: 18px ; letter-spacing: 2px ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;在finally代码块中手动执行了ack操作&lt;/strong&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; color: rgb(51 , 51 , 51) ; font-size: 18px ; letter-spacing: 2px ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;，&lt;br&gt;&lt;br style=&quot;font-size: 18px&quot;&gt;说我自己已经完成了耗时几十秒的业务逻辑的处理，&lt;br&gt;现在可以手动ack通知RabbitMQ，这个消息处理完毕了。&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=18;fillColor=#f5f5f5;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="1025" y="1255" width="530" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-46" value="DeliverCallback deliverCallback = (consumerTag, delivery) -&amp;gt; {&lt;br style=&quot;font-size: 18px;&quot;&gt;&lt;br style=&quot;font-size: 18px;&quot;&gt;try{&lt;br style=&quot;font-size: 18px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; String message = new String(delivery.getBody(), &quot;UTF-8&quot;);&lt;br style=&quot;font-size: 18px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; System.olut.println(&quot;[x] 仓储服务接收到消息，准备执行调度发货的流程 &quot; + message);&lt;br style=&quot;font-size: 18px;&quot;&gt;&amp;nbsp;}finaly{&lt;br style=&quot;font-size: 18px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;System.out.printly(&quot;[x] 订单完成调度发货&quot;);&lt;br style=&quot;font-size: 18px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;// 这就是核心代码，手动在代码里对RabbitMQ进行ack&lt;br style=&quot;font-size: 18px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;channel.basicAck(delivery.getEnvenlope().getDeliveryTag(), false);&lt;br style=&quot;font-size: 18px;&quot;&gt;&amp;nbsp; &amp;nbsp;}&lt;br style=&quot;font-size: 18px;&quot;&gt;};" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=18;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="160" y="1210" width="720" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-47" value="" style="endArrow=classic;html=1;fontSize=18;entryX=1.001;entryY=0.44;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.004;exitY=0.544;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-45" target="Lkm7xPwdyCk8JkXtMmqo-46">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1070" y="1420" as="sourcePoint" />
+            <mxPoint x="1120" y="1280" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="960" y="1320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-48" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-49">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="475" y="1800" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="395" y="1680" />
+              <mxPoint x="395" y="1800" />
+              <mxPoint x="471" y="1800" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-49" value="订单服务" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="185" y="1650" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-50" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-51" target="Lkm7xPwdyCk8JkXtMmqo-54">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="385" y="1820" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-51" value="订单服务" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="185" y="1790" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-52" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-53" target="Lkm7xPwdyCk8JkXtMmqo-54">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="465" y="1850" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="395" y="1960" />
+              <mxPoint x="395" y="1840" />
+              <mxPoint x="465" y="1840" />
+              <mxPoint x="465" y="1841" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-53" value="订单服务" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="185" y="1930" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-54" value="" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="475" y="1755" width="330" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-55" value="&lt;b style=&quot;font-size: 14px&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;/b&gt;" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="995" y="1580" width="155" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-56" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-57" target="Lkm7xPwdyCk8JkXtMmqo-65">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-57" value="仓储服务" style="whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="1790" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-58" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-59" target="Lkm7xPwdyCk8JkXtMmqo-63">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-59" value="仓储服务" style="whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="1930" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-60" value="" style="endArrow=classic;html=1;entryX=-0.017;entryY=0.4;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="Lkm7xPwdyCk8JkXtMmqo-83">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="806" y="1800" as="sourcePoint" />
+            <mxPoint x="935" y="1810" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="895" y="1800" />
+              <mxPoint x="895" y="1608" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-61" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-54" target="Lkm7xPwdyCk8JkXtMmqo-57">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="855" y="1860" as="sourcePoint" />
+            <mxPoint x="905" y="1810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-62" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1.006;exitY=0.646;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-54" target="Lkm7xPwdyCk8JkXtMmqo-59">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="805" y="1820" as="sourcePoint" />
+            <mxPoint x="905" y="1920" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="895" y="1840" />
+              <mxPoint x="895" y="1960" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-63" value="仓库系统" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="1930" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-64" value="仓库服务" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="1615" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-65" value="仓库系统" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="1790" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-66" value="订单消息01" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="315" y="1660" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-67" value="订单消息02" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="315" y="1800" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-68" value="订单消息03" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="315" y="1940" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-69" value="RabbitMQ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="605" y="1755" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-70" value="" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="495" y="1810" width="290" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-71" value="queue" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="615" y="1810" width="50" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-72" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-73" target="Lkm7xPwdyCk8JkXtMmqo-75">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-73" value="订单消息03" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="495" y="1850" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-74" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-75" target="Lkm7xPwdyCk8JkXtMmqo-76">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-75" value="订单消息02" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="600" y="1850" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-76" value="订单消息01" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="705" y="1850" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-77" value="订单消息03" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="905" y="1610" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-78" value="订单消息01" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="905" y="1800" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-79" value="订单消息02" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="905" y="1940" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-80" value="订单02&lt;br&gt;调度发货" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="1930" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-81" value="订单01&lt;br&gt;调度发货" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="1790" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-82" value="订单03&lt;br&gt;调度发货" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="1630" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-83" value="订单消息03" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1027.5" y="1600" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-84" value="仓库服务&lt;br&gt;是否成功&lt;br&gt;调度" style="rhombus;whiteSpace=wrap;html=1;fillColor=#d5e8d4;fontSize=14;align=center;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1035" y="1660" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-85" value="" style="endArrow=classic;html=1;fontSize=14;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="Lkm7xPwdyCk8JkXtMmqo-84">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1075" y="1620" as="sourcePoint" />
+            <mxPoint x="1250" y="1710" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-86" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-83" target="Lkm7xPwdyCk8JkXtMmqo-64">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1174" y="1610" />
+              <mxPoint x="1174" y="1645" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-87" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-84">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="760" y="1710" as="sourcePoint" />
+            <mxPoint x="540" y="1768" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="540" y="1700" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-88" value="接收ACK消息" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="495" y="1770" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-89" value="发送ACK消息" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="680" y="1680" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-90" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0.38;exitY=1.05;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-88">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="537" y="1789" as="sourcePoint" />
+            <mxPoint x="532" y="1850" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-91" value="标记删除" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="500" y="1820" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-92" value="&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;架构流程改成上面那样后，就意味着只有完成了仓储调度发货的代码业务逻辑，确保仓库系统收到通知之后，仓储服务才会在代码中手动发送ack消息给RabbitMQ。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;此时，RabbitMQ收到了这个ack消息，才会标记对应的订单消息被删除了。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;如果说在仓储服务收到了订单消息，但是还没来得及完成仓储调度发货的业务逻辑，那也就绝对不会执行这条订单消息的ack操作，然后RabbitMQ也就不会收到这条订单消息的ack通知。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;一旦RabbitMQ发现代表消费者的某个仓储服务实例突然宕机了，而这个仓储服务收到的一些订单消息还没来得及处理，没给自己发送那些消息的ack通知。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;此时，RabbitMQ会自动对这条订单消息重发推送给其他在运行中的仓储服务实例，让其他的仓储服务实例去处理这条订单消息。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;这样的话，就可以保证这条订单消息不会因为某个仓储服务实例的宕机而丢失，他会确保必须由某个仓储服务实例完成这条订单消息的调度发货处理，然后才会删除那条订单消息。&lt;/span&gt;&lt;/p&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="185" y="2070" width="1430" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-93" value="" style="endArrow=classic;html=1;fontSize=14;exitX=-0.027;exitY=0.55;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-96">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="830" y="1810" as="sourcePoint" />
+            <mxPoint x="720" y="1760" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="920" y="1740" />
+              <mxPoint x="720" y="1740" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-94" value="否" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1075" y="1735" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-95" value="是" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1005" y="1690" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-96" value="不发送ACK消息" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#ffcc99;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="920" y="1730" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-97" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.991;entryY=0.55;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-84" target="Lkm7xPwdyCk8JkXtMmqo-96">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1075" y="1740" as="sourcePoint" />
+            <mxPoint x="1031" y="1760" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-98" value="发现消费者宕机" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#ffcc99;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="760" y="1720" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-99" value="" style="endArrow=classic;html=1;fontSize=14;entryX=-0.033;entryY=0.867;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-73" target="Lkm7xPwdyCk8JkXtMmqo-59">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="510" y="2010" as="sourcePoint" />
+            <mxPoint x="1020" y="1980" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="535" y="1980" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-100" value="未收到ACK&lt;br&gt;订单消息03重新消费" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="605" y="1960" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-101" value="&lt;h2 class=&quot;rich_media_title&quot; id=&quot;activity-name&quot; style=&quot;margin: 0px 0px 14px ; padding: 0px ; font-size: 22px ; line-height: 1.4 ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; letter-spacing: 0.621714px&quot;&gt;消息中间件集群崩溃，如何保证百万生产数据不丢失？&lt;/h2&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="555" y="2580" width="560" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-102" value="&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;那如果此时出现一个问题，就是说订单服务投递了订单消息到RabbitMQ里去，RabbitMQ暂时放在了自己的内存中，还没来得及投递给下游的仓储服务呢，此时RabbitMQ突然宕机了，会怎么样？&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;答案其实很简单，默认情况下，按照我们目前的代码和配置，这个数据就会丢失了。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;所以在这里而言，就牵扯到了RabbitMQ的一个较为重要的概念：&lt;strong style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;消息的持久化&lt;/strong&gt;，用英文来说就是durable机制。&lt;/span&gt;&lt;/p&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="130" y="2640" width="1510" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-103" value="&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;然后这里又有一个引申的概念，如果按照我们之前的代码和配置，默认情况下，RabbitMQ一旦宕机就再次重启，就会丢失我们之前创建的queue。所以首先得先让queue是持久化的。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;使用下面的代码，就可以把我们的“warehouse_schedule_delivery”这个queue，也就是仓储调度发货的queue，设置为持久化的。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left ; margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-size: 17px ; letter-spacing: 0.621714px ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;这样，即使RabbitMQ宕机后重启，也会恢复之前创建好的这个queue。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left ; margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-size: 17px ; letter-spacing: 0.621714px ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-size: 16px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;b&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; color: rgb(110 , 191 , 248)&quot;&gt;channel.queueDeclare(&lt;/span&gt;&lt;span style=&quot;letter-spacing: 0.621714px ; margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word ; color: rgb(110 , 191 , 248)&quot;&gt;&amp;nbsp;&quot;warehouse_schedule_delivery&quot;,&lt;/span&gt;&lt;span style=&quot;letter-spacing: 0.621714px ; margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word ; color: rgb(110 , 191 , 248)&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;true,&lt;/span&gt;&lt;span style=&quot;letter-spacing: 0.621714px ; margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word ; color: rgb(110 , 191 , 248)&quot;&gt;&amp;nbsp; &amp;nbsp;false,&lt;/span&gt;&lt;span style=&quot;letter-spacing: 0.621714px ; margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word ; color: rgb(110 , 191 , 248)&quot;&gt;&amp;nbsp; &amp;nbsp;false,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;letter-spacing: 0.621714px ; color: rgb(110 , 191 , 248)&quot;&gt;&amp;nbsp;null&lt;/span&gt;&lt;span style=&quot;letter-spacing: 0.621714px ; color: rgb(110 , 191 , 248) ; margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;);&lt;/span&gt;&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; letter-spacing: 2px ; font-size: 15px&quot;&gt;大家看到上面那行定义和创建queue的代码么？核心在于第二个参数，第二个参数是true。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; letter-spacing: 2px ; font-size: 15px&quot;&gt;他的意思就是说，这&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;个创建的queue是durable的，也就是支持持久化的。&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; letter-spacing: 2px ; font-size: 15px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; letter-spacing: 2px ; font-size: 15px&quot;&gt;RabbitMQ会把这queue的相关信息持久化的存储到磁盘上去，这样RabbitMQ重启后，就可以恢复持久化的queue。&lt;/span&gt;&lt;/p&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="200" y="2860" width="1410" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-104" value="&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 2px ; line-height: 2em ; text-align: left ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px&quot;&gt;OK，现在你的queue的信息可以持久化了，RabbitMQ宕机重启后会自动恢复queue。但是，你的queue里的message数据呢？&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 2px ; line-height: 2em ; text-align: left ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;queue里都是订单服务发送过去的订单消息数据，如果RabbitMQ还没来得及投递queue里的订单消息到仓储服务，结果RabbitMQ就宕机了。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 2px ; line-height: 2em ; text-align: left ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px&quot;&gt;那此时RabbitMQ重启之后，他可以恢复queue的信息，但是queue的message数据是没法恢复了。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 2px ; line-height: 2em ; text-align: left ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;所以此时还有一个重要的点，就是在你的订单服务发送消息到RabbitMQ的时候，需要定义这条消息也是durable，即持久化的。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 2px ; line-height: 2em ; text-align: left ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-size: 16px ; letter-spacing: 2px ; text-align: left ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;b&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word ; color: rgb(110 , 191 , 248)&quot;&gt;channel.basicPublish(&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word ; color: rgb(110 , 191 , 248)&quot;&gt;&amp;nbsp;&quot;&quot;,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word ; color: rgb(110 , 191 , 248)&quot;&gt;&amp;nbsp;&quot;warehouse_schedule_delivery&quot;,&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word ; color: rgb(110 , 191 , 248)&quot;&gt;&amp;nbsp;MessageProperties.PERSISTENT_TEXT_PLAIN,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(110 , 191 , 248)&quot;&gt;message.getBytes());&lt;/span&gt;&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 2px ; line-height: 2em ; text-align: left ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 2px ; line-height: 2em ; text-align: left ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px&quot;&gt;通过上面的方式来发送消息，就可以让发送出去的消息是持久化的。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 2px ; line-height: 2em ; text-align: left ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 2px ; line-height: 2em ; text-align: left ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px&quot;&gt;一旦标记了消息是持久化之后，就会让RabbitMQ把消息持久化写入到磁盘上去，此时如果RabbitMQ还没投递数据到仓储服务，结果就突然宕机了。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 2px ; line-height: 2em ; text-align: left ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px&quot;&gt;那么再次重启的时候，就会把磁盘上持久化的消息给加载出来。&lt;/span&gt;&lt;/p&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="200" y="3330" width="1240" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-105" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-106">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="520" y="4070" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="440" y="3950" />
+              <mxPoint x="440" y="4070" />
+              <mxPoint x="516" y="4070" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-106" value="订单服务" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="230" y="3920" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-107" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-108" target="Lkm7xPwdyCk8JkXtMmqo-111">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="4090" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-108" value="订单服务" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="230" y="4060" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-109" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-110" target="Lkm7xPwdyCk8JkXtMmqo-111">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="510" y="4120" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="440" y="4230" />
+              <mxPoint x="440" y="4110" />
+              <mxPoint x="510" y="4110" />
+              <mxPoint x="510" y="4111" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-110" value="订单服务" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="230" y="4200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-111" value="" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="520" y="4025" width="330" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-112" value="&lt;b style=&quot;font-size: 14px&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;/b&gt;" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="3850" width="155" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-113" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-114" target="Lkm7xPwdyCk8JkXtMmqo-122">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-114" value="仓储服务" style="whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1075" y="4060" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-115" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-116" target="Lkm7xPwdyCk8JkXtMmqo-120">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-116" value="仓储服务" style="whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1075" y="4200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-117" value="" style="endArrow=classic;html=1;entryX=-0.017;entryY=0.4;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="Lkm7xPwdyCk8JkXtMmqo-140">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="851" y="4070" as="sourcePoint" />
+            <mxPoint x="980" y="4080" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="940" y="4070" />
+              <mxPoint x="940" y="3878" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-118" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-111" target="Lkm7xPwdyCk8JkXtMmqo-114">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="900" y="4130" as="sourcePoint" />
+            <mxPoint x="950" y="4080" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-119" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1.006;exitY=0.646;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-111" target="Lkm7xPwdyCk8JkXtMmqo-116">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="850" y="4090" as="sourcePoint" />
+            <mxPoint x="950" y="4190" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="940" y="4110" />
+              <mxPoint x="940" y="4230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-120" value="仓库系统" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1285" y="4200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-121" value="仓库服务" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1275" y="3885" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-122" value="仓库系统" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1285" y="4060" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-123" value="订单消息01" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="360" y="3930" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-124" value="订单消息02" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="360" y="4070" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-125" value="订单消息03" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="360" y="4210" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-126" value="RabbitMQ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="4025" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-127" value="" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="540" y="4080" width="290" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-128" value="queue" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="4080" width="50" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-129" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-130" target="Lkm7xPwdyCk8JkXtMmqo-132">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-130" value="订单消息03" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="540" y="4120" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-131" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-132" target="Lkm7xPwdyCk8JkXtMmqo-133">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-132" value="订单消息02" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="645" y="4120" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-133" value="订单消息01" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="750" y="4120" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-134" value="订单消息03" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="950" y="3880" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-135" value="订单消息01" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="950" y="4070" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-136" value="订单消息02" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="950" y="4210" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-137" value="订单02&lt;br&gt;调度发货" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="1205" y="4200" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-138" value="订单01&lt;br&gt;调度发货" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="1205" y="4060" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-139" value="订单03&lt;br&gt;调度发货" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="1215" y="3900" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-140" value="订单消息03" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1072.5" y="3870" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-141" value="仓库服务&lt;br&gt;是否成功&lt;br&gt;调度" style="rhombus;whiteSpace=wrap;html=1;fillColor=#d5e8d4;fontSize=14;align=center;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="3930" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-142" value="" style="endArrow=classic;html=1;fontSize=14;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="Lkm7xPwdyCk8JkXtMmqo-141">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1120" y="3890" as="sourcePoint" />
+            <mxPoint x="1295" y="3980" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-143" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-140" target="Lkm7xPwdyCk8JkXtMmqo-121">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1219" y="3880" />
+              <mxPoint x="1219" y="3915" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-144" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-141">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="805" y="3980" as="sourcePoint" />
+            <mxPoint x="585" y="4038" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="585" y="3970" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-145" value="接收ACK消息" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="540" y="4040" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-146" value="发送ACK消息" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="725" y="3950" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-147" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0.38;exitY=1.05;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-145">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="582" y="4059" as="sourcePoint" />
+            <mxPoint x="577" y="4120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-148" value="标记删除" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="545" y="4090" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-149" value="" style="endArrow=classic;html=1;fontSize=14;exitX=-0.027;exitY=0.55;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-152">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="875" y="4080" as="sourcePoint" />
+            <mxPoint x="765" y="4030" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="965" y="4010" />
+              <mxPoint x="765" y="4010" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-150" value="否" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="4005" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-151" value="是" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="3960" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-152" value="不发送ACK消息" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#ffcc99;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="965" y="4000" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-153" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.991;entryY=0.55;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-141" target="Lkm7xPwdyCk8JkXtMmqo-152">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1120" y="4010" as="sourcePoint" />
+            <mxPoint x="1076" y="4030" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-154" value="发现消费者宕机" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#ffcc99;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="805" y="3990" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-155" value="" style="endArrow=classic;html=1;fontSize=14;entryX=-0.033;entryY=0.867;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-130" target="Lkm7xPwdyCk8JkXtMmqo-116">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="555" y="4280" as="sourcePoint" />
+            <mxPoint x="1065" y="4250" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="580" y="4250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-156" value="未收到ACK&lt;br&gt;订单消息03重新消费" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="650" y="4230" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-157" value="磁盘文件" style="whiteSpace=wrap;html=1;fillColor=#e1d5e7;fontSize=14;align=center;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="640" y="4391" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-158" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0.055;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-127" target="Lkm7xPwdyCk8JkXtMmqo-157">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="510" y="4390" as="sourcePoint" />
+            <mxPoint x="560" y="4340" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="556" y="4405" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-159" value="持久化queue" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="560" y="4330" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-160" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-157" target="Lkm7xPwdyCk8JkXtMmqo-127">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="4510" as="sourcePoint" />
+            <mxPoint x="460" y="4460" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="540" y="4435" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-161" value="重启时加载&lt;br&gt;queue信息" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="550" y="4440" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-162" value="" style="endArrow=none;html=1;fontSize=14;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.931;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;endFill=0;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-157" target="Lkm7xPwdyCk8JkXtMmqo-127">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="860" y="4450" as="sourcePoint" />
+            <mxPoint x="910" y="4400" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="810" y="4405" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-163" value="" style="endArrow=none;html=1;fontSize=14;exitX=0.979;exitY=1.014;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;endFill=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="Lkm7xPwdyCk8JkXtMmqo-127" target="Lkm7xPwdyCk8JkXtMmqo-157">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="980" y="4460" as="sourcePoint" />
+            <mxPoint x="1030" y="4410" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="824" y="4435" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-164" value="重启时加载&lt;br&gt;message" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="760" y="4440" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-165" value="持久化message" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="695" y="4330" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Lkm7xPwdyCk8JkXtMmqo-166" value="&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; letter-spacing: 0.621714px ; text-align: justify ; font-size: 15px ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; letter-spacing: 2px&quot;&gt;但是这里要注意一点，&lt;strong style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;RabbitMQ的消息持久化，是不承诺100%的消息不丢失的。&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; letter-spacing: 0.621714px ; text-align: justify ; font-size: 15px ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; letter-spacing: 0.621714px ; text-align: justify ; font-size: 15px ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; letter-spacing: 2px&quot;&gt;因为有可能RabbitMQ接收到了消息，但是还没来得及持久化到磁盘，他自己就宕机了，这个时候消息还是会丢失的。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; letter-spacing: 0.621714px ; text-align: justify ; font-size: 15px ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; letter-spacing: 0.621714px ; text-align: justify ; font-size: 15px ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; letter-spacing: 2px&quot;&gt;如果要完全100%保证写入RabbitMQ的数据必须落地磁盘，不会丢失，需要依靠其他的机制。&lt;/span&gt;&lt;/p&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="215" y="4510" width="910" height="160" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
