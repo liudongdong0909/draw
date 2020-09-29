@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-09-29T09:13:47.124Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="BqWse-Z6nuJ4ULFYIBRe" version="13.7.6" type="github">
+<mxfile host="app.diagrams.net" modified="2020-09-29T09:14:15.717Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="VljqfM5_0NIaNkM7ZSTg" version="13.7.6" type="github" pages="2">
   <diagram id="uahqVEcAnmFEvCsxrpgT" name="Eureka如何承载千万级访问">
     <mxGraphModel dx="1899" dy="1043" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -377,6 +377,663 @@
         </mxCell>
         <mxCell id="UJuq882CUuYNrBgm4tqE-82" value="&lt;font style=&quot;font-size: 16px&quot; color=&quot;#000000&quot;&gt;每30s发送一次心跳到注册表中&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FF0000;" vertex="1" parent="1">
           <mxGeometry x="980" y="4040" width="230" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="EFg3_jNtAAl91bTmP5qR" name="每秒上万并发下的Spring Cloud参数优化">
+    <mxGraphModel dx="1899" dy="1043" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-0" />
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-1" parent="O7PgHtq6jPIGn8ExWUBk-0" />
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-2" value="&lt;font color=&quot;#000000&quot; style=&quot;font-size: 16px&quot;&gt;理论上只要6个线程&lt;br&gt;每秒就可以执行30个请求&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=21;fillColor=#e1d5e7;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="635" y="4000" width="190" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-3" value="&lt;font style=&quot;font-size: 16px&quot; color=&quot;#000000&quot;&gt;一个线程调用一次B服务需要200ms&lt;br&gt;即 1s可以调用5次&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=21;fillColor=#f8cecc;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="710" y="3878" width="270" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-4" value="&lt;font style=&quot;font-size: 16px&quot; color=&quot;#000000&quot;&gt;但是如果高峰期线程执行一个请求要300ms&lt;br&gt;那么一个线程每秒只能执行3次请求&lt;br&gt;此时空闲的4个线程就可以顶上，&lt;br&gt;10个线程一起工作，每秒还是可以顶住30个请求&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=21;fillColor=#dae8fc;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="760" y="4110" width="360" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-5" value="&lt;div style=&quot;color: rgb(212 , 212 , 212) ; background-color: rgb(30 , 30 , 30) ; font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace ; font-size: 12px ; line-height: 18px&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #569cd6&quot;&gt;hystrix&lt;/span&gt;:&lt;/div&gt;&lt;div&gt;  &lt;span style=&quot;color: #569cd6&quot;&gt;&amp;nbsp; threadpool&lt;/span&gt;:&lt;/div&gt;&lt;div&gt;    &lt;span style=&quot;color: #569cd6&quot;&gt;&amp;nbsp; &amp;nbsp; default&lt;/span&gt;:&lt;/div&gt;&lt;div&gt;      &lt;span style=&quot;color: #569cd6&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; coreSize&lt;/span&gt;: &lt;span style=&quot;color: #b5cea8&quot;&gt;20&lt;/span&gt; &lt;span style=&quot;color: #6a9955&quot;&gt;##并发执行的最大线程数，默认10&lt;/span&gt;&lt;/div&gt;&lt;div&gt;      &lt;span style=&quot;color: #569cd6&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; maximumSize&lt;/span&gt;: &lt;span style=&quot;color: #b5cea8&quot;&gt;50&lt;/span&gt; &lt;span style=&quot;color: #6a9955&quot;&gt;##最大线程数&lt;/span&gt;&lt;/div&gt;&lt;div&gt;      &lt;span style=&quot;color: #569cd6&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; maxQueueSize&lt;/span&gt;: 2&lt;span style=&quot;color: #b5cea8&quot;&gt;000&lt;/span&gt; &lt;span style=&quot;color: #6a9955&quot;&gt;##BlockingQueue的最大队列数&lt;/span&gt;&lt;/div&gt;&lt;div&gt;      &lt;span style=&quot;color: #6a9955&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; #queueSizeRejectionThreshold: 500 ##即使maxQueueSize没有达到，达到queueSizeRejectionThreshold该值后，请求也会被拒绝&lt;/span&gt;&lt;/div&gt;&lt;div&gt;      &lt;span style=&quot;color: #569cd6&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; allowMaximumSizeToDivergeFromCoreSize&lt;/span&gt;: &lt;span style=&quot;color: #569cd6&quot;&gt;true&lt;/span&gt;&lt;/div&gt;&lt;div&gt;  &lt;span style=&quot;color: #569cd6&quot;&gt;&amp;nbsp; command&lt;/span&gt;:&lt;/div&gt;&lt;div&gt;    &lt;span style=&quot;color: #569cd6&quot;&gt;&amp;nbsp; &amp;nbsp; default&lt;/span&gt;:&lt;/div&gt;&lt;div&gt;      &lt;span style=&quot;color: #569cd6&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; execution&lt;/span&gt;:&lt;/div&gt;&lt;div&gt;        &lt;span style=&quot;color: #569cd6&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; isolation&lt;/span&gt;:&lt;/div&gt;&lt;div&gt;          &lt;span style=&quot;color: #569cd6&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; strategy&lt;/span&gt;: &lt;span style=&quot;color: #ce9178&quot;&gt;THREAD&lt;/span&gt;&lt;/div&gt;&lt;div&gt;          &lt;span style=&quot;color: #569cd6&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; thread&lt;/span&gt;:&lt;/div&gt;&lt;div&gt;            &lt;span style=&quot;color: #569cd6&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; timeoutInMilliseconds&lt;/span&gt;: 4&lt;span style=&quot;color: #b5cea8&quot;&gt;000&lt;/span&gt;&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;span style=&quot;color: #569cd6&quot;&gt;ribbon&lt;/span&gt;:&lt;/div&gt;&lt;div&gt;  &lt;span style=&quot;color: #569cd6&quot;&gt;&amp;nbsp; httpclient&lt;/span&gt;:&lt;/div&gt;&lt;div&gt;    &lt;span style=&quot;color: #569cd6&quot;&gt;&amp;nbsp; &amp;nbsp; enabled&lt;/span&gt;: &lt;span style=&quot;color: #569cd6&quot;&gt;false&lt;/span&gt;&lt;/div&gt;&lt;div&gt;  &lt;span style=&quot;color: #569cd6&quot;&gt;&amp;nbsp; okhttp&lt;/span&gt;:&lt;/div&gt;&lt;div&gt;    &lt;span style=&quot;color: #569cd6&quot;&gt;&amp;nbsp; &amp;nbsp; enabled&lt;/span&gt;: &lt;span style=&quot;color: #569cd6&quot;&gt;true&lt;/span&gt;&lt;/div&gt;&lt;div&gt;  &lt;span style=&quot;color: #569cd6&quot;&gt;&amp;nbsp; ConnectTimeout&lt;/span&gt;: &lt;span style=&quot;color: #b5cea8&quot;&gt;1000&lt;/span&gt;&lt;/div&gt;&lt;div&gt;  &lt;span style=&quot;color: #569cd6&quot;&gt;&amp;nbsp; ReadTimeout&lt;/span&gt;: &lt;span style=&quot;color: #b5cea8&quot;&gt;1000&lt;/span&gt;&lt;/div&gt;&lt;div&gt;  &lt;span style=&quot;color: #569cd6&quot;&gt;&amp;nbsp; OkToRetryOnAllOperations&lt;/span&gt;: &lt;span style=&quot;color: #569cd6&quot;&gt;true&lt;/span&gt;&lt;/div&gt;&lt;div&gt;  &lt;span style=&quot;color: #569cd6&quot;&gt;&amp;nbsp; MaxAutoRetries&lt;/span&gt;: &lt;span style=&quot;color: #b5cea8&quot;&gt;1&lt;/span&gt; &lt;span style=&quot;color: #6a9955&quot;&gt;#对第一次请求的服务的重试次数&lt;/span&gt;&lt;/div&gt;&lt;div&gt;  &lt;span style=&quot;color: #569cd6&quot;&gt;&amp;nbsp; MaxAutoRetriesNextServer&lt;/span&gt;: &lt;span style=&quot;color: #b5cea8&quot;&gt;1&lt;/span&gt; &lt;span style=&quot;color: #6a9955&quot;&gt;#要重试的下一个服务的最大数量（不包括第一个服务）&lt;/span&gt;&lt;/div&gt;&lt;div&gt;  &lt;span style=&quot;color: #569cd6&quot;&gt;&amp;nbsp; eager-load&lt;/span&gt;:&lt;/div&gt;&lt;div&gt;    &lt;span style=&quot;color: #569cd6&quot;&gt;&amp;nbsp; &amp;nbsp; enabled&lt;/span&gt;: &lt;span style=&quot;color: #569cd6&quot;&gt;true&lt;/span&gt;&lt;/div&gt;&lt;div&gt;    &lt;span style=&quot;color: #569cd6&quot;&gt;&amp;nbsp; &amp;nbsp; clients&lt;/span&gt;: &lt;span style=&quot;color: #ce9178&quot;&gt;platform-audit,platform-file,platform-oauth,platform-order&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="60" y="2900" width="840" height="530" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-6" value="&lt;h2 class=&quot;rich_media_title&quot; id=&quot;activity-name&quot; style=&quot;margin: 0px 0px 14px ; padding: 0px ; font-size: 22px ; line-height: 1.4 ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; letter-spacing: 0.621714px&quot;&gt;每秒上万并发下的Spring Cloud参数优化&lt;/h2&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="610" y="40" width="430" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-7" value="&lt;span style=&quot;font-size: 16px; letter-spacing: 1px; text-align: justify;&quot;&gt;会感觉卡顿几秒钟，会刷不出来页面。&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#dae8fc;labelBackgroundColor=none;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="80" y="130" width="300" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-8" value="&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 14px ; letter-spacing: 0.621714px ; text-align: justify ; vertical-align: baseline ; line-height: 1.75em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 16px ; letter-spacing: 1px ; color: rgb(61 , 170 , 214)&quot;&gt;这是为啥呢？&lt;/span&gt;&lt;/p&gt;&lt;ul class=&quot;list-paddingleft-2&quot; style=&quot;margin: 0px ; padding: 0px 0px 0px 2.2em ; max-width: 100% ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 14px ; letter-spacing: 0.621714px ; text-align: justify ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;li style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; clear: both ; min-height: 1em ; vertical-align: baseline ; line-height: 1.75em&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; color: black ; font-size: 16px ; letter-spacing: 1px&quot;&gt;核心原因是单表数据量大了一些，达到了几百万。&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 14px ; letter-spacing: 0.621714px ; text-align: justify ; vertical-align: baseline ; line-height: 1.75em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/p&gt;&lt;ul class=&quot;list-paddingleft-2&quot; style=&quot;margin: 0px ; padding: 0px 0px 0px 2.2em ; max-width: 100% ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 14px ; letter-spacing: 0.621714px ; text-align: justify ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;li style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; clear: both ; min-height: 1em ; vertical-align: baseline ; line-height: 1.75em&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; color: black ; font-size: 16px ; letter-spacing: 1px&quot;&gt;有个别服务，跑的SQL比较复杂，一大堆的多表关联&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 14px ; letter-spacing: 0.621714px ; text-align: justify ; vertical-align: baseline ; line-height: 1.75em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/p&gt;&lt;ul class=&quot;list-paddingleft-2&quot; style=&quot;margin: 0px ; padding: 0px 0px 0px 2.2em ; max-width: 100% ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 14px ; letter-spacing: 0.621714px ; text-align: justify ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;li style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; clear: both ; min-height: 1em ; vertical-align: baseline ; line-height: 1.75em&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; color: black ; font-size: 16px ; letter-spacing: 1px&quot;&gt;并且还没有设计好索引，或者是设计了索引，但无奈一些小弟写了上百行的大SQL，SQL实在太复杂了，那么一个SQL跑出来好几秒肯定是正常的。&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#dae8fc;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="80" y="200" width="1150" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-9" value="&lt;span style=&quot;font-size: 16px ; letter-spacing: 1px ; text-align: left ; background-color: rgb(102 , 255 , 179)&quot;&gt;增加超时时间啊！接口慢点可以，但是别超时不响应&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;labelBackgroundColor=#ffffff;strokeColor=#82b366;fillColor=#d5e8d4;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="80" y="420" width="410" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-10" value="&lt;div style=&quot;color: rgb(212 , 212 , 212) ; background-color: rgb(30 , 30 , 30) ; font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace ; line-height: 18px&quot;&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;line-height: 18px&quot;&gt;&lt;div style=&quot;line-height: 18px&quot;&gt;hystrix:&lt;/div&gt;&lt;div style=&quot;line-height: 18px&quot;&gt;&amp;nbsp; command:&lt;/div&gt;&lt;div style=&quot;line-height: 18px&quot;&gt;&amp;nbsp; &amp;nbsp; default:&lt;/div&gt;&lt;div style=&quot;line-height: 18px&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; execution:&lt;/div&gt;&lt;div style=&quot;line-height: 18px&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; isolation:&lt;/div&gt;&lt;div style=&quot;line-height: 18px&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; thread:&lt;/div&gt;&lt;div style=&quot;line-height: 18px&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; timeoutInMilliseconds: 34000&lt;/div&gt;&lt;div style=&quot;line-height: 18px&quot;&gt;ribbon:&lt;/div&gt;&lt;div style=&quot;line-height: 18px&quot;&gt;&amp;nbsp; ConnectTimeout: 2000&lt;/div&gt;&lt;div style=&quot;line-height: 18px&quot;&gt;&amp;nbsp; ReadTimeout: 15000&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="90" y="530" width="300" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-11" value="" style="curved=1;endArrow=classic;html=1;exitX=-0.007;exitY=0.4;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-1" source="O7PgHtq6jPIGn8ExWUBk-7" target="O7PgHtq6jPIGn8ExWUBk-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="60" y="160" as="sourcePoint" />
+            <mxPoint x="30" y="280" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="40" y="170" />
+              <mxPoint x="10" y="279" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-12" value="" style="curved=1;endArrow=classic;html=1;exitX=-0.003;exitY=0.673;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-1" source="O7PgHtq6jPIGn8ExWUBk-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="10" y="490" as="sourcePoint" />
+            <mxPoint x="77" y="430" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="30" y="370" />
+              <mxPoint x="20" y="420" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-13" value="" style="curved=1;endArrow=classic;html=1;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-1" target="O7PgHtq6jPIGn8ExWUBk-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80" y="430" as="sourcePoint" />
+            <mxPoint x="60" y="610" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="50" y="470" />
+              <mxPoint x="10" y="610" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-14" value="" style="group;fillColor=#d5e8d4;" vertex="1" connectable="0" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="760" y="440" width="750" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-15" value="" style="group" vertex="1" connectable="0" parent="O7PgHtq6jPIGn8ExWUBk-14">
+          <mxGeometry width="750" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-16" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#ffffff;sketch=0;fillColor=#e3c800;strokeColor=#B09500;fontColor=#ffffff;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-15">
+          <mxGeometry x="270" y="130" width="230" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-17" value="&lt;font style=&quot;font-size: 16px&quot;&gt;核心服务A&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-15">
+          <mxGeometry x="280" y="190" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-18" value="hystrix 线程池" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#60a917;fontColor=#ffffff;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-15">
+          <mxGeometry x="400" y="150" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-19" value="hystrix 线程池" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#60a917;fontColor=#ffffff;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-15">
+          <mxGeometry x="400" y="210" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-20" value="核心服务B" style="whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=#ffffff;sketch=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-15">
+          <mxGeometry x="630" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-21" value="核心服务C" style="whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=#ffffff;sketch=0;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-15">
+          <mxGeometry x="630" y="220" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-22" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.users;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#ffffff;rounded=0;labelBackgroundColor=#ffffff;sketch=0;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-15">
+          <mxGeometry y="170" width="66" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-23" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.004;entryY=0.554;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-15" source="O7PgHtq6jPIGn8ExWUBk-22" target="O7PgHtq6jPIGn8ExWUBk-16">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="110" y="270" as="sourcePoint" />
+            <mxPoint x="160" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-24" value="高峰并发5-20" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-15">
+          <mxGeometry x="110" y="180" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-25" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-15" source="O7PgHtq6jPIGn8ExWUBk-16">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="180" y="110" as="sourcePoint" />
+            <mxPoint x="30" y="160" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="385" y="90" />
+              <mxPoint x="30" y="90" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-26" value="&lt;p style=&quot;line-height: 140%&quot;&gt;一般都正常响应&lt;br&gt;部分接口好几秒才响应&lt;br&gt;还可以接受&lt;/p&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-15">
+          <mxGeometry x="100" y="40" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-27" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-15" target="O7PgHtq6jPIGn8ExWUBk-20">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="490" y="159" as="sourcePoint" />
+            <mxPoint x="610" y="190" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="590" y="159" />
+              <mxPoint x="590" y="130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-28" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.55;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-15" source="O7PgHtq6jPIGn8ExWUBk-19" target="O7PgHtq6jPIGn8ExWUBk-21">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="550" y="390" as="sourcePoint" />
+            <mxPoint x="600" y="340" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="590" y="221" />
+              <mxPoint x="590" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-29" value="正常300毫秒返回" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-15">
+          <mxGeometry x="500" y="200" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-30" value="&lt;p style=&quot;line-height: 150%&quot;&gt;卡的不行&lt;br&gt;8s才能返回&lt;/p&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-15">
+          <mxGeometry x="500" y="100" width="80" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-31" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-15" source="O7PgHtq6jPIGn8ExWUBk-20" target="O7PgHtq6jPIGn8ExWUBk-16">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="650" y="50" as="sourcePoint" />
+            <mxPoint x="700" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="690" y="50" />
+              <mxPoint x="443" y="50" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-32" value="没关系&lt;br&gt;重试时间30s&lt;br&gt;可以接受" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-15">
+          <mxGeometry x="515" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-33" value="" style="endArrow=classic;html=1;exitX=1.017;exitY=0.56;exitDx=0;exitDy=0;exitPerimeter=0;dashed=1;strokeWidth=2;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-1" source="O7PgHtq6jPIGn8ExWUBk-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="650" as="sourcePoint" />
+            <mxPoint x="740" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-34" value="&lt;font style=&quot;font-size: 16px ; line-height: 120%&quot;&gt;随着时间推移，公司业务高速发展。。。。用户量指数增长&lt;br&gt;上百万的日活用户量&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#dae8fc;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="760" y="860" width="430" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-35" value="" style="endArrow=classic;html=1;strokeWidth=2;entryX=0.565;entryY=-0.1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-1" target="O7PgHtq6jPIGn8ExWUBk-34">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1003" y="720" as="sourcePoint" />
+            <mxPoint x="1000" y="830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-36" value="&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 14px ; letter-spacing: 0.621714px ; text-align: justify ; vertical-align: baseline ; line-height: 1.75em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;strong style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 16px ; color: black ; letter-spacing: 1px&quot;&gt;高峰期每秒的并发请求居然达到了近万的程度，&lt;/span&gt;&lt;/strong&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 16px ; color: black ; letter-spacing: 1px&quot;&gt;研发团队的兄弟们哪里敢怠慢！在这个过程中，先是紧张的各种扩容服务，一台变两台，两台变四台。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 14px ; letter-spacing: 0.621714px ; text-align: justify ; vertical-align: baseline ; line-height: 1.75em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 14px ; letter-spacing: 0.621714px ; text-align: justify ; vertical-align: baseline ; line-height: 1.75em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 14px ; letter-spacing: 0.621714px ; text-align: justify ; vertical-align: baseline ; line-height: 1.75em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 16px ; color: black ; letter-spacing: 1px&quot;&gt;然后数据库主从架构挂上去，读写分离是必须的，否则单个数据库服务器哪能承载那么大的请求！多搞几个从库，扛一下大量的读请求，这样基本就扛住了。&lt;/span&gt;&lt;/p&gt;&lt;div&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 16px ; color: black ; letter-spacing: 1px&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#dae8fc;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="450" y="1020" width="1190" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-37" value="" style="endArrow=classic;html=1;strokeWidth=2;exitX=0.558;exitY=1.05;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-1" source="O7PgHtq6jPIGn8ExWUBk-34">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1070" y="1010" as="sourcePoint" />
+            <mxPoint x="999" y="1020" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-38" value="&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 14px ; letter-spacing: 0.621714px ; text-align: justify ; vertical-align: baseline ; line-height: 1.75em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 16px ; color: black ; letter-spacing: 1px&quot;&gt;在这个过程中，那些兄弟经常会发现高峰期，系统的某个功能页面，突然就整个&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; letter-spacing: 1px ; color: rgb(200 , 51 , 2) ; font-size: 20px&quot;&gt;hang&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 16px ; color: black ; letter-spacing: 1px&quot;&gt;死了，就是没法再响应任何请求！所有用户刷新这个页面全部都是无法响应！&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 14px ; letter-spacing: 0.621714px ; text-align: justify ; vertical-align: baseline ; line-height: 1.75em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 16px ; color: black ; letter-spacing: 1px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 14px ; letter-spacing: 0.621714px ; text-align: justify ; vertical-align: baseline ; line-height: 1.75em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 16px ; color: black ; letter-spacing: 1px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 14px ; letter-spacing: 0.621714px ; text-align: justify ; vertical-align: baseline ; line-height: 1.75em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 16px ; color: rgb(61 , 170 , 214) ; letter-spacing: 1px&quot;&gt;这是为什么呢？&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 16px ; color: black ; letter-spacing: 1px&quot;&gt;原因很简单啊！一个服务A的实例里，专门调用服务B的那个线程池里的线程，总共可能就几十个。&lt;/span&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; color: black ; font-size: 16px ; letter-spacing: 1px&quot;&gt;每个线程调用服务B都会卡住5秒钟。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 14px ; letter-spacing: 0.621714px ; text-align: justify ; vertical-align: baseline ; line-height: 1.75em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; color: black ; font-size: 16px ; letter-spacing: 1px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 14px ; letter-spacing: 0.621714px ; text-align: justify ; vertical-align: baseline ; line-height: 1.75em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; color: black ; font-size: 16px ; letter-spacing: 1px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 14px ; letter-spacing: 0.621714px ; text-align: justify ; vertical-align: baseline ; line-height: 1.75em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; color: black ; font-size: 16px ; letter-spacing: 1px&quot;&gt;那如果每秒钟过来几百个请求这个服务实例呢？一下子那个线程池里的线程就全部hang死了，没法再响应任何请求了。&lt;/span&gt;&lt;/p&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#dae8fc;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="440" y="1260" width="1240" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-39" value="" style="endArrow=classic;html=1;strokeWidth=2;exitX=0.462;exitY=0.992;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.451;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-1" source="O7PgHtq6jPIGn8ExWUBk-36" target="O7PgHtq6jPIGn8ExWUBk-38">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1000" y="1150" as="sourcePoint" />
+            <mxPoint x="997" y="1257" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-40" value="&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 14px ; letter-spacing: 0.621714px ; text-align: justify ; vertical-align: baseline ; line-height: 1.75em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 16px ; letter-spacing: 1px ; color: rgb(2 , 36 , 74)&quot;&gt;其实这个问题本身不大，但如果对Spring Cloud没有高并发场景的真实经验，&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 14px ; letter-spacing: 0.621714px ; text-align: justify ; vertical-align: baseline ; line-height: 1.75em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 16px ; letter-spacing: 1px ; color: rgb(2 , 36 , 74)&quot;&gt;确实可能会跟这帮兄弟一样，搞出些莫名其妙的问题。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 14px ; letter-spacing: 0.621714px ; text-align: justify ; vertical-align: baseline ; line-height: 1.75em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 16px ; letter-spacing: 1px ; color: rgb(2 , 36 , 74)&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 14px ; letter-spacing: 0.621714px ; text-align: justify ; vertical-align: baseline ; line-height: 1.75em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 16px ; letter-spacing: 1px ; color: rgb(2 , 36 , 74)&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 14px ; letter-spacing: 0.621714px ; text-align: justify ; vertical-align: baseline ; line-height: 1.75em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 16px ; letter-spacing: 1px ; color: rgb(2 , 36 , 74)&quot;&gt;比如这个公司，明明应该去优化服务接口性能，结果硬是调大了超时时间。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 14px ; letter-spacing: 0.621714px ; text-align: justify ; vertical-align: baseline ; line-height: 1.75em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 16px ; letter-spacing: 1px ; color: rgb(2 , 36 , 74)&quot;&gt;结果导致并发量高了，对那个服务的调用直接hang死，系统的核心页面刷不出来，影响用户体验了，这怪谁呢？&lt;/span&gt;&lt;/p&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#f8cecc;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="50" y="1580" width="850" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-41" value="" style="group;fillColor=#d5e8d4;" vertex="1" connectable="0" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="1010" y="1740" width="830.0000000000002" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-42" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.users;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#ffffff;rounded=0;labelBackgroundColor=#ffffff;sketch=0;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-41">
+          <mxGeometry y="220.64516129032256" width="73.04" height="73.16129032258065" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-43" value="" style="endArrow=classic;html=1;entryX=-0.004;entryY=0.554;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.63;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-41" source="O7PgHtq6jPIGn8ExWUBk-42" target="O7PgHtq6jPIGn8ExWUBk-45">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="121.73333333333336" y="313.5483870967742" as="sourcePoint" />
+            <mxPoint x="177.0666666666667" y="255.48387096774192" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-44" value="" style="group" vertex="1" connectable="0" parent="O7PgHtq6jPIGn8ExWUBk-41">
+          <mxGeometry width="830.0000000000001" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-45" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#ffffff;sketch=0;fillColor=#e3c800;strokeColor=#B09500;fontColor=#ffffff;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-44">
+          <mxGeometry x="230" y="150.97" width="323.33" height="209.03" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-46" value="&lt;font style=&quot;font-size: 16px&quot;&gt;核心服务A&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-44">
+          <mxGeometry x="309.86666666666673" y="220.64516129032256" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-47" value="hystrix 线程池" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#60a917;fontColor=#ffffff;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-44">
+          <mxGeometry x="442.66666666666674" y="310.0009677419355" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-48" value="核心服务B" style="whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=#ffffff;sketch=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-44">
+          <mxGeometry x="697.2000000000002" y="116.12903225806453" width="132.80000000000004" height="69.6774193548387" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-49" value="" style="endArrow=classic;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-44" source="O7PgHtq6jPIGn8ExWUBk-45">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="199.20000000000002" y="127.74193548387096" as="sourcePoint" />
+            <mxPoint x="33.20000000000001" y="220.64516129032256" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="311" y="105" />
+              <mxPoint x="33.20000000000001" y="104.51612903225806" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-50" value="&lt;p style=&quot;line-height: 140%&quot;&gt;一个接口死活刷不出数据&lt;/p&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-44">
+          <mxGeometry x="105.66666666666669" y="61.45161290322581" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-51" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-44" target="O7PgHtq6jPIGn8ExWUBk-48">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="542.2666666666668" y="184.6451612903226" as="sourcePoint" />
+            <mxPoint x="675.0666666666668" y="220.64516129032256" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="652.9333333333334" y="184.6451612903226" />
+              <mxPoint x="652.9333333333334" y="150.96774193548387" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-52" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-44" source="O7PgHtq6jPIGn8ExWUBk-48" target="O7PgHtq6jPIGn8ExWUBk-45">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="719.3333333333334" y="58.06451612903226" as="sourcePoint" />
+            <mxPoint x="774.6666666666667" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="763.6000000000001" y="58.06451612903226" />
+              <mxPoint x="472" y="58" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-53" value="没关系&lt;br&gt;重试时间30s&lt;br&gt;可以接受" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-44">
+          <mxGeometry x="569.9333333333334" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-54" value="" style="group" vertex="1" connectable="0" parent="O7PgHtq6jPIGn8ExWUBk-44">
+          <mxGeometry x="427.6700000000001" y="159.02999999999997" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-55" value="" style="whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=#ffffff;sketch=0;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-54">
+          <mxGeometry width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-56" value="hystrix 线程池" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-54">
+          <mxGeometry x="15" y="10" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-57" value="线程" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-54">
+          <mxGeometry x="65" y="50" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-58" value="线程" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-54">
+          <mxGeometry x="15" y="50" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-59" value="线程" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-54">
+          <mxGeometry x="15" y="90" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-60" value="线程" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-54">
+          <mxGeometry x="65" y="90" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-61" value="每个线程都卡主了&lt;br&gt;没有线程可以响应请求了" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-44">
+          <mxGeometry x="255.66999999999996" y="165" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-62" value="核心服务C" style="whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=#ffffff;sketch=0;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-41">
+          <mxGeometry x="697.2000000000002" y="260.3238709677419" width="132.80000000000004" height="69.6774193548387" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-63" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.55;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-41" source="O7PgHtq6jPIGn8ExWUBk-47">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="608.6666666666667" y="452.90322580645164" as="sourcePoint" />
+            <mxPoint x="697" y="290" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="653" y="320" />
+              <mxPoint x="652.9333333333334" y="290.32258064516134" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-64" value="正常300毫秒返回" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-41">
+          <mxGeometry x="550.0033333333333" y="293.80806451612904" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-65" value="&lt;p style=&quot;line-height: 150%&quot;&gt;卡的不行&lt;br&gt;8s才能返回&lt;/p&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-41">
+          <mxGeometry x="565.0033333333333" y="129.99903225806452" width="80" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-66" value="高峰并发5-20" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-41">
+          <mxGeometry x="90.00333333333336" y="240.32225806451612" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-67" value="" style="curved=1;endArrow=classic;html=1;strokeWidth=2;exitX=0.515;exitY=1.012;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-1" source="O7PgHtq6jPIGn8ExWUBk-38">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1120" y="1650" as="sourcePoint" />
+            <mxPoint x="1010" y="1920" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="960" y="1500" />
+              <mxPoint x="880" y="1620" />
+              <mxPoint x="900" y="1800" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-68" value="优化:&amp;nbsp;&lt;br style=&quot;font-size: 16px&quot;&gt;&amp;nbsp;1. 核心服务B进行单表操作，优化sql&lt;br&gt;&amp;nbsp;2. 超时时间设置， ribbon, hystrix&amp;nbsp; --&amp;gt; 不要因为系统接口的性能过差，搞成几秒甚至几十秒的超时，一般超时定义在1s内，是比较通用以及合理的&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;why?&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 因为一个接口，理论的最佳响应速度应该在200ms内，或者慢一点的接口就在几百毫秒&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 如果一个接口响应时间达到1s+,建议考虑用缓存、索引、NoSQL等各种技术手段，优化一下性能&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 否则，胡乱设置超时时间是几秒甚至几十秒，万一下游服务偶然出现了点问题响应时间长了点呢？那你的这个线程池里的线程立马全部卡死&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="50" y="2200" width="1040" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-69" value="" style="curved=1;endArrow=classic;html=1;strokeWidth=2;fontSize=16;entryX=1.001;entryY=0.6;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.609;exitY=1.014;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-1" source="O7PgHtq6jPIGn8ExWUBk-45" target="O7PgHtq6jPIGn8ExWUBk-68">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1190" y="2160" as="sourcePoint" />
+            <mxPoint x="1310" y="2210" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1460" y="2290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-70" value="针对性优化" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="1300" y="2210" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-71" value="如图所示" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="900" y="1660" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-72" value="&lt;p style=&quot;line-height: 120% ; font-size: 17px&quot;&gt;继续优化：&lt;br&gt;如果超时时间设置成1s,如果就是因为偶然发生的网路抖动，导致接口某次调用是在2s,这个经常发生的，因为网络的问题，接口调用偶然超时。&lt;br&gt;所以：此时配合着超时时间，一般都会设置一个合理的重试：&lt;br&gt;&lt;/p&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="50" y="2450" width="1080" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-73" value="&lt;div style=&quot;color: rgb(212 , 212 , 212) ; background-color: rgb(30 , 30 , 30) ; font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace ; font-size: 12px ; line-height: 18px&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #3dc9b0&quot;&gt;ribbon&lt;/span&gt;:&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #3dc9b0&quot;&gt;&amp;nbsp; ConnectTimeout&lt;/span&gt;: &lt;span style=&quot;color: #b5cea8&quot;&gt;1000&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #3dc9b0&quot;&gt;&amp;nbsp; ReadTimeout&lt;/span&gt;: &lt;span style=&quot;color: #b5cea8&quot;&gt;1000&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #3dc9b0&quot;&gt;&amp;nbsp; OkToRetryOnAllOperations&lt;/span&gt;: &lt;span style=&quot;color: #569cd6&quot;&gt;true&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #3dc9b0&quot;&gt;&amp;nbsp; MaxAutoRetries&lt;/span&gt;: &lt;span style=&quot;color: #ce9178&quot;&gt;1 #对第一次请求的服务的重试次数&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #3dc9b0&quot;&gt;&amp;nbsp; MaxAutoRetriesNextServer&lt;/span&gt;: &lt;span style=&quot;color: #ce9178&quot;&gt;1 #要重试的下一个服务的最大数量（不包括第一个服务）&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="1610" y="2450" width="530" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-74" value="" style="curved=1;endArrow=classic;html=1;strokeWidth=2;fontSize=16;entryX=0.999;entryY=0.54;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.003;exitY=0.65;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-1" source="O7PgHtq6jPIGn8ExWUBk-68" target="O7PgHtq6jPIGn8ExWUBk-72">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1170" y="2400" as="sourcePoint" />
+            <mxPoint x="1220" y="2350" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1220" y="2380" />
+              <mxPoint x="1200" y="2491" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-75" value="" style="endArrow=classic;html=1;strokeWidth=2;fontSize=16;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1134" y="2516" as="sourcePoint" />
+            <mxPoint x="1611" y="2516" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-76" value="优化参数后" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="1310" y="2495" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-77" value="设置这段重试之后，springcloud 中的Feign + Ribbon的组合，&lt;br&gt;在进行服务调用的时候，如果发现某台机器超时请求失败，&lt;br&gt;会自动重试这台机器，如果还是不行会换另外一条机器重试" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="1150" y="2520" width="450" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-78" value="继续优化：&lt;br&gt;&amp;nbsp; &amp;nbsp;接口幂等性方案：&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;1. 可以在数据库里建一个唯一索引，插入数据的时候如果唯一索引冲突了就不会插入重复数据&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;2. 通过redis里放一个唯一id的值，然后每次要插入数据，都通过redis判断一下，如果值已存在，就不插入重复数据了&amp;nbsp;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="50" y="2720" width="870" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-79" value="这种由于偶尔的网络抖动造成请求超时进行的自动重试，&lt;br&gt;就必须保证接口的幂等性" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fillColor=#a20025;strokeColor=#6F0000;fontColor=#ffffff;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="1090" y="2670" width="420" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-80" value="" style="curved=1;endArrow=classic;html=1;strokeWidth=2;fontSize=16;entryX=1.001;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.004;exitY=0.73;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-1" source="O7PgHtq6jPIGn8ExWUBk-72" target="O7PgHtq6jPIGn8ExWUBk-78">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1135" y="2520" as="sourcePoint" />
+            <mxPoint x="930" y="2630" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1120" y="2740" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-81" value="&lt;font style=&quot;font-size: 22px&quot;&gt;&lt;b&gt;最后优化后的系统表现图&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="1630" y="2880" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-82" value="&lt;font style=&quot;font-size: 21px&quot; color=&quot;#ff0000&quot;&gt;&lt;b&gt;优化后的完整参数：&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="310" y="2870" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-83" value="" style="curved=1;endArrow=classic;html=1;strokeWidth=2;fontSize=16;fontColor=#EA6B66;exitX=1.005;exitY=0.613;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-1" source="O7PgHtq6jPIGn8ExWUBk-78" target="O7PgHtq6jPIGn8ExWUBk-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="930" y="2770" as="sourcePoint" />
+            <mxPoint x="1070" y="3000" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="980" y="2870" />
+              <mxPoint x="1060" y="3050" />
+              <mxPoint x="930" y="3160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-84" value="" style="group;fillColor=#d5e8d4;container=0;" vertex="1" connectable="0" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="1040" y="2923" width="1420" height="490" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-85" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.users;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#ffffff;rounded=0;labelBackgroundColor=#ffffff;sketch=0;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="1040" y="3223.3225806451615" width="96.18399999999998" height="99.58064516129033" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-86" value="" style="endArrow=classic;html=1;entryX=-0.004;entryY=0.554;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.63;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-1" source="O7PgHtq6jPIGn8ExWUBk-85" target="O7PgHtq6jPIGn8ExWUBk-88">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1200.3066666666666" y="3349.7741935483873" as="sourcePoint" />
+            <mxPoint x="1273.1733333333334" y="3270.741935483871" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-87" value="" style="group" vertex="1" connectable="0" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="1040" y="2922.5" width="1092.9999999999998" height="490" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-88" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#ffffff;sketch=0;fillColor=#e3c800;strokeColor=#B09500;fontColor=#ffffff;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-87">
+          <mxGeometry x="302.87951807228904" y="205.48694444444445" width="425.7827590361444" height="284.5130555555556" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-89" value="&lt;font style=&quot;font-size: 16px&quot;&gt;核心服务A&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-87">
+          <mxGeometry x="408.0533333333332" y="300.3225806451613" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-90" value="hystrix 线程池" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#60a917;fontColor=#ffffff;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-87">
+          <mxGeometry x="582.9333333333332" y="421.94576164874553" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-91" value="" style="endArrow=classic;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-87" source="O7PgHtq6jPIGn8ExWUBk-88">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="262.31999999999994" y="173.8709677419355" as="sourcePoint" />
+            <mxPoint x="43.71999999999999" y="300.3225806451613" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="409.54578313252995" y="142.91666666666669" />
+              <mxPoint x="43.71999999999999" y="142.25806451612902" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-92" value="" style="endArrow=classic;html=1;exitX=0.999;exitY=0.594;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-87" source="O7PgHtq6jPIGn8ExWUBk-94">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="714.0933333333331" y="251.3225806451613" as="sourcePoint" />
+            <mxPoint x="880" y="313.5" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="820" y="313.5" />
+              <mxPoint x="850" y="313.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-93" value="" style="group" vertex="1" connectable="0" parent="O7PgHtq6jPIGn8ExWUBk-87">
+          <mxGeometry x="563.1847108433734" y="216.45749999999998" width="158.0240963855421" height="163.33333333333334" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-94" value="" style="whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=#ffffff;sketch=0;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-93">
+          <mxGeometry width="158.0240963855421" height="163.33333333333334" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-95" value="hystrix 线程池" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-93">
+          <mxGeometry x="19.753012048192762" y="13.61111111111111" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-96" value="线程" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-93">
+          <mxGeometry x="85.59638554216863" y="68.05555555555556" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-97" value="线程" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-93">
+          <mxGeometry x="19.753012048192762" y="68.05555555555556" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-98" value="线程" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-93">
+          <mxGeometry x="19.753012048192762" y="122.5" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-99" value="线程" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-93">
+          <mxGeometry x="85.59638554216863" y="122.5" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-100" value="每个线程都卡主了&lt;br&gt;没有线程可以响应请求了" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-87">
+          <mxGeometry x="336.6835060240962" y="224.58333333333334" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-101" value="核心服务C" style="whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=#ffffff;sketch=0;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="1920" y="3307.029713261649" width="174.88" height="94.83870967741935" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-102" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.55;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-1" source="O7PgHtq6jPIGn8ExWUBk-90" target="O7PgHtq6jPIGn8ExWUBk-101">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1841.5333333333333" y="3539.451612903226" as="sourcePoint" />
+            <mxPoint x="1920" y="3350" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-103" value="正常300毫秒返回" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="1772.9966666666664" y="3332.9990322580647" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-104" value="&lt;font color=&quot;#000000&quot; style=&quot;font-size: 14px&quot;&gt;日活用户上百万&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fontColor=#EA6B66;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="1040" y="3322.9" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-105" value="高峰并发大几千" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="1172.9966666666667" y="3263.116129032258" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-106" value="&lt;p style=&quot;line-height: 140%&quot;&gt;每个接口1s内响应输出&lt;/p&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="1172.9989959839356" y="3033.0024731182793" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-107" value="&lt;p style=&quot;line-height: 150%&quot;&gt;重写复杂sql&lt;/p&gt;&lt;p style=&quot;line-height: 150%&quot;&gt;50ms内响应&lt;/p&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="1799.9966666666664" y="3190.0045161290323" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-108" value="核心服务B" style="whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=#ffffff;sketch=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="1920" y="3168.2745161290322" width="174.87999999999997" height="94.83870967741935" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-109" value="" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;endArrow=classic;endFill=1;strokeWidth=1;fontSize=16;fontColor=#EA6B66;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-1" source="O7PgHtq6jPIGn8ExWUBk-110">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2280" y="3067" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-110" value="核心服务B" style="whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=#ffffff;sketch=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="1919.9999999999998" y="3020.0045161290323" width="174.87999999999997" height="94.83870967741935" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-111" value="" style="endArrow=none;html=1;entryX=0.374;entryY=0.006;entryDx=0;entryDy=0;exitX=-0.006;exitY=0.422;exitDx=0;exitDy=0;exitPerimeter=0;entryPerimeter=0;startArrow=classic;startFill=1;endFill=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-1" source="O7PgHtq6jPIGn8ExWUBk-110" target="O7PgHtq6jPIGn8ExWUBk-94">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1920" y="3070" as="sourcePoint" />
+            <mxPoint x="2060.133333333333" y="2922.5" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1662" y="3060" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-112" value="" style="endArrow=classic;html=1;strokeWidth=1;fontSize=16;fontColor=#EA6B66;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-1" source="O7PgHtq6jPIGn8ExWUBk-108">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2190" y="3130" as="sourcePoint" />
+            <mxPoint x="1760" y="3150" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2007" y="3150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-113" value="&lt;font color=&quot;#000000&quot; style=&quot;font-size: 14px&quot;&gt;重试时间 1s&lt;br&gt;不能改&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fontColor=#EA6B66;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="1820" y="3128.27" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-114" value="&lt;font color=&quot;#000000&quot; style=&quot;font-size: 14px&quot;&gt;如果偶尔网络问题超过1s&lt;br&gt;重试请求接口&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fontColor=#EA6B66;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="1730" y="3038" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-115" value="" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.mysql_database;rounded=0;labelBackgroundColor=#ffffff;sketch=0;fontSize=16;fontColor=#EA6B66;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="2294.99" y="3172.25" width="70" height="86.88" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-116" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/Cache_Redis_Product.svg;rounded=0;labelBackgroundColor=#ffffff;sketch=0;fillColor=none;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="2284.16" y="3028.92" width="91.67" height="77" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-117" value="" style="endArrow=classic;html=1;strokeWidth=1;fontSize=16;fontColor=#EA6B66;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-1" source="O7PgHtq6jPIGn8ExWUBk-108" target="O7PgHtq6jPIGn8ExWUBk-115">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2110" y="3224" as="sourcePoint" />
+            <mxPoint x="2180" y="3190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-118" value="&lt;font color=&quot;#000000&quot; style=&quot;font-size: 14px&quot;&gt;入库之前先判断&lt;br&gt;之前插入过没有&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fontColor=#EA6B66;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="2133" y="3047.42" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-119" value="&lt;font color=&quot;#000000&quot; style=&quot;font-size: 14px&quot;&gt;如果之前没有插入过再入库&lt;br&gt;确保不重复&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fontColor=#EA6B66;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="2104.16" y="3195.69" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-120" value="&lt;font color=&quot;#000000&quot;&gt;生产经验 --- 如何设置hystrix线程池的大小&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=21;fontColor=#EA6B66;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="60" y="3570" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-121" value="大量的生产系统优化经验：&lt;br&gt;假设： 核心服务A，每秒接收30次请求，每个请求的响应经验值大概在200ms， 那么你的hystrix线程池需要多少个线程？" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=21;fontColor=#EA6B66;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="60" y="3630" width="1130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-122" value="计算公式： 30(每秒请求数量) * 0.2(每个请求的响应时间) + 4(缓冲buffer) = 10（线程数量）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=21;fontColor=#EA6B66;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="60" y="3740" width="860" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-123" value="" style="whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=#ffffff;sketch=0;fillColor=#dae8fc;fontSize=21;align=left;strokeColor=none;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="120" y="3840" width="500" height="328" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-124" value="&lt;font color=&quot;#000000&quot;&gt;核心服务A&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=21;fontColor=#EA6B66;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="305" y="3840" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-125" value="" style="group" vertex="1" connectable="0" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="410" y="3888" width="180" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-126" value="" style="whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=#ffffff;sketch=0;fillColor=#60a917;fontSize=21;fontColor=#ffffff;align=left;strokeColor=#2D7600;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-125">
+          <mxGeometry width="180" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-127" value="&lt;font style=&quot;font-size: 16px&quot;&gt;Hystrix 线程池&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=21;fontColor=#ffffff;fillColor=#6a00ff;strokeColor=#3700CC;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-125">
+          <mxGeometry x="30" y="10" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-128" value="线程" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=21;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-125">
+          <mxGeometry x="20" y="50" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-129" value="线程" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=21;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-125">
+          <mxGeometry x="101" y="50" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-130" value="线程" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=21;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-125">
+          <mxGeometry x="101" y="90" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-131" value="线程" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=21;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-125">
+          <mxGeometry x="20" y="90" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-132" value="线程" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=21;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-125">
+          <mxGeometry x="20" y="130" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-133" value="线程" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=21;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-125">
+          <mxGeometry x="101" y="130" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-134" value="线程" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=21;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-125">
+          <mxGeometry x="101" y="170" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-135" value="线程" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=21;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-125">
+          <mxGeometry x="20" y="170" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-136" value="线程" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=21;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-125">
+          <mxGeometry x="103" y="210" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-137" value="线程" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=21;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-125">
+          <mxGeometry x="20" y="210" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-138" value="&lt;font style=&quot;background-color: rgb(204 , 0 , 102)&quot;&gt;核心业务逻辑&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=#ffffff;sketch=0;fillColor=#d80073;fontSize=21;fontColor=#ffffff;align=center;strokeColor=#A50040;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="140" y="3968" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-139" value="" style="endArrow=classic;html=1;strokeColor=#FF0000;strokeWidth=2;fontSize=21;fontColor=#EA6B66;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.006;entryY=0.423;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-1" source="O7PgHtq6jPIGn8ExWUBk-138" target="O7PgHtq6jPIGn8ExWUBk-126">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="170" y="3948" as="sourcePoint" />
+            <mxPoint x="220" y="3898" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-140" value="&lt;font style=&quot;font-size: 16px&quot; color=&quot;#000000&quot;&gt;每秒30个请求&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=21;fontColor=#EA6B66;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="290" y="3968" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-141" value="&lt;font color=&quot;#000000&quot;&gt;核心服务B&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=#ffffff;sketch=0;fillColor=#e3c800;fontSize=21;align=center;fontColor=#ffffff;strokeColor=none;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="1000" y="3878" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-142" value="" style="endArrow=classic;html=1;strokeWidth=2;fontSize=21;fontColor=#EA6B66;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-1" source="O7PgHtq6jPIGn8ExWUBk-129" target="O7PgHtq6jPIGn8ExWUBk-141">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="710" y="3920" as="sourcePoint" />
+            <mxPoint x="760" y="3870" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="770" y="3952" />
+              <mxPoint x="770" y="3908" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-143" value="" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=2;fontSize=21;fontColor=#EA6B66;exitX=1;exitY=0.533;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.006;entryY=0.675;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-1" source="O7PgHtq6jPIGn8ExWUBk-133" target="O7PgHtq6jPIGn8ExWUBk-141">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="760" y="4170" as="sourcePoint" />
+            <mxPoint x="810" y="4120" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="830" y="4034" />
+              <mxPoint x="830" y="3960" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-144" value="" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=2;fontSize=21;fontColor=#EA6B66;exitX=1.017;exitY=0.2;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.006;entryY=0.858;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-1" source="O7PgHtq6jPIGn8ExWUBk-134" target="O7PgHtq6jPIGn8ExWUBk-141">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="890" y="4180" as="sourcePoint" />
+            <mxPoint x="940" y="4130" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="850" y="4064" />
+              <mxPoint x="850" y="3981" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-145" value="" style="endArrow=classic;html=1;strokeWidth=2;fontSize=21;fontColor=#EA6B66;entryX=0.25;entryY=1;entryDx=0;entryDy=0;strokeColor=#FF0080;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-1" source="O7PgHtq6jPIGn8ExWUBk-136" target="O7PgHtq6jPIGn8ExWUBk-141">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="970" y="4240" as="sourcePoint" />
+            <mxPoint x="1020" y="4190" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1040" y="4113" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-146" value="&lt;font style=&quot;font-size: 16px&quot;&gt;4个线程的200ms的正常响应请求情况下是空闲的&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=21;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="390" y="4230" width="360" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-147" value="" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=2;fontSize=21;fontColor=#EA6B66;entryX=0.683;entryY=0.967;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.447;exitY=-0.033;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="O7PgHtq6jPIGn8ExWUBk-1" source="O7PgHtq6jPIGn8ExWUBk-146" target="O7PgHtq6jPIGn8ExWUBk-137">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="490" y="4240" as="sourcePoint" />
+            <mxPoint x="540" y="4190" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="551" y="4200" />
+              <mxPoint x="471" y="4200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O7PgHtq6jPIGn8ExWUBk-148" value="&lt;font style=&quot;font-size: 20px&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; letter-spacing: 0.621714px ; text-align: justify ; vertical-align: baseline ; line-height: 1.75em ; box-sizing: border-box ; overflow-wrap: break-word ; font-size: 20px&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word ; letter-spacing: 1px&quot;&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;总结一下，排除那些基础设施的故障，你要玩儿微服务架构的话，需要保证两点：&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; letter-spacing: 0.621714px ; text-align: justify ; vertical-align: baseline ; line-height: 1.75em ; box-sizing: border-box ; overflow-wrap: break-word ; font-size: 20px&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word ; letter-spacing: 1px&quot;&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;ul class=&quot;list-paddingleft-2&quot; style=&quot;margin: 0px ; padding: 0px 0px 0px 2.2em ; max-width: 100% ; color: rgb(51 , 51 , 51) ; letter-spacing: 0.621714px ; text-align: justify ; box-sizing: border-box ; overflow-wrap: break-word ; font-size: 20px&quot;&gt;&lt;li style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; clear: both ; min-height: 1em ; vertical-align: baseline ; line-height: 1.75em&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word ; letter-spacing: 1px&quot;&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;首先你的hystrix资源隔离以及超时这块，必须设置合理的参数，避免高峰期，频繁的hystrix线程卡死&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; letter-spacing: 0.621714px ; text-align: justify ; box-sizing: border-box ; overflow-wrap: break-word ; font-size: 20px&quot;&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/font&gt;&lt;/p&gt;&lt;ul class=&quot;list-paddingleft-2&quot; style=&quot;margin: 0px ; padding: 0px 0px 0px 2.2em ; max-width: 100% ; color: rgb(51 , 51 , 51) ; letter-spacing: 0.621714px ; text-align: justify ; box-sizing: border-box ; overflow-wrap: break-word ; font-size: 20px&quot;&gt;&lt;li style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word ; clear: both ; min-height: 1em ; vertical-align: baseline ; line-height: 1.75em&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word ; color: inherit ; letter-spacing: 1px&quot;&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;其次，针对个别的服务故障，要设置合理的降级策略，保证各个服务挂了，可以合理的降级，系统整体可用！&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=21;fillColor=#d5e8d4;" vertex="1" parent="O7PgHtq6jPIGn8ExWUBk-1">
+          <mxGeometry x="60" y="4340" width="1070" height="200" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
