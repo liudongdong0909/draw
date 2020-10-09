@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-10-09T07:32:44.895Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36" etag="bu5zF4D4_3hNKtVhGQBQ" version="13.7.6" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2020-10-09T08:05:55.615Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36" etag="vp1lPT9xu567HGouQGSK" version="13.7.6" type="github" pages="3">
   <diagram id="JzXBgew2gPKfXDzcpc2j" name="消息中间件全链路数据100%不丢失">
     <mxGraphModel dx="1852" dy="1034" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -2628,6 +2628,323 @@
         </mxCell>
         <mxCell id="OCvMhO_ngMlDvEZJMHBb-61" value="&lt;font style=&quot;font-size: 14px&quot;&gt;没来得及投递出去&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=23;fontColor=#FF3333;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
           <mxGeometry x="660" y="700" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-0" value="&lt;strong style=&quot;margin: 0px; padding: 0px; max-width: 100%; font-size: 22px; letter-spacing: 0.621714px; text-align: justify; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; overflow-wrap: break-word; font-size: 22px;&quot;&gt;保证投递消息不丢失的confirm机制&lt;/span&gt;&lt;/strong&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=22;fontColor=#FF3333;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="120" y="1290" width="370" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-1" value="&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;其实要解决这个问题，相信大家看过之前的消费端ack机制之后，也都猜到了。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;很简单，就是生产端（比如上图的订单服务）首先需要开启一个confirm模式，接着投递到MQ的消息，如果MQ一旦将消息持久化到磁盘之后，必须也要回传一个confirm消息给生产端。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;这样的话，如果生产端的服务接收到了这个confirm消息，就知道是已经持久化到磁盘了。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;否则如果没有接收到confirm消息，那么就说明这条消息半路可能丢失了，此时你就可以重新投递消息到MQ去，确保消息不要丢失。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;而且一旦你开启了confirm模式之后，每次消息投递也同样是有一个delivery tag的，也是起到唯一标识一次消息投递的作用。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;这样，MQ回传ack给生产端的时候，会带上这个delivery tag。你就知道具体对应着哪一次消息投递了，可以删除这条消息。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;此外，如果RabbitMQ接收到一条消息之后，结果内部出错发现无法处理这条消息，那么他会回传一个nack消息给生产端。此时你就会感知到这条消息可能处理有问题，你可以选择重新再次投递这条消息到MQ去。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;或者另一种情况，如果某条消息很长时间都没给你回传ack/nack，那可能是极端意外情况发生了，数据也丢了，你也可以自己重新投递消息到MQ去。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px ; padding: 0px ; max-width: 100% ; clear: both ; min-height: 1em ; color: rgb(51 , 51 , 51) ; font-family: , &amp;#34;blinkmacsystemfont&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;pingfang sc&amp;#34; , &amp;#34;hiragino sans gb&amp;#34; , &amp;#34;microsoft yahei ui&amp;#34; , &amp;#34;microsoft yahei&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; font-size: 17px ; letter-spacing: 0.621714px ; text-align: justify ; line-height: 2em ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;通过这套confirm机制，就可以实现生产端投递消息不会丢失的效果。大家来看看下面的图，一起来感受一下。&lt;/span&gt;&lt;/p&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=22;fontColor=#FF3333;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="120" y="1380" width="1630" height="600" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-64" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shadow=1;" edge="1" source="LEUSSZYqISiTrDHhZDLJ-65" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="2280" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="450" y="2160" />
+              <mxPoint x="450" y="2280" />
+              <mxPoint x="526" y="2280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-65" value="订单服务" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="240" y="2130" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-66" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;shadow=1;" edge="1" source="LEUSSZYqISiTrDHhZDLJ-67" target="LEUSSZYqISiTrDHhZDLJ-70" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="2300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-67" value="订单服务" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="240" y="2270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-68" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shadow=1;" edge="1" source="LEUSSZYqISiTrDHhZDLJ-69" target="LEUSSZYqISiTrDHhZDLJ-70" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="520" y="2330" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="450" y="2440" />
+              <mxPoint x="450" y="2320" />
+              <mxPoint x="520" y="2320" />
+              <mxPoint x="520" y="2321" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-69" value="订单服务" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="240" y="2410" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-70" value="" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="530" y="2235" width="330" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-71" value="&lt;b style=&quot;font-size: 14px&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;/b&gt;" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="1050" y="2060" width="160" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-72" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shadow=1;" edge="1" source="LEUSSZYqISiTrDHhZDLJ-73" target="LEUSSZYqISiTrDHhZDLJ-80" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-73" value="仓储服务" style="whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="1085" y="2270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-74" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shadow=1;" edge="1" source="LEUSSZYqISiTrDHhZDLJ-75" target="LEUSSZYqISiTrDHhZDLJ-78" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-75" value="仓储服务" style="whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="1085" y="2410" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-76" value="" style="endArrow=classic;html=1;entryX=-0.017;entryY=0.4;entryDx=0;entryDy=0;entryPerimeter=0;shadow=1;" edge="1" target="LEUSSZYqISiTrDHhZDLJ-98" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="861" y="2280" as="sourcePoint" />
+            <mxPoint x="990" y="2290" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="950" y="2280" />
+              <mxPoint x="950" y="2088" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-77" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1.006;exitY=0.646;exitDx=0;exitDy=0;exitPerimeter=0;shadow=1;" edge="1" source="LEUSSZYqISiTrDHhZDLJ-70" target="LEUSSZYqISiTrDHhZDLJ-75" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="860" y="2300" as="sourcePoint" />
+            <mxPoint x="960" y="2400" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="950" y="2320" />
+              <mxPoint x="950" y="2440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-78" value="仓库系统" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="1295" y="2410" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-79" value="仓库服务" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="1285" y="2095" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-80" value="仓库系统" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="1295" y="2270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-81" value="订单消息01" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="370" y="2140" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-82" value="订单消息02" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="370" y="2280" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-83" value="订单消息03" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="370" y="2420" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-84" value="RabbitMQ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="660" y="2235" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-85" value="" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="550" y="2290" width="290" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-86" value="queue" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="670" y="2290" width="50" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-87" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shadow=1;" edge="1" source="LEUSSZYqISiTrDHhZDLJ-88" target="LEUSSZYqISiTrDHhZDLJ-90" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-88" value="订单消息03" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#6a00ff;fontColor=#ffffff;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="550" y="2330" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-89" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shadow=1;" edge="1" source="LEUSSZYqISiTrDHhZDLJ-90" target="LEUSSZYqISiTrDHhZDLJ-91" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-90" value="订单消息02" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#6a00ff;fontColor=#ffffff;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="655" y="2330" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-91" value="订单消息01" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#6a00ff;fontColor=#ffffff;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="760" y="2330" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-92" value="订单消息03" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="960" y="2090" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-93" value="订单消息01" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="960" y="2280" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-94" value="订单消息02" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="960" y="2420" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-95" value="订单02&lt;br&gt;调度发货" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="1215" y="2410" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-96" value="订单01&lt;br&gt;调度发货" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="1215" y="2270" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-97" value="订单03&lt;br&gt;调度发货" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="1225" y="2110" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-98" value="订单消息03" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="1082.5" y="2080" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-99" value="仓库服务&lt;br&gt;是否成功&lt;br&gt;调度" style="rhombus;whiteSpace=wrap;html=1;fillColor=#d5e8d4;fontSize=14;align=center;strokeColor=#82b366;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="1090" y="2140" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-100" value="" style="endArrow=classic;html=1;fontSize=14;entryX=0.5;entryY=0;entryDx=0;entryDy=0;shadow=1;" edge="1" target="LEUSSZYqISiTrDHhZDLJ-99" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1130" y="2100" as="sourcePoint" />
+            <mxPoint x="1305" y="2190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-101" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shadow=1;" edge="1" source="LEUSSZYqISiTrDHhZDLJ-98" target="LEUSSZYqISiTrDHhZDLJ-79" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1229" y="2090" />
+              <mxPoint x="1229" y="2125" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-102" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0;exitY=0.5;exitDx=0;exitDy=0;shadow=1;" edge="1" source="LEUSSZYqISiTrDHhZDLJ-99" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="815" y="2190" as="sourcePoint" />
+            <mxPoint x="595" y="2248" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="595" y="2180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-103" value="接收ACK消息" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="550" y="2250" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-104" value="发送ACK消息" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="820" y="2160" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-105" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0.38;exitY=1.05;exitDx=0;exitDy=0;exitPerimeter=0;shadow=1;" edge="1" source="LEUSSZYqISiTrDHhZDLJ-103" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="592" y="2269" as="sourcePoint" />
+            <mxPoint x="587" y="2330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-106" value="标记删除" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="555" y="2300" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-107" value="" style="endArrow=classic;html=1;fontSize=14;exitX=-0.027;exitY=0.55;exitDx=0;exitDy=0;exitPerimeter=0;shadow=1;" edge="1" source="LEUSSZYqISiTrDHhZDLJ-110" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="885" y="2290" as="sourcePoint" />
+            <mxPoint x="775" y="2240" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="975" y="2220" />
+              <mxPoint x="775" y="2220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-109" value="是" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="1060" y="2170" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-110" value="不发送ACK消息" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#ffcc99;strokeColor=#36393d;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="960" y="2210" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-111" value="" style="endArrow=classic;html=1;fontSize=14;entryX=0.991;entryY=0.55;entryDx=0;entryDy=0;entryPerimeter=0;shadow=1;exitX=0.167;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" source="LEUSSZYqISiTrDHhZDLJ-108" target="LEUSSZYqISiTrDHhZDLJ-110" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1130" y="2220" as="sourcePoint" />
+            <mxPoint x="1086" y="2240" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1100" y="2240" />
+              <mxPoint x="1100" y="2221" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-112" value="发现消费者宕机" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#ffcc99;strokeColor=#36393d;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="815" y="2200" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-113" value="" style="endArrow=classic;html=1;fontSize=14;entryX=-0.033;entryY=0.867;entryDx=0;entryDy=0;entryPerimeter=0;shadow=1;" edge="1" source="LEUSSZYqISiTrDHhZDLJ-88" target="LEUSSZYqISiTrDHhZDLJ-75" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="565" y="2490" as="sourcePoint" />
+            <mxPoint x="1075" y="2460" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="590" y="2460" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-114" value="未收到ACK&lt;br&gt;订单消息03重新消费" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="660" y="2440" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-115" value="磁盘文件" style="whiteSpace=wrap;html=1;fillColor=#e1d5e7;fontSize=14;align=center;strokeColor=#9673a6;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="650" y="2601" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-116" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0.055;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;shadow=1;" edge="1" source="LEUSSZYqISiTrDHhZDLJ-85" target="LEUSSZYqISiTrDHhZDLJ-115" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="520" y="2600" as="sourcePoint" />
+            <mxPoint x="570" y="2550" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="566" y="2615" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-117" value="持久化queue" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="570" y="2540" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-118" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;shadow=1;" edge="1" source="LEUSSZYqISiTrDHhZDLJ-115" target="LEUSSZYqISiTrDHhZDLJ-85" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="420" y="2720" as="sourcePoint" />
+            <mxPoint x="470" y="2670" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="550" y="2645" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-119" value="重启时加载&lt;br&gt;queue信息" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="560" y="2650" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-120" value="" style="endArrow=none;html=1;fontSize=14;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.931;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;endFill=0;shadow=1;fontColor=#FF3333;labelBackgroundColor=none;strokeWidth=1;" edge="1" source="LEUSSZYqISiTrDHhZDLJ-115" target="LEUSSZYqISiTrDHhZDLJ-85" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="870" y="2660" as="sourcePoint" />
+            <mxPoint x="920" y="2610" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="820" y="2615" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-121" value="" style="endArrow=none;html=1;fontSize=14;exitX=0.979;exitY=1.014;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;endFill=0;startArrow=classic;startFill=1;shadow=1;" edge="1" source="LEUSSZYqISiTrDHhZDLJ-85" target="LEUSSZYqISiTrDHhZDLJ-115" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="990" y="2670" as="sourcePoint" />
+            <mxPoint x="1040" y="2620" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="834" y="2645" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-122" value="重启时加载&lt;br&gt;message" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="770" y="2650" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-123" value="持久化message" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="705" y="2530" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-124" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;shadow=1;strokeWidth=1;" edge="1" target="LEUSSZYqISiTrDHhZDLJ-73" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="820" y="2328" as="sourcePoint" />
+            <mxPoint x="960" y="2290" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="820" y="2300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-126" value="" style="endArrow=classic;html=1;labelBackgroundColor=none;strokeColor=#000000;strokeWidth=1;fontSize=22;fontColor=#000000;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="T2TyvwEO37OJlChBjBgD-1" source="LEUSSZYqISiTrDHhZDLJ-99" target="LEUSSZYqISiTrDHhZDLJ-108">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1360" y="2240" as="sourcePoint" />
+            <mxPoint x="1410" y="2190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-108" value="否" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;shadow=1;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="1115" y="2230" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-127" value="订单消息01&lt;br&gt;ack&lt;br&gt;delivery tag" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;strokeColor=#001DBC;fontColor=#ffffff;fillColor=#6666FF;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="505" y="2060" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-128" value="" style="endArrow=classic;html=1;labelBackgroundColor=none;strokeWidth=2;fontSize=16;fontColor=#000000;entryX=1.02;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.4;exitY=-0.1;exitDx=0;exitDy=0;exitPerimeter=0;strokeColor=#6666FF;" edge="1" parent="T2TyvwEO37OJlChBjBgD-1" source="LEUSSZYqISiTrDHhZDLJ-91" target="LEUSSZYqISiTrDHhZDLJ-127">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="670" y="2110" as="sourcePoint" />
+            <mxPoint x="720" y="2060" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="792" y="2090" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-130" value="" style="endArrow=classic;html=1;labelBackgroundColor=none;strokeWidth=2;fontSize=16;fontColor=#000000;strokeColor=#6666FF;" edge="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="500" y="2090" as="sourcePoint" />
+            <mxPoint x="310" y="2128" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="310" y="2090" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LEUSSZYqISiTrDHhZDLJ-131" value="回传ack 确认" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fontColor=#000000;" vertex="1" parent="T2TyvwEO37OJlChBjBgD-1">
+          <mxGeometry x="350" y="2070" width="110" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
