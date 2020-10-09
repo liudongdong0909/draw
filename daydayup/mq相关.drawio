@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-09-30T05:39:38.178Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="ePMjMNe42wMZSUPJssEW" version="13.7.6" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2020-10-09T05:48:36.236Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36" etag="5sPNkAl_A-uCu_ov_f4j" version="13.7.6" type="github" pages="2">
   <diagram id="JzXBgew2gPKfXDzcpc2j" name="消息中间件全链路数据100%不丢失">
-    <mxGraphModel dx="1899" dy="1043" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1506" dy="1034" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1357,7 +1357,7 @@
           <mxGeometry x="922.5" y="11185" width="70" height="20" as="geometry" />
         </mxCell>
         <mxCell id="0q1MMLpygY_Zd2AtGhnZ-169" value="message&lt;br&gt;delivery_tag=2" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#f8cecc;strokeColor=#b85450;shadow=1;" parent="1" vertex="1">
-          <mxGeometry x="905" y="11244" width="90" height="30" as="geometry" />
+          <mxGeometry x="915" y="11244" width="90" height="30" as="geometry" />
         </mxCell>
         <mxCell id="0q1MMLpygY_Zd2AtGhnZ-170" value="" style="endArrow=classic;html=1;fontSize=16;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.257;entryY=-0.2;entryDx=0;entryDy=0;entryPerimeter=0;shadow=1;" parent="1" source="0q1MMLpygY_Zd2AtGhnZ-167" target="0q1MMLpygY_Zd2AtGhnZ-158" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -1443,7 +1443,7 @@
           <mxGeometry x="922.5" y="11321.75" width="70" height="20" as="geometry" />
         </mxCell>
         <mxCell id="0q1MMLpygY_Zd2AtGhnZ-193" value="message&lt;br&gt;delivery_tag=1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#f8cecc;strokeColor=#b85450;shadow=1;" parent="1" vertex="1">
-          <mxGeometry x="905" y="11380.75" width="90" height="30" as="geometry" />
+          <mxGeometry x="915" y="11380.75" width="90" height="30" as="geometry" />
         </mxCell>
         <mxCell id="0q1MMLpygY_Zd2AtGhnZ-194" value="" style="endArrow=classic;html=1;exitX=0.941;exitY=1.014;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;shadow=1;exitPerimeter=0;" parent="1" source="0q1MMLpygY_Zd2AtGhnZ-159" target="0q1MMLpygY_Zd2AtGhnZ-191" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
