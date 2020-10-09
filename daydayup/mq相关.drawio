@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-10-09T06:11:34.969Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36" etag="Pv6-vJDW26uQC73k8vQS" version="13.7.6" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2020-10-09T07:12:35.871Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36" etag="kECiQRvJtFLD-TxFuT4D" version="13.7.6" type="github" pages="2">
   <diagram id="JzXBgew2gPKfXDzcpc2j" name="消息中间件全链路数据100%不丢失">
     <mxGraphModel dx="1506" dy="1034" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -1764,179 +1764,379 @@
         <mxCell id="l4yiZMI0Lqiobq8qElfs-35" value="&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;正是因为这个原因，RabbitMQ基于一个&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; color: rgb(64 , 179 , 230) ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;prefetch count&lt;/span&gt;来控制这个unack message的数量。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;你可以通过 “&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; color: rgb(64 , 179 , 230) ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;channel.basicQos(10)&lt;/span&gt;” 这个方法来设置当前channel的prefetch count。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;举个例子，比如你要是设置为10的话，那么意味着当前这个channel里，unack message的数量不能超过10个，以此来避免消费者服务实例积压unack message过多。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;这样的话，就意味着RabbitMQ正在投递到channel过程中的unack message，以及消费者服务在处理中的unack message，以及异步ack之后还没完成ack的unack message，所有这些message加起来，一个channel也不能超过10个。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;如果你要简单粗浅的理解的话，也大致可以理解为这个prefetch count就代表了一个消费者服务同时最多可以获取多少个message来处理。所以这里也点出了prefetch这个单词的意思。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;prefetch就是预抓取的意思，就意味着你的消费者服务实例预抓取多少条message过来处理，但是最多只能同时处理这么多消息。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;如果一个channel里的unack message超过了prefetch count指定的数量，此时RabbitMQ就会停止给这个channel投递消息了，必须要等待已经投递过去的消息被ack了，此时才能继续投递下一个消息。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;老规矩，给大家上一张图，我们一起来看看这个东西是啥意思。&lt;/span&gt;&lt;/p&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#FF3333;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
           <mxGeometry x="80" y="1880" width="1830" height="530" as="geometry" />
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shadow=1;" edge="1" source="l4yiZMI0Lqiobq8qElfs-37" parent="sVo--3T0ijmoXCc1OJXL-1">
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-80" value="&lt;strong style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; letter-spacing: 0.621714px ; text-align: justify ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;高并发场景下的内存溢出问题&lt;/font&gt;&lt;/span&gt;&lt;/strong&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=12;fontColor=#FF3333;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="80" y="3020" width="280" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-81" value="&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;好！现在大家对ack机制底层的另外一个核心机制：prefetch机制也有了一个深刻的理解了。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;此时，咱们就应该来考虑一个问题了。就是&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; color: rgb(64 , 179 , 230) ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;如何来设置这个prefetch count呢？这个东西设置的过大或者过小有什么影响呢？&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;其实大家理解了上面的图就很好理解这个问题了。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;假如说我们把prefetch count设置的很大，比如说3000，5000，甚至100000，就这样特别大的值，那么此时会如何呢？&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;这个时候，在高并发大流量的场景下，可能就会导致消费者服务的内存被快速的消耗掉。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;因为假如说现在MQ接收到的流量特别的大，每秒都上千条消息，而且此时你的消费者服务的prefetch count还设置的特别大，就会导致可能一瞬间你的消费者服务接收到了达到prefetch count指定数量的消息。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;打个比方，比如一下子你的消费者服务内存里积压了10万条消息，都是unack的状态，反正你的prefetch count设置的是10万。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;那么对一个channel，RabbitMQ就会最多容忍10万个unack状态的消息，在高并发下也就最多可能积压10万条消息在消费者服务的内存里。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;那么此时导致的结果，就是消费者服务直接被击垮了，内存溢出，OOM，服务宕机，然后大量unack的消息会被重新投递给其他的消费者服务，此时其他消费者服务一样的情况，直接宕机，最后造成&lt;strong style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; color: rgb(201 , 56 , 28) ; box-sizing: border-box ; overflow-wrap: break-word&quot;&gt;雪崩效应&lt;/span&gt;&lt;/strong&gt;。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;所有的消费者服务因为扛不住这么大的数据量，全部宕机。&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;&lt;br style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 8px; padding: 0px; max-width: 100%; clear: both; min-height: 1em; color: rgb(51, 51, 51); font-size: 17px; letter-spacing: 0.621714px; line-height: 2em; box-sizing: border-box; overflow-wrap: break-word;&quot;&gt;&lt;span style=&quot;margin: 0px ; padding: 0px ; max-width: 100% ; box-sizing: border-box ; word-wrap: break-word ; font-size: 15px ; letter-spacing: 2px&quot;&gt;大家来看看下面的图，自己感受一下现场的氛围。&lt;/span&gt;&lt;/p&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=12;fontColor=#FF3333;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="80" y="3090" width="1610" height="740" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-82" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shadow=1;" edge="1" source="l4yiZMI0Lqiobq8qElfs-83" parent="sVo--3T0ijmoXCc1OJXL-1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="505" y="2650" as="targetPoint" />
+            <mxPoint x="410" y="4020" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="435" y="2530" />
-              <mxPoint x="435" y="2650" />
+              <mxPoint x="340" y="3900" />
+              <mxPoint x="340" y="4020" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-37" value="订单服务" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
-          <mxGeometry x="215" y="2500" width="120" height="60" as="geometry" />
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-83" value="订单服务" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="120" y="3870" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;shadow=1;" edge="1" source="l4yiZMI0Lqiobq8qElfs-39" target="l4yiZMI0Lqiobq8qElfs-42" parent="sVo--3T0ijmoXCc1OJXL-1">
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-84" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;shadow=1;" edge="1" source="l4yiZMI0Lqiobq8qElfs-85" target="l4yiZMI0Lqiobq8qElfs-88" parent="sVo--3T0ijmoXCc1OJXL-1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="415" y="2670" as="targetPoint" />
+            <mxPoint x="320" y="4040" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-39" value="订单服务" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
-          <mxGeometry x="215" y="2640" width="120" height="60" as="geometry" />
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-85" value="订单服务" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="120" y="4010" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shadow=1;" edge="1" source="l4yiZMI0Lqiobq8qElfs-41" target="l4yiZMI0Lqiobq8qElfs-42" parent="sVo--3T0ijmoXCc1OJXL-1">
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-86" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shadow=1;" edge="1" source="l4yiZMI0Lqiobq8qElfs-87" target="l4yiZMI0Lqiobq8qElfs-88" parent="sVo--3T0ijmoXCc1OJXL-1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="495" y="2700" as="targetPoint" />
+            <mxPoint x="400" y="4070" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="435" y="2810" />
-              <mxPoint x="435" y="2690" />
-              <mxPoint x="495" y="2690" />
-              <mxPoint x="495" y="2691" />
+              <mxPoint x="340" y="4180" />
+              <mxPoint x="340" y="4060" />
+              <mxPoint x="400" y="4060" />
+              <mxPoint x="400" y="4061" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-41" value="订单服务" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
-          <mxGeometry x="215" y="2780" width="120" height="60" as="geometry" />
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-87" value="订单服务" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="120" y="4150" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-42" value="" style="whiteSpace=wrap;html=1;fillColor=#fa6800;strokeColor=#C73500;fontColor=#ffffff;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
-          <mxGeometry x="505" y="2605" width="330" height="130" as="geometry" />
-        </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-43" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shadow=1;" edge="1" source="l4yiZMI0Lqiobq8qElfs-44" target="l4yiZMI0Lqiobq8qElfs-58" parent="sVo--3T0ijmoXCc1OJXL-1">
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-133" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;fontColor=#FF3333;" edge="1" parent="sVo--3T0ijmoXCc1OJXL-1" source="l4yiZMI0Lqiobq8qElfs-88" target="l4yiZMI0Lqiobq8qElfs-117">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-44" value="" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
-          <mxGeometry x="942.5" y="2595" width="125" height="150" as="geometry" />
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-88" value="" style="whiteSpace=wrap;html=1;fillColor=#fa6800;strokeColor=#C73500;fontColor=#ffffff;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="410" y="3975" width="330" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-45" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;shadow=1;entryX=0.038;entryY=0.513;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" source="l4yiZMI0Lqiobq8qElfs-42" target="l4yiZMI0Lqiobq8qElfs-70" parent="sVo--3T0ijmoXCc1OJXL-1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="885" y="2710" as="sourcePoint" />
-            <mxPoint x="931" y="2853" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="880" y="2670" />
-              <mxPoint x="880" y="2853" />
-            </Array>
-          </mxGeometry>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-90" value="" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="1138.75" y="3975" width="125" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-46" value="订单消息01" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
-          <mxGeometry x="345" y="2510" width="80" height="20" as="geometry" />
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-92" value="订单消息01" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="250" y="3880" width="80" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-47" value="订单消息02" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
-          <mxGeometry x="345" y="2650" width="80" height="20" as="geometry" />
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-93" value="订单消息02" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="250" y="4020" width="80" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-48" value="订单消息03" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
-          <mxGeometry x="345" y="2790" width="80" height="20" as="geometry" />
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-94" value="订单消息03" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="250" y="4160" width="80" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-49" value="RabbitMQ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
-          <mxGeometry x="635" y="2605" width="70" height="20" as="geometry" />
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-95" value="RabbitMQ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="540" y="3975" width="70" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-50" value="" style="whiteSpace=wrap;html=1;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
-          <mxGeometry x="525" y="2660" width="290" height="70" as="geometry" />
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-96" value="" style="whiteSpace=wrap;html=1;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="430" y="4030" width="290" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-51" value="queue" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
-          <mxGeometry x="645" y="2660" width="50" height="20" as="geometry" />
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-97" value="queue" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="550" y="4030" width="50" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-52" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shadow=1;" edge="1" source="l4yiZMI0Lqiobq8qElfs-53" target="l4yiZMI0Lqiobq8qElfs-55" parent="sVo--3T0ijmoXCc1OJXL-1">
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-98" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shadow=1;" edge="1" source="l4yiZMI0Lqiobq8qElfs-99" target="l4yiZMI0Lqiobq8qElfs-101" parent="sVo--3T0ijmoXCc1OJXL-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-53" value="订单消息03" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
-          <mxGeometry x="525" y="2700" width="80" height="20" as="geometry" />
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-99" value="订单消息03" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="430" y="4070" width="80" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-54" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shadow=1;" edge="1" source="l4yiZMI0Lqiobq8qElfs-55" target="l4yiZMI0Lqiobq8qElfs-56" parent="sVo--3T0ijmoXCc1OJXL-1">
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-100" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shadow=1;" edge="1" source="l4yiZMI0Lqiobq8qElfs-101" target="l4yiZMI0Lqiobq8qElfs-102" parent="sVo--3T0ijmoXCc1OJXL-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-55" value="订单消息02" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
-          <mxGeometry x="630" y="2700" width="80" height="20" as="geometry" />
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-101" value="订单消息02" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="535" y="4070" width="80" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-56" value="订单消息01" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
-          <mxGeometry x="735" y="2700" width="80" height="20" as="geometry" />
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-102" value="订单消息01" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="640" y="4070" width="80" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-57" value="订单消息01" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
-          <mxGeometry x="1102.5" y="2640" width="80" height="20" as="geometry" />
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-103" value="订单消息01" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="1330" y="4020" width="80" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-58" value="仓储服务&lt;br&gt;" style="whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
-          <mxGeometry x="1222.5" y="2610" width="122.5" height="120" as="geometry" />
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-105" value="channel" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#d5e8d4;fontSize=16;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="1168.75" y="3984.5" width="70" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-59" value="channel" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#d5e8d4;fontSize=16;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
-          <mxGeometry x="965" y="2610" width="70" height="20" as="geometry" />
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-106" value="message&lt;br&gt;delivery_tag=1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#f8cecc;strokeColor=#b85450;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="1156.25" y="4060" width="90" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-60" value="message&lt;br&gt;delivery_tag=1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#f8cecc;strokeColor=#b85450;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
-          <mxGeometry x="960" y="2684" width="90" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-61" value="" style="endArrow=classic;html=1;fontSize=16;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.257;entryY=-0.2;entryDx=0;entryDy=0;entryPerimeter=0;shadow=1;" edge="1" source="l4yiZMI0Lqiobq8qElfs-58" target="l4yiZMI0Lqiobq8qElfs-49" parent="sVo--3T0ijmoXCc1OJXL-1">
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-107" value="" style="endArrow=classic;html=1;fontSize=16;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.257;entryY=-0.2;entryDx=0;entryDy=0;entryPerimeter=0;shadow=1;" edge="1" source="l4yiZMI0Lqiobq8qElfs-127" target="l4yiZMI0Lqiobq8qElfs-95" parent="sVo--3T0ijmoXCc1OJXL-1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="880" y="2520" as="sourcePoint" />
-            <mxPoint x="930" y="2470" as="targetPoint" />
+            <mxPoint x="1188.75" y="3980" as="sourcePoint" />
+            <mxPoint x="835" y="3840" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="1285" y="2540" />
-              <mxPoint x="653" y="2540" />
+              <mxPoint x="1539" y="3910.5" />
+              <mxPoint x="558" y="3910" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-62" value="注册自己" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
-          <mxGeometry x="955" y="2520" width="80" height="20" as="geometry" />
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-108" value="注册自己" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="860" y="3890" width="80" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-63" value="" style="endArrow=classic;html=1;fontSize=16;exitX=0.388;exitY=0;exitDx=0;exitDy=0;shadow=1;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="l4yiZMI0Lqiobq8qElfs-58" target="l4yiZMI0Lqiobq8qElfs-44" parent="sVo--3T0ijmoXCc1OJXL-1">
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-109" value="" style="endArrow=classic;html=1;fontSize=16;shadow=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" target="l4yiZMI0Lqiobq8qElfs-90" parent="sVo--3T0ijmoXCc1OJXL-1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="1265" y="2800" as="sourcePoint" />
-            <mxPoint x="1005" y="2590" as="targetPoint" />
+            <mxPoint x="1510" y="3980.5" as="sourcePoint" />
+            <mxPoint x="910" y="3960" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="1270" y="2560" />
-              <mxPoint x="1005" y="2560" />
+              <mxPoint x="1510" y="3930.5" />
+              <mxPoint x="1201" y="3930.5" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-64" value="ACK" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
-          <mxGeometry x="1122.5" y="2560" width="50" height="20" as="geometry" />
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-110" value="ACK" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="1360" y="3930" width="50" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-65" value="" style="endArrow=classic;html=1;fontSize=16;shadow=1;exitX=0.316;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" source="l4yiZMI0Lqiobq8qElfs-44" parent="sVo--3T0ijmoXCc1OJXL-1">
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-111" value="" style="endArrow=classic;html=1;fontSize=16;shadow=1;exitX=0.316;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" source="l4yiZMI0Lqiobq8qElfs-90" parent="sVo--3T0ijmoXCc1OJXL-1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="983" y="2590" as="sourcePoint" />
-            <mxPoint x="760" y="2604" as="targetPoint" />
+            <mxPoint x="888" y="3960" as="sourcePoint" />
+            <mxPoint x="665" y="3974" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="983" y="2560" />
-              <mxPoint x="760" y="2560" />
+              <mxPoint x="1178" y="3928.5" />
+              <mxPoint x="665" y="3930" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-66" value="ACK&lt;br&gt;delivery_tag=1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
-          <mxGeometry x="820" y="2540" width="120" height="40" as="geometry" />
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-112" value="ACK&lt;br&gt;delivery_tag=1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="725" y="3910" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-67" value="积压10个&lt;br&gt;unack message" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
-          <mxGeometry x="1233.75" y="2690" width="100" height="30" as="geometry" />
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-114" value="prefetch count=10万" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=12;fontColor=#FF3333;fontStyle=1" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="1136.25" y="4010" width="130" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-68" value="prefetch count=10" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=12;fontColor=#FF3333;fontStyle=1" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
-          <mxGeometry x="940" y="2650" width="120" height="20" as="geometry" />
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-117" value="" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;fontColor=#FF3333;align=left;labelBackgroundColor=none;fillColor=none;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="850" y="3997.5" width="140" height="85" as="geometry" />
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-73" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;fontColor=#FF3333;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="sVo--3T0ijmoXCc1OJXL-1" source="l4yiZMI0Lqiobq8qElfs-69" target="l4yiZMI0Lqiobq8qElfs-44">
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-137" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;fontColor=#FF3333;entryX=-0.014;entryY=0.397;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="sVo--3T0ijmoXCc1OJXL-1" source="l4yiZMI0Lqiobq8qElfs-118" target="l4yiZMI0Lqiobq8qElfs-90">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1077.5" y="4034.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-118" value="&lt;font style=&quot;font-size: 14px&quot;&gt;unack message&lt;br&gt;数量是否达到10万个&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=12;fontColor=#FF3333;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="847.5" y="4014.5" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-119" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=12;fontColor=#FF3333;" edge="1" source="l4yiZMI0Lqiobq8qElfs-117" target="l4yiZMI0Lqiobq8qElfs-117" parent="sVo--3T0ijmoXCc1OJXL-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-75" value="&lt;font style=&quot;font-size: 14px&quot;&gt;否&lt;br&gt;&lt;font color=&quot;#000000&quot; style=&quot;font-size: 14px&quot;&gt;继续投递&lt;/font&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontColor=#FF3333;labelBackgroundColor=none;" vertex="1" connectable="0" parent="l4yiZMI0Lqiobq8qElfs-73">
-          <mxGeometry x="-0.0462" y="2" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-69" value="" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;fontColor=#FF3333;align=left;labelBackgroundColor=none;fillColor=none;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
-          <mxGeometry x="935" y="2810" width="140" height="85" as="geometry" />
-        </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-70" value="&lt;font style=&quot;font-size: 14px&quot;&gt;unack message&lt;br&gt;数量是否达到10个&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=12;fontColor=#FF3333;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
-          <mxGeometry x="935" y="2832.5" width="130" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=12;fontColor=#FF3333;" edge="1" parent="sVo--3T0ijmoXCc1OJXL-1" source="l4yiZMI0Lqiobq8qElfs-69" target="l4yiZMI0Lqiobq8qElfs-69">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-74" value="" style="endArrow=classic;html=1;fontSize=12;fontColor=#FF3333;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="sVo--3T0ijmoXCc1OJXL-1" source="l4yiZMI0Lqiobq8qElfs-69">
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-120" value="" style="endArrow=classic;html=1;fontSize=12;fontColor=#FF3333;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" source="l4yiZMI0Lqiobq8qElfs-117" parent="sVo--3T0ijmoXCc1OJXL-1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="750" y="2780" as="sourcePoint" />
-            <mxPoint x="800" y="2730" as="targetPoint" />
+            <mxPoint x="655" y="4150" as="sourcePoint" />
+            <mxPoint x="705" y="4100" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="1005" y="2920" />
-              <mxPoint x="800" y="2920" />
+              <mxPoint x="920" y="4188.5" />
+              <mxPoint x="705" y="4188.5" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="l4yiZMI0Lqiobq8qElfs-76" value="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;font color=&quot;#00ff00&quot; style=&quot;font-size: 14px&quot;&gt;是&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#000000&quot; style=&quot;font-size: 14px&quot;&gt;不再投递&lt;/font&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontColor=#FF3333;labelBackgroundColor=none;" vertex="1" connectable="0" parent="l4yiZMI0Lqiobq8qElfs-74">
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-121" value="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;font color=&quot;#00ff00&quot; style=&quot;font-size: 14px&quot;&gt;是&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#000000&quot; style=&quot;font-size: 14px&quot;&gt;不再投递&lt;/font&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontColor=#FF3333;labelBackgroundColor=none;" vertex="1" connectable="0" parent="l4yiZMI0Lqiobq8qElfs-120">
           <mxGeometry x="0.5857" relative="1" as="geometry">
-            <mxPoint as="offset" />
+            <mxPoint x="210" y="-76" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-124" value="" style="whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="1447.5" y="4248.5" width="122.5" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-125" value="积压10万个&lt;br&gt;unack message" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="1458.75" y="4309" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-126" value="内存溢出 宕机" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=12;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="1463.75" y="4348.5" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-127" value="" style="whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="1447.5" y="3984.5" width="122.5" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-128" value="积压10万个&lt;br&gt;unack message" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="1458.75" y="4043.5" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-129" value="内存溢出 宕机" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=12;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="1463.75" y="4085" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-130" value="&lt;span style=&quot;color: rgb(0 , 0 , 0)&quot;&gt;仓储服务&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=12;fontColor=#FF3333;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="1473.75" y="3994.5" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-132" value="" style="endArrow=classic;html=1;fontSize=12;fontColor=#FF3333;exitX=1.018;exitY=0.457;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="sVo--3T0ijmoXCc1OJXL-1" source="l4yiZMI0Lqiobq8qElfs-90" target="l4yiZMI0Lqiobq8qElfs-127">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1440" y="4198.5" as="sourcePoint" />
+            <mxPoint x="1490" y="4148.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-134" value="&lt;span style=&quot;color: rgb(0 , 0 , 0)&quot;&gt;仓储服务&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=12;fontColor=#FF3333;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="1478.75" y="4248.5" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-135" value="" style="endArrow=none;html=1;fontSize=12;fontColor=#FF3333;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.803;entryY=0.996;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;endFill=0;" edge="1" parent="sVo--3T0ijmoXCc1OJXL-1" source="l4yiZMI0Lqiobq8qElfs-124" target="l4yiZMI0Lqiobq8qElfs-88">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="860" y="4428.5" as="sourcePoint" />
+            <mxPoint x="710" y="4338.5" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="675" y="4308.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-138" value="&lt;font color=&quot;#000000&quot; style=&quot;font-size: 14px;&quot;&gt;重新投递&lt;br style=&quot;font-size: 14px;&quot;&gt;10万条消息&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;fontColor=#FF3333;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="1005" y="4288.5" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-141" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shadow=1;" edge="1" source="l4yiZMI0Lqiobq8qElfs-142" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="410" y="2630" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="340" y="2510" />
+              <mxPoint x="340" y="2630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-142" value="订单服务" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="120" y="2480" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-143" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;shadow=1;" edge="1" source="l4yiZMI0Lqiobq8qElfs-144" target="l4yiZMI0Lqiobq8qElfs-148" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="320" y="2650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-144" value="订单服务" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="120" y="2620" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-145" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shadow=1;" edge="1" source="l4yiZMI0Lqiobq8qElfs-146" target="l4yiZMI0Lqiobq8qElfs-148" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="2680" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="340" y="2790" />
+              <mxPoint x="340" y="2670" />
+              <mxPoint x="400" y="2670" />
+              <mxPoint x="400" y="2671" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-146" value="订单服务" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="120" y="2760" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-147" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;fontColor=#FF3333;" edge="1" source="l4yiZMI0Lqiobq8qElfs-148" target="l4yiZMI0Lqiobq8qElfs-171" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-148" value="" style="whiteSpace=wrap;html=1;fillColor=#fa6800;strokeColor=#C73500;fontColor=#ffffff;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="410" y="2585" width="330" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-149" value="" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="1138.75" y="2585" width="125" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-150" value="订单消息01" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="250" y="2490" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-151" value="订单消息02" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="250" y="2630" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-152" value="订单消息03" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="250" y="2770" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-153" value="RabbitMQ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="540" y="2585" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-154" value="" style="whiteSpace=wrap;html=1;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="430" y="2640" width="290" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-155" value="queue" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="550" y="2640" width="50" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-156" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shadow=1;" edge="1" source="l4yiZMI0Lqiobq8qElfs-157" target="l4yiZMI0Lqiobq8qElfs-159" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-157" value="订单消息03" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="430" y="2680" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-158" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shadow=1;" edge="1" source="l4yiZMI0Lqiobq8qElfs-159" target="l4yiZMI0Lqiobq8qElfs-160" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-159" value="订单消息02" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="535" y="2680" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-160" value="订单消息01" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="640" y="2680" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-161" value="订单消息01" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#e1d5e7;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="1330" y="2630" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-162" value="channel" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#d5e8d4;fontSize=16;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="1168.75" y="2594.5" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-163" value="message&lt;br&gt;delivery_tag=1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#f8cecc;strokeColor=#b85450;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="1156.25" y="2670" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-164" value="" style="endArrow=classic;html=1;fontSize=16;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.257;entryY=-0.2;entryDx=0;entryDy=0;entryPerimeter=0;shadow=1;" edge="1" source="l4yiZMI0Lqiobq8qElfs-177" target="l4yiZMI0Lqiobq8qElfs-153" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1188.75" y="2590" as="sourcePoint" />
+            <mxPoint x="835" y="2450" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1539" y="2520.5" />
+              <mxPoint x="558" y="2520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-165" value="注册自己" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="860" y="2500" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-166" value="" style="endArrow=classic;html=1;fontSize=16;shadow=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" target="l4yiZMI0Lqiobq8qElfs-149" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1510" y="2590.5" as="sourcePoint" />
+            <mxPoint x="910" y="2570" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1510" y="2540.5" />
+              <mxPoint x="1201" y="2540.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-167" value="ACK" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="1360" y="2540" width="50" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-168" value="" style="endArrow=classic;html=1;fontSize=16;shadow=1;exitX=0.316;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" source="l4yiZMI0Lqiobq8qElfs-149" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="888" y="2570" as="sourcePoint" />
+            <mxPoint x="665" y="2584" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1178" y="2538.5" />
+              <mxPoint x="665" y="2540" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-169" value="ACK&lt;br&gt;delivery_tag=1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="725" y="2520" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-170" value="prefetch count=10" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=12;fontColor=#FF3333;fontStyle=1" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="1141.25" y="2620" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-171" value="" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;fontColor=#FF3333;align=left;labelBackgroundColor=none;fillColor=none;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="850" y="2607.5" width="140" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-172" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;fontColor=#FF3333;entryX=-0.014;entryY=0.397;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" source="l4yiZMI0Lqiobq8qElfs-173" target="l4yiZMI0Lqiobq8qElfs-149" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1077.5" y="2644.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-173" value="&lt;font style=&quot;font-size: 14px&quot;&gt;unack message&lt;br&gt;数量是否达到10个&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=12;fontColor=#FF3333;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="852.5" y="2624.5" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-174" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=12;fontColor=#FF3333;" edge="1" source="l4yiZMI0Lqiobq8qElfs-171" target="l4yiZMI0Lqiobq8qElfs-171" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-175" value="" style="endArrow=classic;html=1;fontSize=12;fontColor=#FF3333;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" source="l4yiZMI0Lqiobq8qElfs-171" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="655" y="2760" as="sourcePoint" />
+            <mxPoint x="705" y="2710" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="920" y="2798.5" />
+              <mxPoint x="705" y="2798.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-176" value="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;font color=&quot;#00ff00&quot; style=&quot;font-size: 14px&quot;&gt;是&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#000000&quot; style=&quot;font-size: 14px&quot;&gt;不再投递&lt;/font&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontColor=#FF3333;labelBackgroundColor=none;" vertex="1" connectable="0" parent="l4yiZMI0Lqiobq8qElfs-175">
+          <mxGeometry x="0.5857" relative="1" as="geometry">
+            <mxPoint x="210" y="-76" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-177" value="" style="whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;shadow=1;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="1447.5" y="2594.5" width="122.5" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-178" value="积压10个&lt;br&gt;unack message" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="1458.75" y="2653.5" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-180" value="&lt;span style=&quot;color: rgb(0 , 0 , 0)&quot;&gt;仓储服务&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=12;fontColor=#FF3333;" vertex="1" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry x="1473.75" y="2604.5" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l4yiZMI0Lqiobq8qElfs-181" value="" style="endArrow=classic;html=1;fontSize=12;fontColor=#FF3333;exitX=1.018;exitY=0.457;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" source="l4yiZMI0Lqiobq8qElfs-149" target="l4yiZMI0Lqiobq8qElfs-177" parent="sVo--3T0ijmoXCc1OJXL-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1440" y="2808.5" as="sourcePoint" />
+            <mxPoint x="1490" y="2758.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
