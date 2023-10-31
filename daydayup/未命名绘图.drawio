@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-31T03:52:42.690Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="t8hkyHh6r7TgGIiSBDDh" version="22.0.8" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-31T04:00:10.028Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="Go8t-oY7i8OunX-oy7s4" version="22.0.8" type="github">
   <diagram name="第 1 页" id="XwOfIKq0tnw8-P53mZ7I">
     <mxGraphModel dx="950" dy="510" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -40,7 +40,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="KIAm81Sfg12KZMm3VU6N-5" value="住宅" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
-          <mxGeometry x="440" y="110" width="76" height="40" as="geometry" />
+          <mxGeometry x="440" y="140" width="76" height="40" as="geometry" />
         </mxCell>
         <mxCell id="KIAm81Sfg12KZMm3VU6N-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="KIAm81Sfg12KZMm3VU6N-6" target="KIAm81Sfg12KZMm3VU6N-11">
           <mxGeometry relative="1" as="geometry" />
@@ -49,7 +49,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="KIAm81Sfg12KZMm3VU6N-6" value="商业房地产" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="440" y="250" width="76" height="40" as="geometry" />
+          <mxGeometry x="450" y="380" width="76" height="40" as="geometry" />
         </mxCell>
         <mxCell id="KIAm81Sfg12KZMm3VU6N-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="KIAm81Sfg12KZMm3VU6N-7" target="KIAm81Sfg12KZMm3VU6N-13">
           <mxGeometry relative="1" as="geometry" />
@@ -58,7 +58,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="KIAm81Sfg12KZMm3VU6N-7" value="工业房地产" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="440" y="400" width="76" height="40" as="geometry" />
+          <mxGeometry x="450" y="530" width="76" height="40" as="geometry" />
         </mxCell>
         <mxCell id="KIAm81Sfg12KZMm3VU6N-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="KIAm81Sfg12KZMm3VU6N-8" target="KIAm81Sfg12KZMm3VU6N-15">
           <mxGeometry relative="1" as="geometry" />
@@ -67,53 +67,56 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="KIAm81Sfg12KZMm3VU6N-8" value="土地" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
-          <mxGeometry x="440" y="540" width="76" height="40" as="geometry" />
+          <mxGeometry x="450" y="670" width="76" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="KIAm81Sfg12KZMm3VU6N-9" value="住宅-司法拍卖" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+        <mxCell id="KIAm81Sfg12KZMm3VU6N-9" value="住宅-司法拍卖&lt;br&gt;house_auction" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
           <mxGeometry x="620" y="80" width="110" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="KIAm81Sfg12KZMm3VU6N-10" value="住宅-二手房" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+        <mxCell id="KIAm81Sfg12KZMm3VU6N-10" value="住宅-二手房&lt;br&gt;house_resold" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
           <mxGeometry x="620" y="140" width="110" height="40" as="geometry" />
         </mxCell>
         <mxCell id="KIAm81Sfg12KZMm3VU6N-11" value="商业房地产-司法拍卖" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="620" y="220" width="110" height="40" as="geometry" />
+          <mxGeometry x="630" y="350" width="110" height="40" as="geometry" />
         </mxCell>
         <mxCell id="KIAm81Sfg12KZMm3VU6N-12" value="商业房地产-二手房" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="620" y="280" width="110" height="40" as="geometry" />
+          <mxGeometry x="630" y="410" width="110" height="40" as="geometry" />
         </mxCell>
         <mxCell id="KIAm81Sfg12KZMm3VU6N-13" value="工业房地产-司法拍卖" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="620" y="370" width="110" height="40" as="geometry" />
+          <mxGeometry x="630" y="500" width="110" height="40" as="geometry" />
         </mxCell>
         <mxCell id="KIAm81Sfg12KZMm3VU6N-14" value="工业房地产-二手房" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="620" y="430" width="110" height="40" as="geometry" />
+          <mxGeometry x="630" y="560" width="110" height="40" as="geometry" />
         </mxCell>
         <mxCell id="KIAm81Sfg12KZMm3VU6N-15" value="土地-司法拍卖" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
-          <mxGeometry x="620" y="510" width="110" height="40" as="geometry" />
+          <mxGeometry x="630" y="640" width="110" height="40" as="geometry" />
         </mxCell>
         <mxCell id="KIAm81Sfg12KZMm3VU6N-16" value="土地-中国土地网" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
-          <mxGeometry x="620" y="570" width="110" height="40" as="geometry" />
+          <mxGeometry x="630" y="700" width="110" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="KIAm81Sfg12KZMm3VU6N-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="KIAm81Sfg12KZMm3VU6N-8" target="KIAm81Sfg12KZMm3VU6N-2">
+        <mxCell id="KIAm81Sfg12KZMm3VU6N-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="KIAm81Sfg12KZMm3VU6N-8">
           <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="480" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="340" y="560" />
-              <mxPoint x="340" y="350" />
+              <mxPoint x="350" y="690" />
+              <mxPoint x="350" y="480" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="KIAm81Sfg12KZMm3VU6N-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;" edge="1" parent="1" source="KIAm81Sfg12KZMm3VU6N-6" target="KIAm81Sfg12KZMm3VU6N-2">
+        <mxCell id="KIAm81Sfg12KZMm3VU6N-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;" edge="1" parent="1" source="KIAm81Sfg12KZMm3VU6N-6">
           <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="480" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="340" y="270" />
-              <mxPoint x="340" y="350" />
+              <mxPoint x="350" y="400" />
+              <mxPoint x="350" y="480" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="KIAm81Sfg12KZMm3VU6N-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;" edge="1" parent="1" source="KIAm81Sfg12KZMm3VU6N-7" target="KIAm81Sfg12KZMm3VU6N-2">
+        <mxCell id="KIAm81Sfg12KZMm3VU6N-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;" edge="1" parent="1" source="KIAm81Sfg12KZMm3VU6N-7">
           <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="480" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="340" y="420" />
-              <mxPoint x="340" y="350" />
+              <mxPoint x="350" y="550" />
+              <mxPoint x="350" y="480" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -122,6 +125,18 @@
         </mxCell>
         <mxCell id="KIAm81Sfg12KZMm3VU6N-35" value="分类" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
           <mxGeometry x="418" y="10" width="122" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KIAm81Sfg12KZMm3VU6N-40" value="&lt;div style=&quot;font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; line-height: 18px;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;house_resold&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="820" y="110" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KIAm81Sfg12KZMm3VU6N-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;" edge="1" parent="1" source="KIAm81Sfg12KZMm3VU6N-41" target="KIAm81Sfg12KZMm3VU6N-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KIAm81Sfg12KZMm3VU6N-41" value="住宅-二手房-小区&lt;br&gt;house_apartment" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="620" y="200" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KIAm81Sfg12KZMm3VU6N-42" value="&lt;div style=&quot;font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; line-height: 18px;&quot;&gt;&lt;font style=&quot;&quot; color=&quot;#0f0f0f&quot;&gt;house_apartment&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="825" y="168" width="130" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
